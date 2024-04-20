@@ -1,0 +1,4 @@
+download == 0.3.5
+pycocotools == 2.0.4
+opencv-python == 4.9.0.80
+https://ms-release.obs.cpipn-north-4.myhuaweicloud.com/2.2.13/MindSpore/unified/aarch64/mindspore-2.2.13-cp37-cp37m-linux_aarch64.whl --trusted-host ms-release.obs.cn-north-4.myhuaweicloud.com -i https://pypi.tuna.tsinghua.edu.cn/simple
