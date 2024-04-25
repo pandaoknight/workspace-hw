@@ -1,0 +1,11 @@
+FROM  unionbigdata/notebook_ascend-mindspore:0.1.0
+
+USER root
+# Copy data and ensure correct permissions
+COPY mindspore_fcn8s/ /home/HwHiAiUser/mindspore_fcn8s/
+# Change the ownership to HwHiAiUser
+RUN chown -R HwHiAiUser:HwHiAiUser /home/HwHiAiUser/mindspore_fcn8s/
+# Optionally, set the correct permissions if necessary
+RUN chmod -R 755 /home/HwHiAiUser/mindspore_fcn8s/
+
+USER HwHiAiUser

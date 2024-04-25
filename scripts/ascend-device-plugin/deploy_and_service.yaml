@@ -15,22 +15,23 @@ spec:
     spec:
       containers:
       - name: jupyter-notebook
-        image: unionbigdata/notebook_ascend-mindspore:0.1.0
+        #image: unionbigdata/notebook_ascend-mindspore:0.1.0
+        image: unionbigdata/notebook_ascend-mindspore:0.1.0-fcn8s
         ports:
         - containerPort: 30081
-        volumeMounts:
-        - name: mindspore-volume
-          mountPath: /home/HwHiAiUser/mindspore_fcn8s
+        #volumeMounts:
+        #- name: mindspore-volume
+        #  mountPath: /home/HwHiAiUser/mindspore_fcn8s
         resources:
           limits:
             huawei.com/Ascend910: 1
           requests:
             huawei.com/Ascend910: 1
-      volumes:
-      - name: mindspore-volume
-        hostPath:
-          path: /data/szl1160710/scripts/mindspore_docker_build/volumes/mindspore_fcn8s
-          type: Directory
+      #volumes:
+      #- name: mindspore-volume
+      #  hostPath:
+      #    path: /data/szl1160710/scripts/mindspore_docker_build/volumes/mindspore_fcn8s
+      #    type: Directory
 
 ---
 
