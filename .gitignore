@@ -1,3 +1,4 @@
 install/
 src/
 scripts/mindspore_docker_build/volumes/
+scripts/mindspore_docker_build/docker_8888_fcn8s_notebook_ascend-mindspore/mindspore_fcn8s
