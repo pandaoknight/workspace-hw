@@ -2,9 +2,10 @@
 #!/bin/bash
 
 # Variable
-CONTAINER_ID="container-id-ap1"
+CONTAINER_PATTERN="container-id-ap"
 # NOT Change
-#NAMESPACE="k8s.io"
 
 # Run the container with the specified variables
-docker rm ${CONTAINER_ID}
+docker ps -aqf "name=$CONTAINER_PATTERN" | xargs -r docker rm
+
+echo "Containers with names starting with '$CONTAINER_PATTERN' have been deleted."

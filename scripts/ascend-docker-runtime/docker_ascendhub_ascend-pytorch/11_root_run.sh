@@ -2,7 +2,7 @@
 #!/bin/bash
 
 # Variable
-CONTAINER_ID="container-id-ap1"
+CONTAINER_ID="container-id-ap11"
 #IMAGE="ascendhub.huawei.com/public-ascendhub/ascend-pytorch:23.0.RC3-1.11.0-ubuntu18.04"
 IMAGE="ascendhub.huawei.com/public-ascendhub/ascend-pytorch:23.0.0-A2-1.11.0-ubuntu18.04"
 # NOT Change

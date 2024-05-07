@@ -2,7 +2,7 @@
 #!/bin/bash
 
 # Variable
-CONTAINER_ID="container-id-ap1"
+CONTAINER_ID="container-id-ap10"
 #IMAGE="ascendhub.huawei.com/public-ascendhub/ascend-pytorch:23.0.RC3-1.11.0-ubuntu18.04"
 IMAGE="ascendhub.huawei.com/public-ascendhub/ascend-pytorch:23.0.0-A2-1.11.0-ubuntu18.04"
 # NOT Change
@@ -10,6 +10,7 @@ IMAGE="ascendhub.huawei.com/public-ascendhub/ascend-pytorch:23.0.0-A2-1.11.0-ubu
 DEVICES="2"
 
 #docker run -u root -it --name ${CONTAINER_ID} -e ASCEND_VISIBLE_DEVICES=${DEVICES} ${IMAGE} /bin/bash
+#docker run -u root -it --name ${CONTAINER_ID} \
 docker run -it --name ${CONTAINER_ID} \
 	-e ASCEND_VISIBLE_DEVICES=${DEVICES} \
 	-v /data/szl1160710/src/samples/:/home/HwHiAiUser/samples/ \
