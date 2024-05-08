@@ -1,0 +1,658 @@
+root@ubuntu:/data/szl1160710/scripts/nmap_security_scan/outer# ./nmap_101.204.146.85.sh
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2024-05-08 15:32 HKT
+NSE: Loaded 146 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 15:32
+Completed NSE at 15:32, 0.00s elapsed
+Initiating NSE at 15:32
+Completed NSE at 15:32, 0.00s elapsed
+Initiating SYN Stealth Scan at 15:32
+Scanning 101.204.146.85 [65535 ports]
+Discovered open port 23/tcp on 101.204.146.85
+Discovered open port 80/tcp on 101.204.146.85
+Increasing send delay for 101.204.146.85 from 0 to 5 due to 452 out of 1506 dropped probes since last increase.
+Increasing send delay for 101.204.146.85 from 5 to 10 due to max_successful_tryno increase to 4
+Increasing send delay for 101.204.146.85 from 10 to 20 due to 15 out of 48 dropped probes since last increase.
+Increasing send delay for 101.204.146.85 from 20 to 40 due to 11 out of 31 dropped probes since last increase.
+Increasing send delay for 101.204.146.85 from 40 to 80 due to 11 out of 27 dropped probes since last increase.
+SYN Stealth Scan Timing: About 2.96% done; ETC: 15:50 (0:16:57 remaining)
+SYN Stealth Scan Timing: About 3.43% done; ETC: 16:02 (0:28:39 remaining)
+SYN Stealth Scan Timing: About 3.89% done; ETC: 16:11 (0:37:30 remaining)
+SYN Stealth Scan Timing: About 4.35% done; ETC: 16:18 (0:44:20 remaining)
+SYN Stealth Scan Timing: About 4.80% done; ETC: 16:25 (0:49:52 remaining)
+SYN Stealth Scan Timing: About 5.27% done; ETC: 16:29 (0:54:12 remaining)
+SYN Stealth Scan Timing: About 5.73% done; ETC: 16:33 (0:57:48 remaining)
+SYN Stealth Scan Timing: About 6.25% done; ETC: 16:37 (1:01:02 remaining)
+SYN Stealth Scan Timing: About 6.89% done; ETC: 16:41 (1:04:24 remaining)
+SYN Stealth Scan Timing: About 7.76% done; ETC: 16:46 (1:07:55 remaining)
+SYN Stealth Scan Timing: About 9.16% done; ETC: 16:51 (1:11:37 remaining)
+SYN Stealth Scan Timing: About 11.86% done; ETC: 16:58 (1:15:34 remaining)
+SYN Stealth Scan Timing: About 27.82% done; ETC: 17:11 (1:11:16 remaining)
+SYN Stealth Scan Timing: About 34.07% done; ETC: 17:13 (1:06:18 remaining)
+SYN Stealth Scan Timing: About 39.73% done; ETC: 17:14 (1:01:15 remaining)
+SYN Stealth Scan Timing: About 45.21% done; ETC: 17:15 (0:56:08 remaining)
+Discovered open port 8887/tcp on 101.204.146.85
+SYN Stealth Scan Timing: About 50.55% done; ETC: 17:15 (0:50:59 remaining)
+SYN Stealth Scan Timing: About 55.81% done; ETC: 17:16 (0:45:47 remaining)
+SYN Stealth Scan Timing: About 61.00% done; ETC: 17:16 (0:40:34 remaining)
+SYN Stealth Scan Timing: About 66.14% done; ETC: 17:16 (0:35:20 remaining)
+SYN Stealth Scan Timing: About 71.26% done; ETC: 17:17 (0:30:04 remaining)
+SYN Stealth Scan Timing: About 76.33% done; ETC: 17:17 (0:24:49 remaining)
+SYN Stealth Scan Timing: About 81.40% done; ETC: 17:17 (0:19:33 remaining)
+Discovered open port 8443/tcp on 101.204.146.85
+SYN Stealth Scan Timing: About 86.48% done; ETC: 17:17 (0:14:15 remaining)
+SYN Stealth Scan Timing: About 91.50% done; ETC: 17:18 (0:08:58 remaining)
+SYN Stealth Scan Timing: About 96.52% done; ETC: 17:18 (0:03:41 remaining)
+Completed SYN Stealth Scan at 17:23, 6672.76s elapsed (65535 total ports)
+Initiating Service scan at 17:23
+Scanning 4 services on 101.204.146.85
+Service scan Timing: About 50.00% done; ETC: 17:28 (0:02:16 remaining)
+Completed Service scan at 17:26, 153.23s elapsed (4 services on 1 host)
+Initiating OS detection (try #1) against 101.204.146.85
+Retrying OS detection (try #2) against 101.204.146.85
+Retrying OS detection (try #3) against 101.204.146.85
+Retrying OS detection (try #4) against 101.204.146.85
+Retrying OS detection (try #5) against 101.204.146.85
+Initiating Traceroute at 17:26
+Completed Traceroute at 17:26, 0.02s elapsed
+NSE: Script scanning 101.204.146.85.
+Initiating NSE at 17:26
+Completed NSE at 17:26, 8.07s elapsed
+Initiating NSE at 17:26
+Completed NSE at 17:26, 0.01s elapsed
+Nmap scan report for 101.204.146.85
+Host is up, received user-set (0.0015s latency).
+Not shown: 65473 closed ports, 58 filtered ports
+Reason: 65473 resets and 58 no-responses
+PORT     STATE SERVICE       REASON          VERSION
+23/tcp   open  telnet        syn-ack ttl 254 Huawei switch telnetd
+80/tcp   open  http          syn-ack ttl 254 HTTP Server 1.0
+| fingerprint-strings:
+|   GetRequest:
+|     HTTP/1.1 301 Moved Permanently
+|     Date: SUN, 8 May 2024 17:22:39
+|     Connection:
+|     Location: https://101.204.146.85:8443
+|     Server: HTTP Server 1.0
+|     Content-Length: 0
+|     X-Frame-Options: SAMEORIGIN
+|     X-Content-Type-Options: nosniff
+|     X-XSS-Protection: 1;mode=block
+|     Strict-Transport-Security: max-age=31536000
+|     Content-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval';style-src 'self' 'unsafe-inline';img-src 'self' data:;frame-ancestors 'self';
+|     X-Download-Options: noopen
+|     Content-Type: text/html; charset=utf-8
+|   HTTPOptions:
+|     HTTP/1.1 404 Not Found
+|     Date: SUN, 8 May 2024 17:22:44
+|     Connection:
+|     Server: HTTP Server 1.0
+|     Content-Length: 52
+|     X-Frame-Options: SAMEORIGIN
+|     X-Content-Type-Options: nosniff
+|     X-XSS-Protection: 1;mode=block
+|     Strict-Transport-Security: max-age=31536000
+|     Content-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval';style-src 'self' 'unsafe-inline';img-src 'self' data:;frame-ancestors 'self';
+|     X-Download-Options: noopen
+|     Content-Type: text/html; charset=utf-8
+|     <body><h1>HTTP/1.1 404 Object Not Found
+|     </h1></body>
+|   RTSPRequest:
+|     HTTP/1.1 404 Not Found
+|     Date: SUN, 8 May 2024 17:22:49
+|     Connection:
+|     Server: HTTP Server 1.0
+|     Content-Length: 52
+|     X-Frame-Options: SAMEORIGIN
+|     X-Content-Type-Options: nosniff
+|     X-XSS-Protection: 1;mode=block
+|     Strict-Transport-Security: max-age=31536000
+|     Content-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval';style-src 'self' 'unsafe-inline';img-src 'self' data:;frame-ancestors 'self';
+|     X-Download-Options: noopen
+|     Content-Type: text/html; charset=utf-8
+|     <body><h1>HTTP/1.1 404 Object Not Found
+|_    </h1></body>
+| http-methods:
+|_  Supported Methods: GET POST
+|_http-server-header: HTTP Server 1.0
+|_http-title: Did not follow redirect to https://101.204.146.85:8443
+8443/tcp open  ssl/https-alt syn-ack ttl 254 HTTP Server 1.0
+| fingerprint-strings:
+|   GetRequest:
+|     HTTP/1.1 200 OK
+|     Date: SUN, 8 May 2024 17:22:45
+|     Connection:
+|     Server: HTTP Server 1.0
+|     Content-Length: 7571
+|     X-Frame-Options: SAMEORIGIN
+|     X-Content-Type-Options: nosniff
+|     X-XSS-Protection: 1;mode=block
+|     Strict-Transport-Security: max-age=31536000
+|     Content-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval';style-src 'self' 'unsafe-inline';img-src 'self' data:;frame-ancestors 'self';
+|     X-Download-Options: noopen
+|     Content-Type: text/html; charset=utf-8
+|     Set-Cookie: SESSIONID=5AAAAEXJ42ql2JKxZj6IMRsVwA7nOkN3FfS6RQBj72U=&5AAAACV0cDT6t2oYaPH8Vg==&HUAWEI &langfrombrows=&copyright=2014-2021;httponly; secure
+|     <!Doctype html>
+|     <html>
+|     <head>
+|     <title></title>
+|     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+|     <meta http-equiv="Expires" content="0"></meta>
+|     <meta http-equiv="Pragma" content="no-cache"></meta>
+|     <meta http-equiv="Cach
+|   HTTPOptions:
+|     HTTP/1.1 404 Not Found
+|     Date: SUN, 8 May 2024 17:22:46
+|     Connection:
+|     Server: HTTP Server 1.0
+|     Content-Length: 52
+|     X-Frame-Options: SAMEORIGIN
+|     X-Content-Type-Options: nosniff
+|     X-XSS-Protection: 1;mode=block
+|     Strict-Transport-Security: max-age=31536000
+|     Content-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval';style-src 'self' 'unsafe-inline';img-src 'self' data:;frame-ancestors 'self';
+|     X-Download-Options: noopen
+|     Content-Type: text/html; charset=utf-8
+|     <body><h1>HTTP/1.1 404 Object Not Found
+|     </h1></body>
+|   RTSPRequest:
+|     HTTP/1.1 404 Not Found
+|     Date: SUN, 8 May 2024 17:22:51
+|     Connection:
+|     Server: HTTP Server 1.0
+|     Content-Length: 52
+|     X-Frame-Options: SAMEORIGIN
+|     X-Content-Type-Options: nosniff
+|     X-XSS-Protection: 1;mode=block
+|     Strict-Transport-Security: max-age=31536000
+|     Content-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval';style-src 'self' 'unsafe-inline';img-src 'self' data:;frame-ancestors 'self';
+|     X-Download-Options: noopen
+|     Content-Type: text/html; charset=utf-8
+|     <body><h1>HTTP/1.1 404 Object Not Found
+|_    </h1></body>
+| http-methods:
+|_  Supported Methods: GET POST
+|_http-server-header: HTTP Server 1.0
+|_http-title: Site doesn't have a title (text/html; charset=utf-8).
+| ssl-cert: Subject: commonName=LOCAL-102190264812/organizationName=HW/stateOrProvinceName=JS/countryName=CN
+| Issuer: commonName=CA-102190264812/organizationName=HW/stateOrProvinceName=JS/countryName=CN
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2021-09-16T20:24:45
+| Not valid after:  2031-09-14T20:24:45
+| MD5:   7897 66e1 d077 e046 5c74 1b0b eb78 8cfc
+|_SHA-1: 1ef0 1586 f1cc 3869 6fa0 418b 2127 66e9 3cf9 9666
+8887/tcp open  ssl/unknown   syn-ack ttl 254
+| fingerprint-strings:
+|   GetRequest:
+|     HTTP/1.1 200 OK
+|     Pragma: no-cache
+|     Cache-Control: no-store
+|     Connection: close
+|     Server: Huawei Auth-Http Server 1.0
+|     Content-Type: text/html; charset=gb2312
+|     X-Content-Type-Options: nosniff
+|     X-Frame-Options: SAMEORIGIN
+|     X-XSS-Protection: 1; mode=block
+|     Strict-Transport-Security: max-age=31536000; includeSubDomains
+|     Content-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval';style-src 'self' 'unsafe-inline';img-src 'self' data:;frame-ancestors 'self';
+|     <html allow-background-captures="true">
+|     <head>
+|     <title>User Login</title>
+|     <meta http-equiv="content-type" content="text/html; charset=gbk">
+|     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+|     <script language="JScript" event="OnCompleted(hResult,pErrorObject, pAsyncContext)" for="foo">
+|     document.getElementById("userIpMacVal").value = networkCardInfo;
+|_    </sc
+| ssl-cert: Subject: commonName=LOCAL-102190264812/organizationName=HW/stateOrProvinceName=JS/countryName=CN
+| Issuer: commonName=CA-102190264812/organizationName=HW/stateOrProvinceName=JS/countryName=CN
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2021-09-16T20:24:45
+| Not valid after:  2031-09-14T20:24:45
+| MD5:   7897 66e1 d077 e046 5c74 1b0b eb78 8cfc
+|_SHA-1: 1ef0 1586 f1cc 3869 6fa0 418b 2127 66e9 3cf9 9666
+3 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.60%I=7%D=5/8%Time=663B44B1%P=aarch64-unknown-linux-gnu%r
+SF:(GetRequest,21D,"HTTP/1\.1\x20301\x20Moved\x20Permanently\r\nDate:\x20S
+SF:UN,\x208\x20May\x202024\x2017:22:39\r\nConnection:\x20\r\nLocation:\x20
+SF:https://101\.204\.146\.85:8443\r\nServer:\x20HTTP\x20Server\x201\.0\r\n
+SF:Content-Length:\x200\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-Content-Typ
+SF:e-Options:\x20nosniff\r\nX-XSS-Protection:\x201;mode=block\r\nStrict-Tr
+SF:ansport-Security:\x20max-age=31536000\r\nContent-Security-Policy:\x20de
+SF:fault-src\x20'self';script-src\x20'self'\x20'unsafe-inline'\x20'unsafe-
+SF:eval';style-src\x20'self'\x20'unsafe-inline';img-src\x20'self'\x20data:
+SF:;frame-ancestors\x20'self';\r\nX-Download-Options:\x20noopen\r\nContent
+SF:-Type:\x20text/html;\x20charset=utf-8\r\n\r\n")%r(HTTPOptions,223,"HTTP
+SF:/1\.1\x20404\x20Not\x20Found\r\nDate:\x20SUN,\x208\x20May\x202024\x2017
+SF::22:44\r\nConnection:\x20\r\nServer:\x20HTTP\x20Server\x201\.0\r\nConte
+SF:nt-Length:\x2052\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-Content-Type-Op
+SF:tions:\x20nosniff\r\nX-XSS-Protection:\x201;mode=block\r\nStrict-Transp
+SF:ort-Security:\x20max-age=31536000\r\nContent-Security-Policy:\x20defaul
+SF:t-src\x20'self';script-src\x20'self'\x20'unsafe-inline'\x20'unsafe-eval
+SF:';style-src\x20'self'\x20'unsafe-inline';img-src\x20'self'\x20data:;fra
+SF:me-ancestors\x20'self';\r\nX-Download-Options:\x20noopen\r\nContent-Typ
+SF:e:\x20text/html;\x20charset=utf-8\r\n\r\n<body><h1>HTTP/1\.1\x20404\x20
+SF:Object\x20Not\x20Found\n</h1></body>")%r(RTSPRequest,223,"HTTP/1\.1\x20
+SF:404\x20Not\x20Found\r\nDate:\x20SUN,\x208\x20May\x202024\x2017:22:49\r\
+SF:nConnection:\x20\r\nServer:\x20HTTP\x20Server\x201\.0\r\nContent-Length
+SF::\x2052\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-Content-Type-Options:\x2
+SF:0nosniff\r\nX-XSS-Protection:\x201;mode=block\r\nStrict-Transport-Secur
+SF:ity:\x20max-age=31536000\r\nContent-Security-Policy:\x20default-src\x20
+SF:'self';script-src\x20'self'\x20'unsafe-inline'\x20'unsafe-eval';style-s
+SF:rc\x20'self'\x20'unsafe-inline';img-src\x20'self'\x20data:;frame-ancest
+SF:ors\x20'self';\r\nX-Download-Options:\x20noopen\r\nContent-Type:\x20tex
+SF:t/html;\x20charset=utf-8\r\n\r\n<body><h1>HTTP/1\.1\x20404\x20Object\x2
+SF:0Not\x20Found\n</h1></body>");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port8443-TCP:V=7.60%T=SSL%I=7%D=5/8%Time=663B44B2%P=aarch64-unknown-lin
+SF:ux-gnu%r(GetRequest,2016,"HTTP/1\.1\x20200\x20OK\r\nDate:\x20SUN,\x208\
+SF:x20May\x202024\x2017:22:45\r\nConnection:\x20\r\nServer:\x20HTTP\x20Ser
+SF:ver\x201\.0\r\nContent-Length:\x207571\r\nX-Frame-Options:\x20SAMEORIGI
+SF:N\r\nX-Content-Type-Options:\x20nosniff\r\nX-XSS-Protection:\x201;mode=
+SF:block\r\nStrict-Transport-Security:\x20max-age=31536000\r\nContent-Secu
+SF:rity-Policy:\x20default-src\x20'self';script-src\x20'self'\x20'unsafe-i
+SF:nline'\x20'unsafe-eval';style-src\x20'self'\x20'unsafe-inline';img-src\
+SF:x20'self'\x20data:;frame-ancestors\x20'self';\r\nX-Download-Options:\x2
+SF:0noopen\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nSet-Cookie:\
+SF:x20SESSIONID=5AAAAEXJ42ql2JKxZj6IMRsVwA7nOkN3FfS6RQBj72U=&5AAAACV0cDT6t
+SF:2oYaPH8Vg==&HUAWEI\x20&langfrombrows=&copyright=2014-2021;httponly;\x20
+SF:secure\r\n\r\n<!Doctype\x20html>\r\n<html>\r\n\t<head>\r\n\t\t<title></
+SF:title>\r\n\t\t<meta\x20http-equiv=\"Content-Type\"\x20content=\"text/ht
+SF:ml;\x20charset=UTF-8\"\x20/>\r\n\t\t<meta\x20http-equiv=\"Expires\"\x20
+SF:content=\"0\"></meta>\r\n\t\t<meta\x20http-equiv=\"Pragma\"\x20content=
+SF:\"no-cache\"></meta>\x20\r\n\t\t<meta\x20http-equiv=\"Cach")%r(HTTPOpti
+SF:ons,223,"HTTP/1\.1\x20404\x20Not\x20Found\r\nDate:\x20SUN,\x208\x20May\
+SF:x202024\x2017:22:46\r\nConnection:\x20\r\nServer:\x20HTTP\x20Server\x20
+SF:1\.0\r\nContent-Length:\x2052\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-Co
+SF:ntent-Type-Options:\x20nosniff\r\nX-XSS-Protection:\x201;mode=block\r\n
+SF:Strict-Transport-Security:\x20max-age=31536000\r\nContent-Security-Poli
+SF:cy:\x20default-src\x20'self';script-src\x20'self'\x20'unsafe-inline'\x2
+SF:0'unsafe-eval';style-src\x20'self'\x20'unsafe-inline';img-src\x20'self'
+SF:\x20data:;frame-ancestors\x20'self';\r\nX-Download-Options:\x20noopen\r
+SF:\nContent-Type:\x20text/html;\x20charset=utf-8\r\n\r\n<body><h1>HTTP/1\
+SF:.1\x20404\x20Object\x20Not\x20Found\n</h1></body>")%r(RTSPRequest,223,"
+SF:HTTP/1\.1\x20404\x20Not\x20Found\r\nDate:\x20SUN,\x208\x20May\x202024\x
+SF:2017:22:51\r\nConnection:\x20\r\nServer:\x20HTTP\x20Server\x201\.0\r\nC
+SF:ontent-Length:\x2052\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-Content-Typ
+SF:e-Options:\x20nosniff\r\nX-XSS-Protection:\x201;mode=block\r\nStrict-Tr
+SF:ansport-Security:\x20max-age=31536000\r\nContent-Security-Policy:\x20de
+SF:fault-src\x20'self';script-src\x20'self'\x20'unsafe-inline'\x20'unsafe-
+SF:eval';style-src\x20'self'\x20'unsafe-inline';img-src\x20'self'\x20data:
+SF:;frame-ancestors\x20'self';\r\nX-Download-Options:\x20noopen\r\nContent
+SF:-Type:\x20text/html;\x20charset=utf-8\r\n\r\n<body><h1>HTTP/1\.1\x20404
+SF:\x20Object\x20Not\x20Found\n</h1></body>");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port8887-TCP:V=7.60%T=SSL%I=7%D=5/8%Time=663B44BC%P=aarch64-unknown-lin
+SF:ux-gnu%r(GetRequest,1800,"HTTP/1\.1\x20200\x20OK\r\nPragma:\x20no-cache
+SF:\r\nCache-Control:\x20no-store\r\nConnection:\x20close\r\nServer:\x20Hu
+SF:awei\x20Auth-Http\x20Server\x201\.0\r\nContent-Type:\x20text/html;\x20c
+SF:harset=gb2312\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:
+SF:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nStrict-Trans
+SF:port-Security:\x20max-age=31536000;\x20includeSubDomains\r\nContent-Sec
+SF:urity-Policy:\x20default-src\x20'self';script-src\x20'self'\x20'unsafe-
+SF:inline'\x20'unsafe-eval';style-src\x20'self'\x20'unsafe-inline';img-src
+SF:\x20'self'\x20data:;frame-ancestors\x20'self';\r\n\r\n<html\x20allow-ba
+SF:ckground-captures=\"true\">\r\n\t<head>\r\n\t\t<title>User\x20Login</ti
+SF:tle>\r\n\t\t<meta\x20http-equiv=\"content-type\"\x20content=\"text/html
+SF:;\x20charset=gbk\">\r\n\t\t<meta\x20name=\"viewport\"\x20content=\"widt
+SF:h=device-width,\x20initial-scale=1,\x20maximum-scale=1\">\r\n\t\t<scrip
+SF:t\x20language=\"JScript\"\x20event=\"OnCompleted\(hResult,pErrorObject,
+SF:\x20pAsyncContext\)\"\x20for=\"foo\">\x20\r\n\t\t\tdocument\.getElement
+SF:ById\(\"userIpMacVal\"\)\.value\x20=\x20networkCardInfo;\r\n\t\t</sc");
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.60%E=4%D=5/8%OT=23%CT=1%CU=40454%PV=N%DS=2%DC=T%G=Y%TM=663B4555
+OS:%P=aarch64-unknown-linux-gnu)SEQ(SP=106%GCD=1%ISR=10B%TI=I%TS=U)SEQ(SP=F
+OS:F%GCD=1%ISR=10D%TS=U)OPS(O1=M5B4%O2=M5B4%O3=M5B4%O4=M5B4%O5=M5B4%O6=M5B4
+OS:)WIN(W1=2000%W2=2000%W3=2000%W4=2000%W5=2000%W6=2000)ECN(R=Y%DF=N%T=FF%W
+OS:=2000%O=M5B4%CC=N%Q=)T1(R=Y%DF=N%T=FF%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=
+OS:N)T4(R=N)T5(R=Y%DF=N%T=FF%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=N)T7(R=N)U1(
+OS:R=Y%DF=N%T=FF%IPL=38%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=S
+OS:%T=FF%CD=S)
+
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=256 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: Device: switch
+
+TRACEROUTE (using port 53/tcp)
+HOP RTT     ADDRESS
+1   0.79 ms 192.168.30.1
+2   0.57 ms 101.204.146.85
+
+Initiating SYN Stealth Scan at 17:26
+Scanning 101.204.146.85 [65535 ports]
+Discovered open port 23/tcp on 101.204.146.85
+Discovered open port 80/tcp on 101.204.146.85
+Increasing send delay for 101.204.146.85 from 0 to 5 due to max_successful_tryno increase to 4
+Increasing send delay for 101.204.146.85 from 5 to 10 due to 14 out of 45 dropped probes since last increase.
+Increasing send delay for 101.204.146.85 from 10 to 20 due to 11 out of 30 dropped probes since last increase.
+Increasing send delay for 101.204.146.85 from 20 to 40 due to 11 out of 36 dropped probes since last increase.
+Increasing send delay for 101.204.146.85 from 40 to 80 due to 11 out of 33 dropped probes since last increase.
+SYN Stealth Scan Timing: About 2.84% done; ETC: 17:44 (0:17:42 remaining)
+SYN Stealth Scan Timing: About 3.30% done; ETC: 17:57 (0:29:50 remaining)
+SYN Stealth Scan Timing: About 3.76% done; ETC: 18:07 (0:38:50 remaining)
+SYN Stealth Scan Timing: About 4.22% done; ETC: 18:14 (0:45:48 remaining)
+SYN Stealth Scan Timing: About 4.68% done; ETC: 18:20 (0:51:16 remaining)
+SYN Stealth Scan Timing: About 5.14% done; ETC: 18:25 (0:55:44 remaining)
+SYN Stealth Scan Timing: About 5.60% done; ETC: 18:29 (0:59:17 remaining)
+SYN Stealth Scan Timing: About 6.11% done; ETC: 18:33 (1:02:30 remaining)
+SYN Stealth Scan Timing: About 6.80% done; ETC: 18:37 (1:06:01 remaining)
+SYN Stealth Scan Timing: About 7.77% done; ETC: 18:42 (1:09:41 remaining)
+SYN Stealth Scan Timing: About 9.39% done; ETC: 18:47 (1:13:32 remaining)
+SYN Stealth Scan Timing: About 13.89% done; ETC: 18:56 (1:17:36 remaining)
+SYN Stealth Scan Timing: About 25.84% done; ETC: 19:05 (1:13:04 remaining)
+SYN Stealth Scan Timing: About 32.28% done; ETC: 19:07 (1:08:07 remaining)
+SYN Stealth Scan Timing: About 38.01% done; ETC: 19:08 (1:03:04 remaining)
+SYN Stealth Scan Timing: About 43.52% done; ETC: 19:09 (0:57:57 remaining)
+SYN Stealth Scan Timing: About 48.87% done; ETC: 19:10 (0:52:48 remaining)
+Discovered open port 8887/tcp on 101.204.146.85
+SYN Stealth Scan Timing: About 54.11% done; ETC: 19:10 (0:47:36 remaining)
+SYN Stealth Scan Timing: About 59.27% done; ETC: 19:10 (0:42:25 remaining)
+SYN Stealth Scan Timing: About 64.40% done; ETC: 19:11 (0:37:11 remaining)
+SYN Stealth Scan Timing: About 69.52% done; ETC: 19:11 (0:31:56 remaining)
+SYN Stealth Scan Timing: About 74.59% done; ETC: 19:11 (0:26:41 remaining)
+SYN Stealth Scan Timing: About 79.66% done; ETC: 19:11 (0:21:24 remaining)
+Discovered open port 8443/tcp on 101.204.146.85
+SYN Stealth Scan Timing: About 84.71% done; ETC: 19:12 (0:16:07 remaining)
+SYN Stealth Scan Timing: About 89.73% done; ETC: 19:12 (0:10:51 remaining)
+SYN Stealth Scan Timing: About 94.75% done; ETC: 19:12 (0:05:33 remaining)
+Stats: 3:37:13 elapsed; 1 hosts completed (2 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 97.40% done; ETC: 19:12 (0:02:45 remaining)
+Completed SYN Stealth Scan at 19:18, 6686.44s elapsed (65535 total ports)
+Initiating Service scan at 19:18
+Scanning 4 services on 101.204.146.85
+Stats: 3:47:51 elapsed; 1 hosts completed (2 up), 1 undergoing Service Scan
+Service scan Timing: About 50.00% done; ETC: 19:22 (0:02:16 remaining)
+Completed Service scan at 19:20, 153.17s elapsed (4 services on 1 host)
+Initiating OS detection (try #1) against 101.204.146.85
+Retrying OS detection (try #2) against 101.204.146.85
+Retrying OS detection (try #3) against 101.204.146.85
+Retrying OS detection (try #4) against 101.204.146.85
+Retrying OS detection (try #5) against 101.204.146.85
+Initiating Traceroute at 19:20
+Completed Traceroute at 19:20, 0.01s elapsed
+NSE: Script scanning 101.204.146.85.
+Initiating NSE at 19:20
+Completed NSE at 19:21, 8.28s elapsed
+Initiating NSE at 19:21
+Completed NSE at 19:21, 0.01s elapsed
+Nmap scan report for 101.204.146.85
+Host is up, received user-set (0.0011s latency).
+Not shown: 65473 closed ports, 58 filtered ports
+Reason: 65473 resets and 58 no-responses
+PORT     STATE SERVICE       REASON          VERSION
+23/tcp   open  telnet        syn-ack ttl 254 Huawei switch telnetd
+80/tcp   open  http          syn-ack ttl 254 HTTP Server 1.0
+| fingerprint-strings:
+|   GetRequest:
+|     HTTP/1.1 301 Moved Permanently
+|     Date: SUN, 8 May 2024 19:17:01
+|     Connection:
+|     Location: https://101.204.146.85:8443
+|     Server: HTTP Server 1.0
+|     Content-Length: 0
+|     X-Frame-Options: SAMEORIGIN
+|     X-Content-Type-Options: nosniff
+|     X-XSS-Protection: 1;mode=block
+|     Strict-Transport-Security: max-age=31536000
+|     Content-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval';style-src 'self' 'unsafe-inline';img-src 'self' data:;frame-ancestors 'self';
+|     X-Download-Options: noopen
+|     Content-Type: text/html; charset=utf-8
+|   HTTPOptions:
+|     HTTP/1.1 404 Not Found
+|     Date: SUN, 8 May 2024 19:17:06
+|     Connection:
+|     Server: HTTP Server 1.0
+|     Content-Length: 52
+|     X-Frame-Options: SAMEORIGIN
+|     X-Content-Type-Options: nosniff
+|     X-XSS-Protection: 1;mode=block
+|     Strict-Transport-Security: max-age=31536000
+|     Content-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval';style-src 'self' 'unsafe-inline';img-src 'self' data:;frame-ancestors 'self';
+|     X-Download-Options: noopen
+|     Content-Type: text/html; charset=utf-8
+|     <body><h1>HTTP/1.1 404 Object Not Found
+|     </h1></body>
+|   RTSPRequest:
+|     HTTP/1.1 404 Not Found
+|     Date: SUN, 8 May 2024 19:17:11
+|     Connection:
+|     Server: HTTP Server 1.0
+|     Content-Length: 52
+|     X-Frame-Options: SAMEORIGIN
+|     X-Content-Type-Options: nosniff
+|     X-XSS-Protection: 1;mode=block
+|     Strict-Transport-Security: max-age=31536000
+|     Content-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval';style-src 'self' 'unsafe-inline';img-src 'self' data:;frame-ancestors 'self';
+|     X-Download-Options: noopen
+|     Content-Type: text/html; charset=utf-8
+|     <body><h1>HTTP/1.1 404 Object Not Found
+|_    </h1></body>
+| http-methods:
+|_  Supported Methods: GET POST
+|_http-server-header: HTTP Server 1.0
+|_http-title: Did not follow redirect to https://101.204.146.85:8443
+8443/tcp open  ssl/https-alt syn-ack ttl 254 HTTP Server 1.0
+| fingerprint-strings:
+|   GetRequest:
+|     HTTP/1.1 200 OK
+|     Date: SUN, 8 May 2024 19:17:07
+|     Connection:
+|     Server: HTTP Server 1.0
+|     Content-Length: 7571
+|     X-Frame-Options: SAMEORIGIN
+|     X-Content-Type-Options: nosniff
+|     X-XSS-Protection: 1;mode=block
+|     Strict-Transport-Security: max-age=31536000
+|     Content-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval';style-src 'self' 'unsafe-inline';img-src 'self' data:;frame-ancestors 'self';
+|     X-Download-Options: noopen
+|     Content-Type: text/html; charset=utf-8
+|     Set-Cookie: SESSIONID=tAAAACssh9e23STIMsLJ0ulSuWJTnp6ZQBVes+d2aBY=&tAAAABUvB8s/mvGLdyj19A==&HUAWEI &langfrombrows=&copyright=2014-2021;httponly; secure
+|     <!Doctype html>
+|     <html>
+|     <head>
+|     <title></title>
+|     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+|     <meta http-equiv="Expires" content="0"></meta>
+|     <meta http-equiv="Pragma" content="no-cache"></meta>
+|     <meta http-equiv="Cach
+|   HTTPOptions:
+|     HTTP/1.1 404 Not Found
+|     Date: SUN, 8 May 2024 19:17:08
+|     Connection:
+|     Server: HTTP Server 1.0
+|     Content-Length: 52
+|     X-Frame-Options: SAMEORIGIN
+|     X-Content-Type-Options: nosniff
+|     X-XSS-Protection: 1;mode=block
+|     Strict-Transport-Security: max-age=31536000
+|     Content-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval';style-src 'self' 'unsafe-inline';img-src 'self' data:;frame-ancestors 'self';
+|     X-Download-Options: noopen
+|     Content-Type: text/html; charset=utf-8
+|     <body><h1>HTTP/1.1 404 Object Not Found
+|     </h1></body>
+|   RTSPRequest:
+|     HTTP/1.1 404 Not Found
+|     Date: SUN, 8 May 2024 19:17:13
+|     Connection:
+|     Server: HTTP Server 1.0
+|     Content-Length: 52
+|     X-Frame-Options: SAMEORIGIN
+|     X-Content-Type-Options: nosniff
+|     X-XSS-Protection: 1;mode=block
+|     Strict-Transport-Security: max-age=31536000
+|     Content-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval';style-src 'self' 'unsafe-inline';img-src 'self' data:;frame-ancestors 'self';
+|     X-Download-Options: noopen
+|     Content-Type: text/html; charset=utf-8
+|     <body><h1>HTTP/1.1 404 Object Not Found
+|_    </h1></body>
+| http-methods:
+|_  Supported Methods: POST
+|_http-server-header: HTTP Server 1.0
+|_http-title: Site doesn't have a title (text/html; charset=utf-8).
+| ssl-cert: Subject: commonName=LOCAL-102190264812/organizationName=HW/stateOrProvinceName=JS/countryName=CN
+| Issuer: commonName=CA-102190264812/organizationName=HW/stateOrProvinceName=JS/countryName=CN
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2021-09-16T20:24:45
+| Not valid after:  2031-09-14T20:24:45
+| MD5:   7897 66e1 d077 e046 5c74 1b0b eb78 8cfc
+|_SHA-1: 1ef0 1586 f1cc 3869 6fa0 418b 2127 66e9 3cf9 9666
+8887/tcp open  ssl/unknown   syn-ack ttl 254
+| fingerprint-strings:
+|   GetRequest:
+|     HTTP/1.1 200 OK
+|     Pragma: no-cache
+|     Cache-Control: no-store
+|     Connection: close
+|     Server: Huawei Auth-Http Server 1.0
+|     Content-Type: text/html; charset=gb2312
+|     X-Content-Type-Options: nosniff
+|     X-Frame-Options: SAMEORIGIN
+|     X-XSS-Protection: 1; mode=block
+|     Strict-Transport-Security: max-age=31536000; includeSubDomains
+|     Content-Security-Policy: default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval';style-src 'self' 'unsafe-inline';img-src 'self' data:;frame-ancestors 'self';
+|     <html allow-background-captures="true">
+|     <head>
+|     <title>User Login</title>
+|     <meta http-equiv="content-type" content="text/html; charset=gbk">
+|     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+|     <script language="JScript" event="OnCompleted(hResult,pErrorObject, pAsyncContext)" for="foo">
+|     document.getElementById("userIpMacVal").value = networkCardInfo;
+|_    </sc
+| ssl-cert: Subject: commonName=LOCAL-102190264812/organizationName=HW/stateOrProvinceName=JS/countryName=CN
+| Issuer: commonName=CA-102190264812/organizationName=HW/stateOrProvinceName=JS/countryName=CN
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2021-09-16T20:24:45
+| Not valid after:  2031-09-14T20:24:45
+| MD5:   7897 66e1 d077 e046 5c74 1b0b eb78 8cfc
+|_SHA-1: 1ef0 1586 f1cc 3869 6fa0 418b 2127 66e9 3cf9 9666
+3 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.60%I=7%D=5/8%Time=663B5F7F%P=aarch64-unknown-linux-gnu%r
+SF:(GetRequest,21D,"HTTP/1\.1\x20301\x20Moved\x20Permanently\r\nDate:\x20S
+SF:UN,\x208\x20May\x202024\x2019:17:01\r\nConnection:\x20\r\nLocation:\x20
+SF:https://101\.204\.146\.85:8443\r\nServer:\x20HTTP\x20Server\x201\.0\r\n
+SF:Content-Length:\x200\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-Content-Typ
+SF:e-Options:\x20nosniff\r\nX-XSS-Protection:\x201;mode=block\r\nStrict-Tr
+SF:ansport-Security:\x20max-age=31536000\r\nContent-Security-Policy:\x20de
+SF:fault-src\x20'self';script-src\x20'self'\x20'unsafe-inline'\x20'unsafe-
+SF:eval';style-src\x20'self'\x20'unsafe-inline';img-src\x20'self'\x20data:
+SF:;frame-ancestors\x20'self';\r\nX-Download-Options:\x20noopen\r\nContent
+SF:-Type:\x20text/html;\x20charset=utf-8\r\n\r\n")%r(HTTPOptions,223,"HTTP
+SF:/1\.1\x20404\x20Not\x20Found\r\nDate:\x20SUN,\x208\x20May\x202024\x2019
+SF::17:06\r\nConnection:\x20\r\nServer:\x20HTTP\x20Server\x201\.0\r\nConte
+SF:nt-Length:\x2052\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-Content-Type-Op
+SF:tions:\x20nosniff\r\nX-XSS-Protection:\x201;mode=block\r\nStrict-Transp
+SF:ort-Security:\x20max-age=31536000\r\nContent-Security-Policy:\x20defaul
+SF:t-src\x20'self';script-src\x20'self'\x20'unsafe-inline'\x20'unsafe-eval
+SF:';style-src\x20'self'\x20'unsafe-inline';img-src\x20'self'\x20data:;fra
+SF:me-ancestors\x20'self';\r\nX-Download-Options:\x20noopen\r\nContent-Typ
+SF:e:\x20text/html;\x20charset=utf-8\r\n\r\n<body><h1>HTTP/1\.1\x20404\x20
+SF:Object\x20Not\x20Found\n</h1></body>")%r(RTSPRequest,223,"HTTP/1\.1\x20
+SF:404\x20Not\x20Found\r\nDate:\x20SUN,\x208\x20May\x202024\x2019:17:11\r\
+SF:nConnection:\x20\r\nServer:\x20HTTP\x20Server\x201\.0\r\nContent-Length
+SF::\x2052\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-Content-Type-Options:\x2
+SF:0nosniff\r\nX-XSS-Protection:\x201;mode=block\r\nStrict-Transport-Secur
+SF:ity:\x20max-age=31536000\r\nContent-Security-Policy:\x20default-src\x20
+SF:'self';script-src\x20'self'\x20'unsafe-inline'\x20'unsafe-eval';style-s
+SF:rc\x20'self'\x20'unsafe-inline';img-src\x20'self'\x20data:;frame-ancest
+SF:ors\x20'self';\r\nX-Download-Options:\x20noopen\r\nContent-Type:\x20tex
+SF:t/html;\x20charset=utf-8\r\n\r\n<body><h1>HTTP/1\.1\x20404\x20Object\x2
+SF:0Not\x20Found\n</h1></body>");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port8443-TCP:V=7.60%T=SSL%I=7%D=5/8%Time=663B5F80%P=aarch64-unknown-lin
+SF:ux-gnu%r(GetRequest,2016,"HTTP/1\.1\x20200\x20OK\r\nDate:\x20SUN,\x208\
+SF:x20May\x202024\x2019:17:07\r\nConnection:\x20\r\nServer:\x20HTTP\x20Ser
+SF:ver\x201\.0\r\nContent-Length:\x207571\r\nX-Frame-Options:\x20SAMEORIGI
+SF:N\r\nX-Content-Type-Options:\x20nosniff\r\nX-XSS-Protection:\x201;mode=
+SF:block\r\nStrict-Transport-Security:\x20max-age=31536000\r\nContent-Secu
+SF:rity-Policy:\x20default-src\x20'self';script-src\x20'self'\x20'unsafe-i
+SF:nline'\x20'unsafe-eval';style-src\x20'self'\x20'unsafe-inline';img-src\
+SF:x20'self'\x20data:;frame-ancestors\x20'self';\r\nX-Download-Options:\x2
+SF:0noopen\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nSet-Cookie:\
+SF:x20SESSIONID=tAAAACssh9e23STIMsLJ0ulSuWJTnp6ZQBVes\+d2aBY=&tAAAABUvB8s/
+SF:mvGLdyj19A==&HUAWEI\x20&langfrombrows=&copyright=2014-2021;httponly;\x2
+SF:0secure\r\n\r\n<!Doctype\x20html>\r\n<html>\r\n\t<head>\r\n\t\t<title><
+SF:/title>\r\n\t\t<meta\x20http-equiv=\"Content-Type\"\x20content=\"text/h
+SF:tml;\x20charset=UTF-8\"\x20/>\r\n\t\t<meta\x20http-equiv=\"Expires\"\x2
+SF:0content=\"0\"></meta>\r\n\t\t<meta\x20http-equiv=\"Pragma\"\x20content
+SF:=\"no-cache\"></meta>\x20\r\n\t\t<meta\x20http-equiv=\"Cach")%r(HTTPOpt
+SF:ions,223,"HTTP/1\.1\x20404\x20Not\x20Found\r\nDate:\x20SUN,\x208\x20May
+SF:\x202024\x2019:17:08\r\nConnection:\x20\r\nServer:\x20HTTP\x20Server\x2
+SF:01\.0\r\nContent-Length:\x2052\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-C
+SF:ontent-Type-Options:\x20nosniff\r\nX-XSS-Protection:\x201;mode=block\r\
+SF:nStrict-Transport-Security:\x20max-age=31536000\r\nContent-Security-Pol
+SF:icy:\x20default-src\x20'self';script-src\x20'self'\x20'unsafe-inline'\x
+SF:20'unsafe-eval';style-src\x20'self'\x20'unsafe-inline';img-src\x20'self
+SF:'\x20data:;frame-ancestors\x20'self';\r\nX-Download-Options:\x20noopen\
+SF:r\nContent-Type:\x20text/html;\x20charset=utf-8\r\n\r\n<body><h1>HTTP/1
+SF:\.1\x20404\x20Object\x20Not\x20Found\n</h1></body>")%r(RTSPRequest,223,
+SF:"HTTP/1\.1\x20404\x20Not\x20Found\r\nDate:\x20SUN,\x208\x20May\x202024\
+SF:x2019:17:13\r\nConnection:\x20\r\nServer:\x20HTTP\x20Server\x201\.0\r\n
+SF:Content-Length:\x2052\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-Content-Ty
+SF:pe-Options:\x20nosniff\r\nX-XSS-Protection:\x201;mode=block\r\nStrict-T
+SF:ransport-Security:\x20max-age=31536000\r\nContent-Security-Policy:\x20d
+SF:efault-src\x20'self';script-src\x20'self'\x20'unsafe-inline'\x20'unsafe
+SF:-eval';style-src\x20'self'\x20'unsafe-inline';img-src\x20'self'\x20data
+SF::;frame-ancestors\x20'self';\r\nX-Download-Options:\x20noopen\r\nConten
+SF:t-Type:\x20text/html;\x20charset=utf-8\r\n\r\n<body><h1>HTTP/1\.1\x2040
+SF:4\x20Object\x20Not\x20Found\n</h1></body>");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port8887-TCP:V=7.60%T=SSL%I=7%D=5/8%Time=663B5F8A%P=aarch64-unknown-lin
+SF:ux-gnu%r(GetRequest,1000,"HTTP/1\.1\x20200\x20OK\r\nPragma:\x20no-cache
+SF:\r\nCache-Control:\x20no-store\r\nConnection:\x20close\r\nServer:\x20Hu
+SF:awei\x20Auth-Http\x20Server\x201\.0\r\nContent-Type:\x20text/html;\x20c
+SF:harset=gb2312\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:
+SF:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r\nStrict-Trans
+SF:port-Security:\x20max-age=31536000;\x20includeSubDomains\r\nContent-Sec
+SF:urity-Policy:\x20default-src\x20'self';script-src\x20'self'\x20'unsafe-
+SF:inline'\x20'unsafe-eval';style-src\x20'self'\x20'unsafe-inline';img-src
+SF:\x20'self'\x20data:;frame-ancestors\x20'self';\r\n\r\n<html\x20allow-ba
+SF:ckground-captures=\"true\">\r\n\t<head>\r\n\t\t<title>User\x20Login</ti
+SF:tle>\r\n\t\t<meta\x20http-equiv=\"content-type\"\x20content=\"text/html
+SF:;\x20charset=gbk\">\r\n\t\t<meta\x20name=\"viewport\"\x20content=\"widt
+SF:h=device-width,\x20initial-scale=1,\x20maximum-scale=1\">\r\n\t\t<scrip
+SF:t\x20language=\"JScript\"\x20event=\"OnCompleted\(hResult,pErrorObject,
+SF:\x20pAsyncContext\)\"\x20for=\"foo\">\x20\r\n\t\t\tdocument\.getElement
+SF:ById\(\"userIpMacVal\"\)\.value\x20=\x20networkCardInfo;\r\n\t\t</sc");
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.60%E=4%D=5/8%OT=23%CT=1%CU=31865%PV=N%DS=2%DC=T%G=Y%TM=663B6024
+OS:%P=aarch64-unknown-linux-gnu)SEQ(SP=100%GCD=1%ISR=10E%TI=I%TS=U)OPS(O1=M
+OS:5B4%O2=M5B4%O3=M5B4%O4=M5B4%O5=M5B4%O6=M5B4)WIN(W1=2000%W2=2000%W3=2000%
+OS:W4=2000%W5=2000%W6=2000)ECN(R=Y%DF=N%T=FF%W=2000%O=M5B4%CC=N%Q=)T1(R=Y%D
+OS:F=N%T=FF%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=N)T5(R=Y%DF=N%T=FF%W=0
+OS:%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=N)T7(R=N)U1(R=Y%DF=N%T=FF%IPL=38%UN=0%RIP
+OS:L=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=S%T=FF%CD=S)
+
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=263 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: Device: switch
+
+TRACEROUTE (using port 53/tcp)
+HOP RTT     ADDRESS
+1   0.79 ms 192.168.30.1
+2   0.57 ms 101.204.146.85
+
+NSE: Script Post-scanning.
+Initiating NSE at 19:21
+Completed NSE at 19:21, 0.00s elapsed
+Initiating NSE at 19:21
+Completed NSE at 19:21, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 2 IP addresses (2 hosts up) scanned in 13711.78 seconds
+           Raw packets sent: 172221 (7.602MB) | Rcvd: 169342 (6.783MB)
+root@ubuntu:/data/szl1160710/scripts/nmap_security_scan/outer#
+

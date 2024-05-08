@@ -1,0 +1,7 @@
+# Nmap 7.60 scan initiated Wed May  8 15:32:36 2024 as: nmap -sS -A -v --reason -p- -n -Pn -oA tcp 101.204.146.85 101.204.146.85
+# Ports scanned: TCP(65535;1-65535) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 101.204.146.85 ()	Status: Up
+Host: 101.204.146.85 ()	Ports: 23/open/tcp//telnet//Huawei switch telnetd/, 80/open/tcp//http//HTTP Server 1.0/, 8443/open/tcp//ssl|https-alt//HTTP Server 1.0/, 8887/open/tcp//ssl|unknown///	Seq Index: 256	IP ID Seq: Incremental
+Host: 101.204.146.85 ()	Status: Up
+Host: 101.204.146.85 ()	Ports: 23/open/tcp//telnet//Huawei switch telnetd/, 80/open/tcp//http//HTTP Server 1.0/, 8443/open/tcp//ssl|https-alt//HTTP Server 1.0/, 8887/open/tcp//ssl|unknown///	Seq Index: 263	IP ID Seq: Incremental
+# Nmap done at Wed May  8 19:21:08 2024 -- 2 IP addresses (2 hosts up) scanned in 13711.78 seconds

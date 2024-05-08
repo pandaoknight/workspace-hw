@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.60 scan initiated Wed May  8 15:34:03 2024 as: nmap -sS -A -v -&#45;reason -p- -n -Pn -oA tcp 192.168.30.12 192.168.30.12 -->
+<nmaprun scanner="nmap" args="nmap -sS -A -v -&#45;reason -p- -n -Pn -oA tcp 192.168.30.12 192.168.30.12" start="1715153643" startstr="Wed May  8 15:34:03 2024" version="7.60" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1715153643"/>
+<taskend task="NSE" time="1715153643"/>
+<taskbegin task="NSE" time="1715153643"/>
+<taskend task="NSE" time="1715153643"/>
+<taskbegin task="SYN Stealth Scan" time="1715153643"/>
+<taskprogress task="SYN Stealth Scan" time="1715153674" percent="43.04" remaining="42" etc="1715153715"/>
+<taskprogress task="SYN Stealth Scan" time="1715153704" percent="44.34" remaining="77" etc="1715153781"/>
+<taskprogress task="SYN Stealth Scan" time="1715153734" percent="45.88" remaining="108" etc="1715153841"/>
+<taskprogress task="SYN Stealth Scan" time="1715153764" percent="47.41" remaining="135" etc="1715153898"/>
+<taskprogress task="SYN Stealth Scan" time="1715153794" percent="48.94" remaining="158" etc="1715153952"/>
+<taskprogress task="SYN Stealth Scan" time="1715153824" percent="50.48" remaining="178" etc="1715154002"/>
+<taskprogress task="SYN Stealth Scan" time="1715153854" percent="51.22" remaining="201" etc="1715154055"/>
+<taskprogress task="SYN Stealth Scan" time="1715153884" percent="51.69" remaining="226" etc="1715154109"/>
+<taskprogress task="SYN Stealth Scan" time="1715153914" percent="52.13" remaining="249" etc="1715154163"/>
+<taskprogress task="SYN Stealth Scan" time="1715153950" percent="52.70" remaining="276" etc="1715154226"/>
+<taskprogress task="SYN Stealth Scan" time="1715153992" percent="53.35" remaining="306" etc="1715154297"/>
+<taskprogress task="SYN Stealth Scan" time="1715154043" percent="54.14" remaining="339" etc="1715154382"/>
+<taskprogress task="SYN Stealth Scan" time="1715154106" percent="55.12" remaining="377" etc="1715154483"/>
+<taskprogress task="SYN Stealth Scan" time="1715154184" percent="56.34" remaining="420" etc="1715154603"/>
+<taskprogress task="SYN Stealth Scan" time="1715154289" percent="57.98" remaining="469" etc="1715154757"/>
+<taskprogress task="SYN Stealth Scan" time="1715154439" percent="60.32" remaining="524" etc="1715154963"/>
+<taskprogress task="SYN Stealth Scan" time="1715154736" percent="64.94" remaining="591" etc="1715155326"/>
+<taskprogress task="SYN Stealth Scan" time="1715155327" percent="74.15" remaining="588" etc="1715155914"/>
+<taskprogress task="SYN Stealth Scan" time="1715155858" percent="82.41" remaining="473" etc="1715156331"/>
+<taskprogress task="SYN Stealth Scan" time="1715156251" percent="88.54" remaining="338" etc="1715156589"/>
+<taskprogress task="SYN Stealth Scan" time="1715156590" percent="93.82" remaining="195" etc="1715156784"/>
+<taskprogress task="SYN Stealth Scan" time="1715156785" percent="96.86" remaining="102" etc="1715156887"/>
+<taskprogress task="SYN Stealth Scan" time="1715156887" percent="98.44" remaining="52" etc="1715156938"/>
+<taskend task="SYN Stealth Scan" time="1715157296" extrainfo="65535 total ports"/>
+<taskbegin task="Service scan" time="1715157297"/>
+<taskend task="Service scan" time="1715157389" extrainfo="23 services on 1 host"/>
+<taskbegin task="NSE" time="1715157391"/>
+<taskend task="NSE" time="1715157512"/>
+<taskbegin task="NSE" time="1715157512"/>
+<taskend task="NSE" time="1715157513"/>
+<host starttime="1715153643" endtime="1715157513"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="192.168.30.12" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65506">
+<extrareasons reason="resets" count="65506"/>
+</extraports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" product="OpenSSH" version="7.6p1 Ubuntu 4ubuntu0.7" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:7.6p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  2048 40:40:43:ee:97:b5:68:9d:d9:2d:4a:2c:79:e6:15:b1 (RSA)&#xa;  256 15:c5:05:e4:71:88:a6:bb:a5:fb:7f:d2:27:7c:3d:d4 (ECDSA)&#xa;  256 a1:49:15:7c:47:5b:2b:f8:2f:dd:2c:3a:ac:42:36:d4 (EdDSA)"><table>
+<elem key="bits">2048.0</elem>
+<elem key="type">ssh-rsa</elem>
+<elem key="key">AAAAB3NzaC1yc2EAAAADAQABAAABAQC8rnyxBuSBKMH5mLpCMRpUialXVDqmIIPuquwnWyBAP6dTsdUrnjbIUF/Kp08VZ8d+NY58DunJIHVWunALFtzxrHlnKnkarvogVAuRD7ho6ltwHUmUcfU+vxIULr+mc1bxbseaE5lVTx7BmVK4KQiY07E+PWZzgNgqhGNX7Jzcxf3cMlthrYw29MVF7vEKqP6Q8G6N92LCx34WhQAvdceBELiQhI8sJRnpwJUF3eTQTgBzCIj0EgyWdmQCmn+RFJeeCYvdsohdydFLMrNCs2W5nbM5zIZ4cqCWIwNTfPoHpOUudsurWug8Zv3VbX+r/gtHXkVjUMLNv4Qdq0Nvui9B</elem>
+<elem key="fingerprint">404043ee97b5689dd92d4a2c79e615b1</elem>
+</table>
+<table>
+<elem key="bits">256</elem>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBONQKKW6+Hz8Mnl8sMqLahSy9VkYhEASqmm2s6h/ir87w9QQZAe609IAkYKT+o5h1VD0Hw6mefpe4Cr0LaNtT6I=</elem>
+<elem key="fingerprint">15c505e47188a6bba5fb7fd2277c3dd4</elem>
+</table>
+<table>
+<elem key="bits">256</elem>
+<elem key="type">ssh-ed25519</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIBoBJ3Yr7yPMJ8wP5rL/lfdKtg3/ajKykAtMnflSfjy0</elem>
+<elem key="fingerprint">a149157c475b2bf82fdd2c3aac4236d4</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="111"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="rpcbind" version="2-4" extrainfo="RPC #100000" method="probed" conf="10"/><script id="rpcinfo" output="&#xa;  program version   port/proto  service&#xa;  100000  2,3,4        111/tcp  rpcbind&#xa;  100000  2,3,4        111/udp  rpcbind&#xa;  100003  3           2049/udp  nfs&#xa;  100003  3,4         2049/tcp  nfs&#xa;  100005  1,2,3      16247/udp  mountd&#xa;  100005  1,2,3      59301/tcp  mountd&#xa;  100021  1,3,4      24541/tcp  nlockmgr&#xa;  100021  1,3,4      33924/udp  nlockmgr&#xa;  100024  1          24361/tcp  status&#xa;  100024  1          32241/udp  status&#xa;  100227  3           2049/tcp  nfs_acl&#xa;  100227  3           2049/udp  nfs_acl&#xa;"><table key="100005">
+<table key="tcp">
+<elem key="port">59301</elem>
+<table key="version">
+<elem>1</elem>
+<elem>2</elem>
+<elem>3</elem>
+</table>
+</table>
+<table key="udp">
+<elem key="port">16247</elem>
+<table key="version">
+<elem>1</elem>
+<elem>2</elem>
+<elem>3</elem>
+</table>
+</table>
+</table>
+<table key="100003">
+<table key="udp">
+<elem key="port">2049</elem>
+<table key="version">
+<elem>3</elem>
+</table>
+</table>
+<table key="tcp">
+<elem key="port">2049</elem>
+<table key="version">
+<elem>3</elem>
+<elem>4</elem>
+</table>
+</table>
+</table>
+<table key="100021">
+<table key="tcp">
+<elem key="port">24541</elem>
+<table key="version">
+<elem>1</elem>
+<elem>3</elem>
+<elem>4</elem>
+</table>
+</table>
+<table key="udp">
+<elem key="port">33924</elem>
+<table key="version">
+<elem>1</elem>
+<elem>3</elem>
+<elem>4</elem>
+</table>
+</table>
+</table>
+<table key="100024">
+<table key="tcp">
+<elem key="port">24361</elem>
+<table key="version">
+<elem>1</elem>
+</table>
+</table>
+<table key="udp">
+<elem key="port">32241</elem>
+<table key="version">
+<elem>1</elem>
+</table>
+</table>
+</table>
+<table key="100000">
+<table key="udp">
+<elem key="port">111</elem>
+<table key="version">
+<elem>2</elem>
+<elem>3</elem>
+<elem>4</elem>
+</table>
+</table>
+<table key="tcp">
+<elem key="port">111</elem>
+<table key="version">
+<elem>2</elem>
+<elem>3</elem>
+<elem>4</elem>
+</table>
+</table>
+</table>
+<table key="100227">
+<table key="udp">
+<elem key="port">2049</elem>
+<table key="version">
+<elem>3</elem>
+</table>
+</table>
+<table key="tcp">
+<elem key="port">2049</elem>
+<table key="version">
+<elem>3</elem>
+</table>
+</table>
+</table>
+</script></port>
+<port protocol="tcp" portid="2049"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="nfs_acl" version="3" extrainfo="RPC #100227" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="2379"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="etcd-client" tunnel="ssl" method="table" conf="3"/><script id="ssl-date" output="TLS randomness does not represent time"></script></port>
+<port protocol="tcp" portid="2380"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="etcd-server" tunnel="ssl" method="table" conf="3"/><script id="ssl-date" output="TLS randomness does not represent time"></script></port>
+<port protocol="tcp" portid="2381"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Golang net/http server" extrainfo="Go-IPFS json-rpc or InfluxDB API" method="probed" conf="10"><cpe>cpe:/a:protocol_labs:go-ipfs</cpe></service><script id="http-title" output="Site doesn&apos;t have a title (text/plain; charset=utf-8)."></script></port>
+<port protocol="tcp" portid="5000"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Docker Registry" extrainfo="API: 2.0" method="probed" conf="10"><cpe>cpe:/a:redhat:docker</cpe></service><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD POST OPTIONS"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+<elem>OPTIONS</elem>
+</table>
+</script><script id="http-title" output="Site doesn&apos;t have a title."></script></port>
+<port protocol="tcp" portid="5001"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Golang net/http server" extrainfo="Go-IPFS json-rpc or InfluxDB API" method="probed" conf="10"><cpe>cpe:/a:protocol_labs:go-ipfs</cpe></service><script id="http-title" output="Site doesn&apos;t have a title (text/plain; charset=utf-8)."></script></port>
+<port protocol="tcp" portid="5473"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="apsolab-tags" tunnel="ssl" method="table" conf="3"/><script id="ssl-cert" output="Subject: commonName=typha-server&#xa;Subject Alternative Name: DNS:typha-server&#xa;Issuer: commonName=tigera-operator-signer&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2024-04-12T01:39:00&#xa;Not valid after:  2026-07-16T01:39:01&#xa;MD5:   631e c3b3 e476 b3bf 1587 a5ef 3aa9 0359&#xa;SHA-1: a602 7957 a7ab 5312 bc3c cb22 d485 b7f9 2f66 27e3"><table key="subject">
+<elem key="commonName">typha-server</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">tigera-operator-signer</elem>
+</table>
+<table key="pubkey">
+<elem key="exponent">userdata: 0xaaaaff30f028</elem>
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="critical">true</elem>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication, TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="critical">true</elem>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">B4:6C:FD:A7:31:E5:A5:A8:29:D2:FC:EE:5A:41:FD:46:EF:7C:13:37</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:23:52:FB:4F:83:3C:6B:6A:41:B9:CA:D3:13:1B:28:58:91:EB:B6:F0&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:typha-server</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2024-04-12T01:39:00</elem>
+<elem key="notAfter">2026-07-16T01:39:01</elem>
+</table>
+<elem key="md5">631ec3b3e476b3bf1587a5ef3aa90359</elem>
+<elem key="sha1">a6027957a7ab5312bc3ccb22d485b7f92f6627e3</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIDXjCCAkagAwIBAgIIIy6Sla6M9OkwDQYJKoZIhvcNAQELBQAwITEfMB0GA1UE&#xa;AxMWdGlnZXJhLW9wZXJhdG9yLXNpZ25lcjAeFw0yNDA0MTIwMTM5MDBaFw0yNjA3&#xa;MTYwMTM5MDFaMBcxFTATBgNVBAMTDHR5cGhhLXNlcnZlcjCCASIwDQYJKoZIhvcN&#xa;AQEBBQADggEPADCCAQoCggEBALEeNFFtUpe0ovHh553orqTpDPEBOfM66HquZp3F&#xa;LV4RvHZEUn8UoVpTo21/3vOeNIpuJMzWibZPG64s1mSwHz9WPQHlhoMoDl/Vp/JZ&#xa;dkytwXIjMgUiNDRO8lbR8CL78P6kpOZFvLskDyd9i89UfNhZWZfn+fyv/V9UQfir&#xa;VYKB2UGfLm+8Xy9duhGtN9D/rHRFSTLela52UxmdGK95hb7S9QnlTnjM8fpHbHAv&#xa;3tbHIHOZEjEMHIFXWCyu/81o9SAzMVluoIzD4l/ZtOw5aVvOMdTTh64tgETgC0wm&#xa;1CnrlZhYPZplKc1S+178LjrSEYmJosgkNEAmoBmo4bkhr40CAwEAAaOBozCBoDAO&#xa;BgNVHQ8BAf8EBAMCBaAwJwYDVR0lBCAwHgYIKwYBBQUHAwEGCCsGAQUFBwMBBggr&#xa;BgEFBQcDAjAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBS0bP2nMeWlqCnS/O5aQf1G&#xa;73wTNzAfBgNVHSMEGDAWgBQjUvtPgzxrakG5ytMTGyhYkeu28DAXBgNVHREEEDAO&#xa;ggx0eXBoYS1zZXJ2ZXIwDQYJKoZIhvcNAQELBQADggEBAJtcJ8BOmSEh40Ekkzs8&#xa;OsjPCRM+DnEasH40QZS33wu/4YxBea8Z4f06XcuSkOVDfjfwAWP7omELapumnt5X&#xa;NjO2bihXjT7/RyMr7j3lQgHKBBdsAWheUXGmPwQOMr3bQ4/fpVOE/VPqryLuDQxn&#xa;mmWDL4SBeT24zybfLq6+u+3Pj1UhyRpWnYA+XpMWpuODSBjk0+M5FNkgEBSTgy0h&#xa;Lro2sbaxJAxGfiikQiLRE6rVLSqw4NH2SribKftPACLeD49H0smVaTKYEQoALsWY&#xa;mjpzsOTvie100WQ+VBpra/Z78OMp6/DEvXDEkWSNm2Uuy5qRXBtSm74/6+eDEKIG&#xa;4+0=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script></port>
+<port protocol="tcp" portid="6443"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="sun-sr-https" servicefp="SF-Port6443-TCP:V=7.60%T=SSL%I=7%D=5/8%Time=663B393D%P=aarch64-unknown-linux-gnu%r(GenericLines,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(GetRequest,22F,&quot;HTTP/1\.0\x20403\x20Forbidden\r\nAudit-Id:\x2028f4f80b-5e89-4c8c-abbb-5a6fa3c6ac45\r\nCache-Control:\x20no-cache,\x20private\r\nContent-Type:\x20application/json\r\nX-Content-Type-Options:\x20nosniff\r\nX-Kubernetes-Pf-Flowschema-Uid:\x209bfef585-e308-4362-923b-a5f30683a13d\r\nX-Kubernetes-Pf-Prioritylevel-Uid:\x209d6b0832-3172-4ab0-a887-8bd56dac8794\r\nDate:\x20Wed,\x2008\x20May\x202024\x2008:35:09\x20GMT\r\nContent-Length:\x20185\r\n\r\n{\&quot;kind\&quot;:\&quot;Status\&quot;,\&quot;apiVersion\&quot;:\&quot;v1\&quot;,\&quot;metadata\&quot;:{},\&quot;status\&quot;:\&quot;Failure\&quot;,\&quot;message\&quot;:\&quot;forbidden:\x20User\x20\\\&quot;system:anonymous\\\&quot;\x20cannot\x20get\x20path\x20\\\&quot;/\\\&quot;\&quot;,\&quot;reason\&quot;:\&quot;Forbidden\&quot;,\&quot;details\&quot;:{},\&quot;code\&quot;:403}\n&quot;)%r(HTTPOptions,233,&quot;HTTP/1\.0\x20403\x20Forbidden\r\nAudit-Id:\x2053a853da-ed22-48b7-bcb5-7c00960aea73\r\nCache-Control:\x20no-cache,\x20private\r\nContent-Type:\x20application/json\r\nX-Content-Type-Options:\x20nosniff\r\nX-Kubernetes-Pf-Flowschema-Uid:\x209bfef585-e308-4362-923b-a5f30683a13d\r\nX-Kubernetes-Pf-Prioritylevel-Uid:\x209d6b0832-3172-4ab0-a887-8bd56dac8794\r\nDate:\x20Wed,\x2008\x20May\x202024\x2008:35:09\x20GMT\r\nContent-Length:\x20189\r\n\r\n{\&quot;kind\&quot;:\&quot;Status\&quot;,\&quot;apiVersion\&quot;:\&quot;v1\&quot;,\&quot;metadata\&quot;:{},\&quot;status\&quot;:\&quot;Failure\&quot;,\&quot;message\&quot;:\&quot;forbidden:\x20User\x20\\\&quot;system:anonymous\\\&quot;\x20cannot\x20options\x20path\x20\\\&quot;/\\\&quot;\&quot;,\&quot;reason\&quot;:\&quot;Forbidden\&quot;,\&quot;details\&quot;:{},\&quot;code\&quot;:403}\n&quot;)%r(RTSPRequest,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(Help,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(SSLSessionReq,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;);" tunnel="ssl" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  GenericLines, Help, RTSPRequest, SSLSessionReq: &#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request&#xa;  GetRequest: &#xa;    HTTP/1.0 403 Forbidden&#xa;    Audit-Id: 28f4f80b-5e89-4c8c-abbb-5a6fa3c6ac45&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    X-Kubernetes-Pf-Flowschema-Uid: 9bfef585-e308-4362-923b-a5f30683a13d&#xa;    X-Kubernetes-Pf-Prioritylevel-Uid: 9d6b0832-3172-4ab0-a887-8bd56dac8794&#xa;    Date: Wed, 08 May 2024 08:35:09 GMT&#xa;    Content-Length: 185&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}&#xa;  HTTPOptions: &#xa;    HTTP/1.0 403 Forbidden&#xa;    Audit-Id: 53a853da-ed22-48b7-bcb5-7c00960aea73&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    X-Kubernetes-Pf-Flowschema-Uid: 9bfef585-e308-4362-923b-a5f30683a13d&#xa;    X-Kubernetes-Pf-Prioritylevel-Uid: 9d6b0832-3172-4ab0-a887-8bd56dac8794&#xa;    Date: Wed, 08 May 2024 08:35:09 GMT&#xa;    Content-Length: 189&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot options path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}"><elem key="GenericLines, Help, RTSPRequest, SSLSessionReq">&#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request</elem>
+<elem key="GetRequest">&#xa;    HTTP/1.0 403 Forbidden&#xa;    Audit-Id: 28f4f80b-5e89-4c8c-abbb-5a6fa3c6ac45&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    X-Kubernetes-Pf-Flowschema-Uid: 9bfef585-e308-4362-923b-a5f30683a13d&#xa;    X-Kubernetes-Pf-Prioritylevel-Uid: 9d6b0832-3172-4ab0-a887-8bd56dac8794&#xa;    Date: Wed, 08 May 2024 08:35:09 GMT&#xa;    Content-Length: 185&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}</elem>
+<elem key="HTTPOptions">&#xa;    HTTP/1.0 403 Forbidden&#xa;    Audit-Id: 53a853da-ed22-48b7-bcb5-7c00960aea73&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    X-Kubernetes-Pf-Flowschema-Uid: 9bfef585-e308-4362-923b-a5f30683a13d&#xa;    X-Kubernetes-Pf-Prioritylevel-Uid: 9d6b0832-3172-4ab0-a887-8bd56dac8794&#xa;    Date: Wed, 08 May 2024 08:35:09 GMT&#xa;    Content-Length: 189&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot options path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}</elem>
+</script><script id="ssl-cert" output="Subject: commonName=kube-apiserver&#xa;Subject Alternative Name: DNS:localhost, DNS:kubernetes, DNS:kubernetes.default, DNS:kubernetes.default.svc, DNS:apiserver.cluster.local, DNS:kubernetes.default.svc.cluster.local, DNS:ubuntu, IP Address:127.0.0.1, IP Address:10.96.0.1, IP Address:10.103.97.2, IP Address:192.168.30.12&#xa;Issuer: commonName=kubernetes&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2024-04-12T01:38:00&#xa;Not valid after:  2124-03-19T01:38:00&#xa;MD5:   5f9c 3668 2734 a148 eb00 d5d8 9d03 aa36&#xa;SHA-1: fd43 fc37 731a e19b 7c89 59cb a2bd 95aa 9924 97cd"><table key="subject">
+<elem key="commonName">kube-apiserver</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">kubernetes</elem>
+</table>
+<table key="pubkey">
+<elem key="exponent">userdata: 0xaaab01bad678</elem>
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="critical">true</elem>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:D5:FE:32:5D:5B:B0:32:47:AF:14:EC:06:0D:9A:64:57:FB:31:C9:CD&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:localhost, DNS:kubernetes, DNS:kubernetes.default, DNS:kubernetes.default.svc, DNS:apiserver.cluster.local, DNS:kubernetes.default.svc.cluster.local, DNS:ubuntu, IP Address:127.0.0.1, IP Address:10.96.0.1, IP Address:10.103.97.2, IP Address:192.168.30.12</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2024-04-12T01:38:00</elem>
+<elem key="notAfter">2124-03-19T01:38:00</elem>
+</table>
+<elem key="md5">5f9c36682734a148eb00d5d89d03aa36</elem>
+<elem key="sha1">fd43fc37731ae19b7c8959cba2bd95aa992497cd</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIDrDCCApSgAwIBAgIIWvPgr7AT+tAwDQYJKoZIhvcNAQELBQAwFTETMBEGA1UE&#xa;AxMKa3ViZXJuZXRlczAgFw0yNDA0MTIwMTM4MDBaGA8yMTI0MDMxOTAxMzgwMFow&#xa;GTEXMBUGA1UEAxMOa3ViZS1hcGlzZXJ2ZXIwggEiMA0GCSqGSIb3DQEBAQUAA4IB&#xa;DwAwggEKAoIBAQC/cdF5jlm1KCgeZ1Ah6cUjyF8jsFL6Xz+nYBjBPMd6oUd4ZrCT&#xa;l7Q0Vs7/ztVj9zlI1t1rznQohnO930NK6eqCuRoOIgAl3H9Egv2WDAudfI/rhBie&#xa;EpT82cCALIQcc7UBXWtZH2wgLx0pIi4u7nVqgwDYTOgMmbNh/rFwyos/fnoagY9W&#xa;BGoPSdFc6/FUS2tpr2mBVFuNDPo76FMaB1C9NUgFcsCmxhc0bIhZmrd0wFNJ+8C/&#xa;sHpC3I0b5hNx/jKUW9J9YvzAIVWDp6AmPHJOGWnHS+XzExDWPlxToiVv+4733SFp&#xa;AKzNOuJiLEgj6OPtx+kRn2PC3NTGhPX9phZfAgMBAAGjgfkwgfYwDgYDVR0PAQH/&#xa;BAQDAgWgMBMGA1UdJQQMMAoGCCsGAQUFBwMBMB8GA1UdIwQYMBaAFNX+Ml1bsDJH&#xa;rxTsBg2aZFf7McnNMIGtBgNVHREEgaUwgaKCCWxvY2FsaG9zdIIKa3ViZXJuZXRl&#xa;c4ISa3ViZXJuZXRlcy5kZWZhdWx0ghZrdWJlcm5ldGVzLmRlZmF1bHQuc3Zjghdh&#xa;cGlzZXJ2ZXIuY2x1c3Rlci5sb2NhbIIka3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5j&#xa;bHVzdGVyLmxvY2FsggZ1YnVudHWHBH8AAAGHBApgAAGHBApnYQKHBMCoHgwwDQYJ&#xa;KoZIhvcNAQELBQADggEBAIs0BjeWX0fbj70Tiq5O1HNB8ndeo4c3TJrHGSVBiUAL&#xa;Kj5aE7MkJWabc3bSVeyTzkn/EgojKzpMY7mb5/OCXDuuWxMFNl5N+mUmOSk5qHQf&#xa;7QDhNUh/Kre/8G0mNjZGucL0+Yj8mnazDX9HsEM3GTo2RXHMpwD1Sh7BahTbZKz/&#xa;IPzPmbHAfyvgi2KAvK3HCDZwBQnEN+7ZstEoRqMmuSqye7lDXKteyeczoLskSmde&#xa;CVkP84EkN/LOai7hXR8z1OGQ6ZZdgGlVpTouKN/3qaa1+q7qK9hjNNMO9G55R23T&#xa;RDprtKvek079jnsJJZphD5ijqyeDm/X1oRDKJbnO+O8=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script></port>
+<port protocol="tcp" portid="10248"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Golang net/http server" extrainfo="Go-IPFS json-rpc or InfluxDB API" method="probed" conf="10"><cpe>cpe:/a:protocol_labs:go-ipfs</cpe></service><script id="http-title" output="Site doesn&apos;t have a title (text/plain; charset=utf-8)."></script></port>
+<port protocol="tcp" portid="10249"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Golang net/http server" extrainfo="Go-IPFS json-rpc or InfluxDB API" method="probed" conf="10"><cpe>cpe:/a:protocol_labs:go-ipfs</cpe></service><script id="http-title" output="Site doesn&apos;t have a title (text/plain; charset=utf-8)."></script></port>
+<port protocol="tcp" portid="10250"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Golang net/http server" extrainfo="Go-IPFS json-rpc or InfluxDB API" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:protocol_labs:go-ipfs</cpe></service><script id="http-title" output="Site doesn&apos;t have a title (text/plain; charset=utf-8)."></script><script id="ssl-cert" output="Subject: commonName=ubuntu@1712885905&#xa;Subject Alternative Name: DNS:ubuntu&#xa;Issuer: commonName=ubuntu-ca@1712885904&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2024-04-12T00:38:24&#xa;Not valid after:  2025-04-12T00:38:24&#xa;MD5:   95a8 df79 3122 f004 91f9 183d 85c2 fc11&#xa;SHA-1: 9d80 d0a8 b2cc 876b 1a57 0625 baa3 1ff3 6371 39e8"><table key="subject">
+<elem key="commonName">ubuntu@1712885905</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">ubuntu-ca@1712885904</elem>
+</table>
+<table key="pubkey">
+<elem key="exponent">userdata: 0xaaab00ab6bf8</elem>
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="critical">true</elem>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication</elem>
+</table>
+<table>
+<elem key="critical">true</elem>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:4C:4B:F4:FE:9B:D4:3C:1A:C2:74:5E:AD:4E:E8:2B:4E:AD:D1:9B:93&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:ubuntu</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2024-04-12T00:38:24</elem>
+<elem key="notAfter">2025-04-12T00:38:24</elem>
+</table>
+<elem key="md5">95a8df793122f00491f9183d85c2fc11</elem>
+<elem key="sha1">9d80d0a8b2cc876b1a570625baa31ff3637139e8</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIDHzCCAgegAwIBAgIBAjANBgkqhkiG9w0BAQsFADAfMR0wGwYDVQQDDBR1YnVu&#xa;dHUtY2FAMTcxMjg4NTkwNDAeFw0yNDA0MTIwMDM4MjRaFw0yNTA0MTIwMDM4MjRa&#xa;MBwxGjAYBgNVBAMMEXVidW50dUAxNzEyODg1OTA1MIIBIjANBgkqhkiG9w0BAQEF&#xa;AAOCAQ8AMIIBCgKCAQEAm9URFq6/oZBbFeIIRKN0enzd6fZe4d1XY4PMozjGfonU&#xa;MLJATZe6i1l6M6NGSYy6sZBY6PnGffhxMma9r+bMwxx7d0ZDmLsuU1aLzPvr9Ewd&#xa;BO9U3DgGxVt5mqwymomFJ19lKlkYQdEMTRsfe8hxSMZjt7ZmB4gDZi7RurDj/muK&#xa;2TWjkhSDw+CWDl76HMPat09spaeRhiS1BwmYw80WhT/ieSwCBfwvG9QsdAg0LjRD&#xa;IqEfaDvc24v5eV4hFPqJtVmUEJaihl6XFpwDZhT7ZqpJjXTHaG5nl4lqGrOy+PUm&#xa;krvTeLHyL0/W2hexFlurGQrSP6LgoP1iN6cILtq3VQIDAQABo2kwZzAOBgNVHQ8B&#xa;Af8EBAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDAYDVR0TAQH/BAIwADAfBgNV&#xa;HSMEGDAWgBRMS/T+m9Q8GsJ0Xq1O6CtOrdGbkzARBgNVHREECjAIggZ1YnVudHUw&#xa;DQYJKoZIhvcNAQELBQADggEBABhiIDtB8DOldwCCMZ/3dkceXqFMtyuVacmvBp5p&#xa;VOM517RZOz/6dNgjsg8mTidwRpj8YgDvFvnQcSsEHaLjT9mKLwRXUUfyg5TNoi2h&#xa;1ARRwztD4rD/Iu1OzkE6iaZJhwSnh0N3HqssWScVp5h44kSw7cZkKgOESUWrwOHk&#xa;O/rfn0Q0GwO08gxuqJc4t6buz6D1wpU+a6QTg9UVqd6wcYmdO0/L/2p4UWJwYdQn&#xa;RmeUdHp9N/ar+yaIQP7fgGPm3dFfxUHussxW7U2WgBbWNnGBl8ke5GM3UwznDy5m&#xa;k32QArQT5EORrCDRC1dvEQyGOPD6jKXSszLdVhlpa/iI8Ks=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script></port>
+<port protocol="tcp" portid="10256"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Golang net/http server" extrainfo="Go-IPFS json-rpc or InfluxDB API" method="probed" conf="10"><cpe>cpe:/a:protocol_labs:go-ipfs</cpe></service><script id="http-title" output="Site doesn&apos;t have a title (text/plain; charset=utf-8)."></script></port>
+<port protocol="tcp" portid="10257"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="unknown" servicefp="SF-Port10257-TCP:V=7.60%T=SSL%I=7%D=5/8%Time=663B3942%P=aarch64-unknown-linux-gnu%r(GenericLines,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(GetRequest,170,&quot;HTTP/1\.0\x20403\x20Forbidden\r\nCache-Control:\x20no-cache,\x20private\r\nContent-Type:\x20application/json\r\nX-Content-Type-Options:\x20nosniff\r\nDate:\x20Wed,\x2008\x20May\x202024\x2008:35:14\x20GMT\r\nContent-Length:\x20185\r\n\r\n{\&quot;kind\&quot;:\&quot;Status\&quot;,\&quot;apiVersion\&quot;:\&quot;v1\&quot;,\&quot;metadata\&quot;:{},\&quot;status\&quot;:\&quot;Failure\&quot;,\&quot;message\&quot;:\&quot;forbidden:\x20User\x20\\\&quot;system:anonymous\\\&quot;\x20cannot\x20get\x20path\x20\\\&quot;/\\\&quot;\&quot;,\&quot;reason\&quot;:\&quot;Forbidden\&quot;,\&quot;details\&quot;:{},\&quot;code\&quot;:403}\n&quot;)%r(HTTPOptions,174,&quot;HTTP/1\.0\x20403\x20Forbidden\r\nCache-Control:\x20no-cache,\x20private\r\nContent-Type:\x20application/json\r\nX-Content-Type-Options:\x20nosniff\r\nDate:\x20Wed,\x2008\x20May\x202024\x2008:35:14\x20GMT\r\nContent-Length:\x20189\r\n\r\n{\&quot;kind\&quot;:\&quot;Status\&quot;,\&quot;apiVersion\&quot;:\&quot;v1\&quot;,\&quot;metadata\&quot;:{},\&quot;status\&quot;:\&quot;Failure\&quot;,\&quot;message\&quot;:\&quot;forbidden:\x20User\x20\\\&quot;system:anonymous\\\&quot;\x20cannot\x20options\x20path\x20\\\&quot;/\\\&quot;\&quot;,\&quot;reason\&quot;:\&quot;Forbidden\&quot;,\&quot;details\&quot;:{},\&quot;code\&quot;:403}\n&quot;)%r(RTSPRequest,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(Help,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(SSLSessionReq,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(TLSSessionReq,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(Kerberos,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(FourOhFourRequest,18B,&quot;HTTP/1\.0\x20403\x20Forbidden\r\nCache-Control:\x20no-cache,\x20private\r\nContent-Type:\x20application/json\r\nX-Content-Type-Options:\x20nosniff\r\nDate:\x20Wed,\x2008\x20May\x202024\x2008:35:39\x20GMT\r\nContent-Length:\x20212\r\n\r\n{\&quot;kind\&quot;:\&quot;Status\&quot;,\&quot;apiVersion\&quot;:\&quot;v1\&quot;,\&quot;metadata\&quot;:{},\&quot;status\&quot;:\&quot;Failure\&quot;,\&quot;message\&quot;:\&quot;forbidden:\x20User\x20\\\&quot;system:anonymous\\\&quot;\x20cannot\x20get\x20path\x20\\\&quot;/nice\x20ports,/Trinity\.txt\.bak\\\&quot;\&quot;,\&quot;reason\&quot;:\&quot;Forbidden\&quot;,\&quot;details\&quot;:{},\&quot;code\&quot;:403}\n&quot;);" tunnel="ssl" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  FourOhFourRequest: &#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 08:35:39 GMT&#xa;    Content-Length: 212&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/nice ports,/Trinity.txt.bak&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}&#xa;  GenericLines, Help, Kerberos, RTSPRequest, SSLSessionReq, TLSSessionReq: &#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request&#xa;  GetRequest: &#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 08:35:14 GMT&#xa;    Content-Length: 185&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}&#xa;  HTTPOptions: &#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 08:35:14 GMT&#xa;    Content-Length: 189&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot options path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}"><elem key="FourOhFourRequest">&#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 08:35:39 GMT&#xa;    Content-Length: 212&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/nice ports,/Trinity.txt.bak&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}</elem>
+<elem key="GenericLines, Help, Kerberos, RTSPRequest, SSLSessionReq, TLSSessionReq">&#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request</elem>
+<elem key="GetRequest">&#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 08:35:14 GMT&#xa;    Content-Length: 185&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}</elem>
+<elem key="HTTPOptions">&#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 08:35:14 GMT&#xa;    Content-Length: 189&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot options path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}</elem>
+</script><script id="ssl-cert" output="Subject: commonName=localhost@1714961885&#xa;Subject Alternative Name: DNS:localhost, DNS:localhost, IP Address:127.0.0.1&#xa;Issuer: commonName=localhost-ca@1714961885&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2024-05-06T01:18:05&#xa;Not valid after:  2025-05-06T01:18:05&#xa;MD5:   1f73 e787 4a0a b8b2 0fe4 73e8 a4df 9206&#xa;SHA-1: 5740 6d39 44ad c3cb 82a5 00b9 684b b6d5 1b50 02d0"><table key="subject">
+<elem key="commonName">localhost@1714961885</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">localhost-ca@1714961885</elem>
+</table>
+<table key="pubkey">
+<elem key="exponent">userdata: 0xaaaaff782068</elem>
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="critical">true</elem>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication</elem>
+</table>
+<table>
+<elem key="critical">true</elem>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:AE:8F:51:20:33:75:43:C8:9F:46:5C:12:C3:10:7C:B8:B6:60:E4:B8&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:localhost, DNS:localhost, IP Address:127.0.0.1</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2024-05-06T01:18:05</elem>
+<elem key="notAfter">2025-05-06T01:18:05</elem>
+</table>
+<elem key="md5">1f73e7874a0ab8b20fe473e8a4df9206</elem>
+<elem key="sha1">57406d3944adc3cb82a500b9684bb6d51b5002d0</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIDOTCCAiGgAwIBAgIBAjANBgkqhkiG9w0BAQsFADAiMSAwHgYDVQQDDBdsb2Nh&#xa;bGhvc3QtY2FAMTcxNDk2MTg4NTAeFw0yNDA1MDYwMTE4MDVaFw0yNTA1MDYwMTE4&#xa;MDVaMB8xHTAbBgNVBAMMFGxvY2FsaG9zdEAxNzE0OTYxODg1MIIBIjANBgkqhkiG&#xa;9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxldM2Vkv+KnLq1W0N8ghWGkftGWFzOhlgcDg&#xa;c6e6wGw/XFCzXsZnDfhKjPwSY93wyWstiwUu4dg3TLap12Jj+SnD2r2HNjjO3oSW&#xa;D2R9Y4zkEHXb6pbPT3hJ1RjuZBkAvz/natmDSUwWK5Ak9/OTiRViFWcGHhQC8jZb&#xa;70BgLrS8Y/OGvh6soHvp6Y6XYzCsDaJOcq/JF3UblB61T82VphJP43PiI+aHtLVT&#xa;+BaZWQaN6V3CB64Zp0izJZ5D68aemfExZJdk+V3QM/eCRyj870I8XigIaH2nQSIj&#xa;FmukQtyV2OJTKPOCPRMYXTEj9XmEt1q2oS8Y3rK2bdaATT67sQIDAQABo30wezAO&#xa;BgNVHQ8BAf8EBAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDAYDVR0TAQH/BAIw&#xa;ADAfBgNVHSMEGDAWgBSuj1EgM3VDyJ9GXBLDEHy4tmDkuDAlBgNVHREEHjAcggls&#xa;b2NhbGhvc3SCCWxvY2FsaG9zdIcEfwAAATANBgkqhkiG9w0BAQsFAAOCAQEAGNaP&#xa;Intg4iv+uO+GTX6P6jQZBgTjyPWGcwiFtP8MfjVZWR+QHbQERSEig3J11Y9Gntzc&#xa;d9xcjo1GDtIfGaC1xmKXsPYyJtHsdgi2PAU5GsmPP9obBybaerDBr3oYsaBOqKmV&#xa;o8jv1RB0/dC01vInnuEJ7RxvjtaSmuKo8UVfIEmf92MsDlYAigr7CjUQZ/4Hy7Jx&#xa;KKpo/5JFa3jWqpBp1v+f0vBcapTnwLQJJbTCwdMqr1My25wm1pg9SbAzmaZmhuRC&#xa;mKze6NZb19bJmDSSafL5t21m1/E4Oc/bGZUgBwKxjFiO7PkqQzm/SdrkKP3T1Qun&#xa;cA+1A67Thi5xpKmuYA==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script></port>
+<port protocol="tcp" portid="10259"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="unknown" servicefp="SF-Port10259-TCP:V=7.60%T=SSL%I=7%D=5/8%Time=663B3942%P=aarch64-unknown-linux-gnu%r(GenericLines,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(GetRequest,170,&quot;HTTP/1\.0\x20403\x20Forbidden\r\nCache-Control:\x20no-cache,\x20private\r\nContent-Type:\x20application/json\r\nX-Content-Type-Options:\x20nosniff\r\nDate:\x20Wed,\x2008\x20May\x202024\x2008:35:14\x20GMT\r\nContent-Length:\x20185\r\n\r\n{\&quot;kind\&quot;:\&quot;Status\&quot;,\&quot;apiVersion\&quot;:\&quot;v1\&quot;,\&quot;metadata\&quot;:{},\&quot;status\&quot;:\&quot;Failure\&quot;,\&quot;message\&quot;:\&quot;forbidden:\x20User\x20\\\&quot;system:anonymous\\\&quot;\x20cannot\x20get\x20path\x20\\\&quot;/\\\&quot;\&quot;,\&quot;reason\&quot;:\&quot;Forbidden\&quot;,\&quot;details\&quot;:{},\&quot;code\&quot;:403}\n&quot;)%r(HTTPOptions,174,&quot;HTTP/1\.0\x20403\x20Forbidden\r\nCache-Control:\x20no-cache,\x20private\r\nContent-Type:\x20application/json\r\nX-Content-Type-Options:\x20nosniff\r\nDate:\x20Wed,\x2008\x20May\x202024\x2008:35:14\x20GMT\r\nContent-Length:\x20189\r\n\r\n{\&quot;kind\&quot;:\&quot;Status\&quot;,\&quot;apiVersion\&quot;:\&quot;v1\&quot;,\&quot;metadata\&quot;:{},\&quot;status\&quot;:\&quot;Failure\&quot;,\&quot;message\&quot;:\&quot;forbidden:\x20User\x20\\\&quot;system:anonymous\\\&quot;\x20cannot\x20options\x20path\x20\\\&quot;/\\\&quot;\&quot;,\&quot;reason\&quot;:\&quot;Forbidden\&quot;,\&quot;details\&quot;:{},\&quot;code\&quot;:403}\n&quot;)%r(RTSPRequest,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(Help,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(SSLSessionReq,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(TLSSessionReq,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(Kerberos,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(FourOhFourRequest,18B,&quot;HTTP/1\.0\x20403\x20Forbidden\r\nCache-Control:\x20no-cache,\x20private\r\nContent-Type:\x20application/json\r\nX-Content-Type-Options:\x20nosniff\r\nDate:\x20Wed,\x2008\x20May\x202024\x2008:35:39\x20GMT\r\nContent-Length:\x20212\r\n\r\n{\&quot;kind\&quot;:\&quot;Status\&quot;,\&quot;apiVersion\&quot;:\&quot;v1\&quot;,\&quot;metadata\&quot;:{},\&quot;status\&quot;:\&quot;Failure\&quot;,\&quot;message\&quot;:\&quot;forbidden:\x20User\x20\\\&quot;system:anonymous\\\&quot;\x20cannot\x20get\x20path\x20\\\&quot;/nice\x20ports,/Trinity\.txt\.bak\\\&quot;\&quot;,\&quot;reason\&quot;:\&quot;Forbidden\&quot;,\&quot;details\&quot;:{},\&quot;code\&quot;:403}\n&quot;);" tunnel="ssl" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  FourOhFourRequest: &#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 08:35:39 GMT&#xa;    Content-Length: 212&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/nice ports,/Trinity.txt.bak&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}&#xa;  GenericLines, Help, Kerberos, RTSPRequest, SSLSessionReq, TLSSessionReq: &#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request&#xa;  GetRequest: &#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 08:35:14 GMT&#xa;    Content-Length: 185&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}&#xa;  HTTPOptions: &#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 08:35:14 GMT&#xa;    Content-Length: 189&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot options path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}"><elem key="FourOhFourRequest">&#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 08:35:39 GMT&#xa;    Content-Length: 212&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/nice ports,/Trinity.txt.bak&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}</elem>
+<elem key="GenericLines, Help, Kerberos, RTSPRequest, SSLSessionReq, TLSSessionReq">&#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request</elem>
+<elem key="GetRequest">&#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 08:35:14 GMT&#xa;    Content-Length: 185&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}</elem>
+<elem key="HTTPOptions">&#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 08:35:14 GMT&#xa;    Content-Length: 189&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot options path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}</elem>
+</script><script id="ssl-cert" output="Subject: commonName=localhost@1714961886&#xa;Subject Alternative Name: DNS:localhost, DNS:localhost, IP Address:127.0.0.1&#xa;Issuer: commonName=localhost-ca@1714961885&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2024-05-06T01:18:05&#xa;Not valid after:  2025-05-06T01:18:05&#xa;MD5:   e42e d420 953f f02f 51ca 8832 c59c 2c7e&#xa;SHA-1: d277 f720 b9e6 ddab 66a1 93e1 295e ec03 2042 9208"><table key="subject">
+<elem key="commonName">localhost@1714961886</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">localhost-ca@1714961885</elem>
+</table>
+<table key="pubkey">
+<elem key="exponent">userdata: 0xaaab01af04f8</elem>
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="critical">true</elem>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication</elem>
+</table>
+<table>
+<elem key="critical">true</elem>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:A1:55:29:74:61:EC:99:B1:CB:8E:B9:EE:46:45:BA:B1:C4:92:C3:1B&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:localhost, DNS:localhost, IP Address:127.0.0.1</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2024-05-06T01:18:05</elem>
+<elem key="notAfter">2025-05-06T01:18:05</elem>
+</table>
+<elem key="md5">e42ed420953ff02f51ca8832c59c2c7e</elem>
+<elem key="sha1">d277f720b9e6ddab66a193e1295eec0320429208</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIDOTCCAiGgAwIBAgIBAjANBgkqhkiG9w0BAQsFADAiMSAwHgYDVQQDDBdsb2Nh&#xa;bGhvc3QtY2FAMTcxNDk2MTg4NTAeFw0yNDA1MDYwMTE4MDVaFw0yNTA1MDYwMTE4&#xa;MDVaMB8xHTAbBgNVBAMMFGxvY2FsaG9zdEAxNzE0OTYxODg2MIIBIjANBgkqhkiG&#xa;9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxqRSUP3IpNAJgtHt2ty3rLCXTyWDkJrJgQT/&#xa;FoQPRumgxvHDMOIus/YV3PCnQVLfLyhtzmrzxUVxfXUgYtpGO14VtwSUww40UI8o&#xa;c4wNL8OJL4yR5OLN/NBfVBXvMq1b8ArlCV3eSlUVtYGQc6SxOj3Lsz928S0DlcP3&#xa;zuqgv6yxOFw/50a1RcGNc3oPieB9x1jBIlJPv8oN3kcUJ/c2d8jIxbEFtaXB0jYK&#xa;1fFe18/zEIN2hJ6AHVtIztIkEgE+ym7bLK1Ysvb6BiRy7YfIN3yGujz2KtvpIq9C&#xa;PStH9LlhhfO/IF7ccy1UxEW7L9kx9mxDy21BMq8kp9fKbGY9HQIDAQABo30wezAO&#xa;BgNVHQ8BAf8EBAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDAYDVR0TAQH/BAIw&#xa;ADAfBgNVHSMEGDAWgBShVSl0YeyZscuOue5GRbqxxJLDGzAlBgNVHREEHjAcggls&#xa;b2NhbGhvc3SCCWxvY2FsaG9zdIcEfwAAATANBgkqhkiG9w0BAQsFAAOCAQEAlres&#xa;BlzJg+YoUj/lVeuE+TTVTg6x69p6nbDUo8GinAEtLHqdql64EzZUY59OpG6HImlH&#xa;0V0HYVZQdysosKFvvOGG7Bd0Tur2CCWr6y/qeDN4C2x8zDj6Gutk8Tkr3F8ailfC&#xa;x4s83mpJ9H/gM2ert9jVlwSwu3W3aY86cdmKJtkpftfvgJzZ7m5YZO4II9Mkd0px&#xa;VSNgWWSM5OJa4O6EL1kwy28/o3sRITt8pZl8/mfQecP27gTguQTKL5/prTZmZ8nO&#xa;w9nLpTWJf29sSZ1svIoEX9t4g8xqz4NP4VXofz+0Cw09e6SH2x/YNGk161SSJ+F7&#xa;9+WFDQSfE8mRo7HdWg==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script></port>
+<port protocol="tcp" portid="13181"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="unknown" servicefp="SF-Port13181-TCP:V=7.60%I=7%D=5/8%Time=663B3937%P=aarch64-unknown-linux-gnu%r(GenericLines,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(GetRequest,8F,&quot;HTTP/1\.0\x20404\x20Not\x20Found\r\nDate:\x20Wed,\x2008\x20May\x202024\x2008:35:03\x20GMT\r\nContent-Length:\x2019\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n\r\n404:\x20Page\x20Not\x20Found&quot;)%r(HTTPOptions,8F,&quot;HTTP/1\.0\x20404\x20Not\x20Found\r\nDate:\x20Wed,\x2008\x20May\x202024\x2008:35:03\x20GMT\r\nContent-Length:\x2019\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n\r\n404:\x20Page\x20Not\x20Found&quot;)%r(RTSPRequest,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(Help,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(SSLSessionReq,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(TLSSessionReq,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(Kerberos,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(FourOhFourRequest,8F,&quot;HTTP/1\.0\x20404\x20Not\x20Found\r\nDate:\x20Wed,\x2008\x20May\x202024\x2008:35:28\x20GMT\r\nContent-Length:\x2019\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n\r\n404:\x20Page\x20Not\x20Found&quot;)%r(LPDString,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(LDAPSearchReq,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(SIPOptions,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;);" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  FourOhFourRequest: &#xa;    HTTP/1.0 404 Not Found&#xa;    Date: Wed, 08 May 2024 08:35:28 GMT&#xa;    Content-Length: 19&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    404: Page Not Found&#xa;  GenericLines, Help, Kerberos, LDAPSearchReq, LPDString, RTSPRequest, SIPOptions, SSLSessionReq, TLSSessionReq: &#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request&#xa;  GetRequest, HTTPOptions: &#xa;    HTTP/1.0 404 Not Found&#xa;    Date: Wed, 08 May 2024 08:35:03 GMT&#xa;    Content-Length: 19&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    404: Page Not Found"><elem key="FourOhFourRequest">&#xa;    HTTP/1.0 404 Not Found&#xa;    Date: Wed, 08 May 2024 08:35:28 GMT&#xa;    Content-Length: 19&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    404: Page Not Found</elem>
+<elem key="GenericLines, Help, Kerberos, LDAPSearchReq, LPDString, RTSPRequest, SIPOptions, SSLSessionReq, TLSSessionReq">&#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request</elem>
+<elem key="GetRequest, HTTPOptions">&#xa;    HTTP/1.0 404 Not Found&#xa;    Date: Wed, 08 May 2024 08:35:03 GMT&#xa;    Content-Length: 19&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    404: Page Not Found</elem>
+</script></port>
+<port protocol="tcp" portid="15241"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="mountd" version="1-3" extrainfo="RPC #100005" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="20609"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="mountd" version="1-3" extrainfo="RPC #100005" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="24361"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="status" version="1" extrainfo="RPC #100024" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="24541"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="nlockmgr" version="1-4" extrainfo="RPC #100021" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="30080"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Tornado httpd" version="6.2" method="probed" conf="10"><cpe>cpe:/a:tornadoweb:tornado:6.2</cpe></service><script id="http-favicon" output="Unknown favicon MD5: 97C6417ED01BDC0AE3EF32AE4894FD03"/><script id="http-methods" output="&#xa;  Supported Methods: GET POST"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>POST</elem>
+</table>
+</script><script id="http-robots.txt" output="1 disallowed entry &#xa;/ "/><script id="http-server-header" output="TornadoServer/6.2"><elem>TornadoServer/6.2</elem>
+</script><script id="http-title" output="Jupyter Notebook&#xa;Requested resource was /login?next=%2Ftree%3F"><elem key="title">Jupyter Notebook</elem>
+<elem key="redirect_url">/login?next=%2Ftree%3F</elem>
+</script></port>
+<port protocol="tcp" portid="31000"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="31001"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="31003"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="31004"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="31005"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="31400"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="pace-licensed" method="table" conf="3"/></port>
+<port protocol="tcp" portid="59301"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="mountd" version="1-3" extrainfo="RPC #100005" method="probed" conf="10"/></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="22"/>
+<portused state="closed" proto="tcp" portid="1"/>
+<portused state="closed" proto="udp" portid="38274"/>
+<osmatch name="Linux 2.6.32" accuracy="100" line="52981">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="2.6.X" accuracy="100"><cpe>cpe:/o:linux:linux_kernel:2.6.32</cpe></osclass>
+</osmatch>
+</os>
+<uptime seconds="2418098" lastboot="Wed Apr 10 16:56:55 2024"/>
+<distance value="0"/>
+<tcpsequence index="256" difficulty="Good luck!" values="73E2EA09,96D7E217,E1DD214D,8EFB9D,DD466706,8B411455"/>
+<ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
+<tcptssequence class="1000HZ" values="901F5DA6,901F5E0A,901F5E6E,901F5ED2,901F5F36,901F5F9A"/>
+<times srtt="128" rttvar="43" to="100000"/>
+</host>
+<taskbegin task="SYN Stealth Scan" time="1715157513"/>
+<taskprogress task="SYN Stealth Scan" time="1715157544" percent="43.00" remaining="42" etc="1715157585"/>
+<taskprogress task="SYN Stealth Scan" time="1715157574" percent="44.33" remaining="77" etc="1715157651"/>
+<taskprogress task="SYN Stealth Scan" time="1715157604" percent="45.98" remaining="107" etc="1715157711"/>
+<taskprogress task="SYN Stealth Scan" time="1715157634" percent="47.63" remaining="134" etc="1715157767"/>
+<taskprogress task="SYN Stealth Scan" time="1715157664" percent="49.29" remaining="156" etc="1715157819"/>
+<taskprogress task="SYN Stealth Scan" time="1715157694" percent="50.26" remaining="180" etc="1715157873"/>
+<taskprogress task="SYN Stealth Scan" time="1715157748" percent="54.36" remaining="198" etc="1715157945"/>
+<taskprogress task="SYN Stealth Scan" time="1715157781" percent="54.86" remaining="221" etc="1715158002"/>
+<taskprogress task="SYN Stealth Scan" time="1715157820" percent="55.46" remaining="247" etc="1715158067"/>
+<taskprogress task="SYN Stealth Scan" time="1715157865" percent="56.16" remaining="275" etc="1715158140"/>
+<taskprogress task="SYN Stealth Scan" time="1715157922" percent="57.05" remaining="308" etc="1715158230"/>
+<taskprogress task="SYN Stealth Scan" time="1715157991" percent="58.12" remaining="345" etc="1715158335"/>
+<taskprogress task="SYN Stealth Scan" time="1715158081" percent="59.53" remaining="387" etc="1715158467"/>
+<taskprogress task="SYN Stealth Scan" time="1715158207" percent="61.49" remaining="435" etc="1715158642"/>
+<taskprogress task="SYN Stealth Scan" time="1715158417" percent="64.77" remaining="492" etc="1715158909"/>
+<taskprogress task="SYN Stealth Scan" time="1715158912" percent="72.48" remaining="532" etc="1715159443"/>
+<taskprogress task="SYN Stealth Scan" time="1715159446" percent="80.79" remaining="460" etc="1715159906"/>
+<taskprogress task="SYN Stealth Scan" time="1715159869" percent="87.38" remaining="341" etc="1715160209"/>
+<taskprogress task="SYN Stealth Scan" time="1715160211" percent="92.70" remaining="213" etc="1715160423"/>
+<taskprogress task="SYN Stealth Scan" time="1715160424" percent="96.02" remaining="121" etc="1715160545"/>
+<taskprogress task="SYN Stealth Scan" time="1715160547" percent="97.94" remaining="64" etc="1715160611"/>
+<taskprogress task="SYN Stealth Scan" time="1715160613" percent="98.96" remaining="33" etc="1715160646"/>
+<taskend task="SYN Stealth Scan" time="1715160985" extrainfo="65535 total ports"/>
+<taskbegin task="Service scan" time="1715160985"/>
+<taskend task="Service scan" time="1715161077" extrainfo="23 services on 1 host"/>
+<taskbegin task="NSE" time="1715161081"/>
+<taskend task="NSE" time="1715161201"/>
+<taskbegin task="NSE" time="1715161201"/>
+<taskend task="NSE" time="1715161202"/>
+<host starttime="1715157513" endtime="1715161202"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="192.168.30.12" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65506">
+<extrareasons reason="resets" count="65506"/>
+</extraports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" product="OpenSSH" version="7.6p1 Ubuntu 4ubuntu0.7" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:7.6p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  2048 40:40:43:ee:97:b5:68:9d:d9:2d:4a:2c:79:e6:15:b1 (RSA)&#xa;  256 15:c5:05:e4:71:88:a6:bb:a5:fb:7f:d2:27:7c:3d:d4 (ECDSA)&#xa;  256 a1:49:15:7c:47:5b:2b:f8:2f:dd:2c:3a:ac:42:36:d4 (EdDSA)"><table>
+<elem key="bits">2048.0</elem>
+<elem key="type">ssh-rsa</elem>
+<elem key="key">AAAAB3NzaC1yc2EAAAADAQABAAABAQC8rnyxBuSBKMH5mLpCMRpUialXVDqmIIPuquwnWyBAP6dTsdUrnjbIUF/Kp08VZ8d+NY58DunJIHVWunALFtzxrHlnKnkarvogVAuRD7ho6ltwHUmUcfU+vxIULr+mc1bxbseaE5lVTx7BmVK4KQiY07E+PWZzgNgqhGNX7Jzcxf3cMlthrYw29MVF7vEKqP6Q8G6N92LCx34WhQAvdceBELiQhI8sJRnpwJUF3eTQTgBzCIj0EgyWdmQCmn+RFJeeCYvdsohdydFLMrNCs2W5nbM5zIZ4cqCWIwNTfPoHpOUudsurWug8Zv3VbX+r/gtHXkVjUMLNv4Qdq0Nvui9B</elem>
+<elem key="fingerprint">404043ee97b5689dd92d4a2c79e615b1</elem>
+</table>
+<table>
+<elem key="bits">256</elem>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBONQKKW6+Hz8Mnl8sMqLahSy9VkYhEASqmm2s6h/ir87w9QQZAe609IAkYKT+o5h1VD0Hw6mefpe4Cr0LaNtT6I=</elem>
+<elem key="fingerprint">15c505e47188a6bba5fb7fd2277c3dd4</elem>
+</table>
+<table>
+<elem key="bits">256</elem>
+<elem key="type">ssh-ed25519</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIBoBJ3Yr7yPMJ8wP5rL/lfdKtg3/ajKykAtMnflSfjy0</elem>
+<elem key="fingerprint">a149157c475b2bf82fdd2c3aac4236d4</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="111"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="rpcbind" version="2-4" extrainfo="RPC #100000" method="probed" conf="10"/><script id="rpcinfo" output="&#xa;  program version   port/proto  service&#xa;  100000  2,3,4        111/tcp  rpcbind&#xa;  100000  2,3,4        111/udp  rpcbind&#xa;  100003  3           2049/udp  nfs&#xa;  100003  3,4         2049/tcp  nfs&#xa;  100005  1,2,3      16247/udp  mountd&#xa;  100005  1,2,3      59301/tcp  mountd&#xa;  100021  1,3,4      24541/tcp  nlockmgr&#xa;  100021  1,3,4      33924/udp  nlockmgr&#xa;  100024  1          24361/tcp  status&#xa;  100024  1          32241/udp  status&#xa;  100227  3           2049/tcp  nfs_acl&#xa;  100227  3           2049/udp  nfs_acl&#xa;"><table key="100005">
+<table key="tcp">
+<elem key="port">59301</elem>
+<table key="version">
+<elem>1</elem>
+<elem>2</elem>
+<elem>3</elem>
+</table>
+</table>
+<table key="udp">
+<elem key="port">16247</elem>
+<table key="version">
+<elem>1</elem>
+<elem>2</elem>
+<elem>3</elem>
+</table>
+</table>
+</table>
+<table key="100003">
+<table key="udp">
+<elem key="port">2049</elem>
+<table key="version">
+<elem>3</elem>
+</table>
+</table>
+<table key="tcp">
+<elem key="port">2049</elem>
+<table key="version">
+<elem>3</elem>
+<elem>4</elem>
+</table>
+</table>
+</table>
+<table key="100021">
+<table key="tcp">
+<elem key="port">24541</elem>
+<table key="version">
+<elem>1</elem>
+<elem>3</elem>
+<elem>4</elem>
+</table>
+</table>
+<table key="udp">
+<elem key="port">33924</elem>
+<table key="version">
+<elem>1</elem>
+<elem>3</elem>
+<elem>4</elem>
+</table>
+</table>
+</table>
+<table key="100024">
+<table key="tcp">
+<elem key="port">24361</elem>
+<table key="version">
+<elem>1</elem>
+</table>
+</table>
+<table key="udp">
+<elem key="port">32241</elem>
+<table key="version">
+<elem>1</elem>
+</table>
+</table>
+</table>
+<table key="100000">
+<table key="udp">
+<elem key="port">111</elem>
+<table key="version">
+<elem>2</elem>
+<elem>3</elem>
+<elem>4</elem>
+</table>
+</table>
+<table key="tcp">
+<elem key="port">111</elem>
+<table key="version">
+<elem>2</elem>
+<elem>3</elem>
+<elem>4</elem>
+</table>
+</table>
+</table>
+<table key="100227">
+<table key="udp">
+<elem key="port">2049</elem>
+<table key="version">
+<elem>3</elem>
+</table>
+</table>
+<table key="tcp">
+<elem key="port">2049</elem>
+<table key="version">
+<elem>3</elem>
+</table>
+</table>
+</table>
+</script></port>
+<port protocol="tcp" portid="2049"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="nfs_acl" version="3" extrainfo="RPC #100227" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="2379"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="etcd-client" tunnel="ssl" method="table" conf="3"/><script id="ssl-date" output="TLS randomness does not represent time"></script></port>
+<port protocol="tcp" portid="2380"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="etcd-server" tunnel="ssl" method="table" conf="3"/><script id="ssl-date" output="TLS randomness does not represent time"></script></port>
+<port protocol="tcp" portid="2381"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Golang net/http server" extrainfo="Go-IPFS json-rpc or InfluxDB API" method="probed" conf="10"><cpe>cpe:/a:protocol_labs:go-ipfs</cpe></service><script id="http-title" output="Site doesn&apos;t have a title (text/plain; charset=utf-8)."></script></port>
+<port protocol="tcp" portid="5000"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Docker Registry" extrainfo="API: 2.0" method="probed" conf="10"><cpe>cpe:/a:redhat:docker</cpe></service><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD POST OPTIONS"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+<elem>POST</elem>
+<elem>OPTIONS</elem>
+</table>
+</script><script id="http-title" output="Site doesn&apos;t have a title."></script></port>
+<port protocol="tcp" portid="5001"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Golang net/http server" extrainfo="Go-IPFS json-rpc or InfluxDB API" method="probed" conf="10"><cpe>cpe:/a:protocol_labs:go-ipfs</cpe></service><script id="http-title" output="Site doesn&apos;t have a title (text/plain; charset=utf-8)."></script></port>
+<port protocol="tcp" portid="5473"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="apsolab-tags" tunnel="ssl" method="table" conf="3"/><script id="ssl-cert" output="Subject: commonName=typha-server&#xa;Subject Alternative Name: DNS:typha-server&#xa;Issuer: commonName=tigera-operator-signer&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2024-04-12T01:39:00&#xa;Not valid after:  2026-07-16T01:39:01&#xa;MD5:   631e c3b3 e476 b3bf 1587 a5ef 3aa9 0359&#xa;SHA-1: a602 7957 a7ab 5312 bc3c cb22 d485 b7f9 2f66 27e3"><table key="subject">
+<elem key="commonName">typha-server</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">tigera-operator-signer</elem>
+</table>
+<table key="pubkey">
+<elem key="exponent">userdata: 0xaaaaff690428</elem>
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="critical">true</elem>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication, TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="critical">true</elem>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">B4:6C:FD:A7:31:E5:A5:A8:29:D2:FC:EE:5A:41:FD:46:EF:7C:13:37</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:23:52:FB:4F:83:3C:6B:6A:41:B9:CA:D3:13:1B:28:58:91:EB:B6:F0&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:typha-server</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2024-04-12T01:39:00</elem>
+<elem key="notAfter">2026-07-16T01:39:01</elem>
+</table>
+<elem key="md5">631ec3b3e476b3bf1587a5ef3aa90359</elem>
+<elem key="sha1">a6027957a7ab5312bc3ccb22d485b7f92f6627e3</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIDXjCCAkagAwIBAgIIIy6Sla6M9OkwDQYJKoZIhvcNAQELBQAwITEfMB0GA1UE&#xa;AxMWdGlnZXJhLW9wZXJhdG9yLXNpZ25lcjAeFw0yNDA0MTIwMTM5MDBaFw0yNjA3&#xa;MTYwMTM5MDFaMBcxFTATBgNVBAMTDHR5cGhhLXNlcnZlcjCCASIwDQYJKoZIhvcN&#xa;AQEBBQADggEPADCCAQoCggEBALEeNFFtUpe0ovHh553orqTpDPEBOfM66HquZp3F&#xa;LV4RvHZEUn8UoVpTo21/3vOeNIpuJMzWibZPG64s1mSwHz9WPQHlhoMoDl/Vp/JZ&#xa;dkytwXIjMgUiNDRO8lbR8CL78P6kpOZFvLskDyd9i89UfNhZWZfn+fyv/V9UQfir&#xa;VYKB2UGfLm+8Xy9duhGtN9D/rHRFSTLela52UxmdGK95hb7S9QnlTnjM8fpHbHAv&#xa;3tbHIHOZEjEMHIFXWCyu/81o9SAzMVluoIzD4l/ZtOw5aVvOMdTTh64tgETgC0wm&#xa;1CnrlZhYPZplKc1S+178LjrSEYmJosgkNEAmoBmo4bkhr40CAwEAAaOBozCBoDAO&#xa;BgNVHQ8BAf8EBAMCBaAwJwYDVR0lBCAwHgYIKwYBBQUHAwEGCCsGAQUFBwMBBggr&#xa;BgEFBQcDAjAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBS0bP2nMeWlqCnS/O5aQf1G&#xa;73wTNzAfBgNVHSMEGDAWgBQjUvtPgzxrakG5ytMTGyhYkeu28DAXBgNVHREEEDAO&#xa;ggx0eXBoYS1zZXJ2ZXIwDQYJKoZIhvcNAQELBQADggEBAJtcJ8BOmSEh40Ekkzs8&#xa;OsjPCRM+DnEasH40QZS33wu/4YxBea8Z4f06XcuSkOVDfjfwAWP7omELapumnt5X&#xa;NjO2bihXjT7/RyMr7j3lQgHKBBdsAWheUXGmPwQOMr3bQ4/fpVOE/VPqryLuDQxn&#xa;mmWDL4SBeT24zybfLq6+u+3Pj1UhyRpWnYA+XpMWpuODSBjk0+M5FNkgEBSTgy0h&#xa;Lro2sbaxJAxGfiikQiLRE6rVLSqw4NH2SribKftPACLeD49H0smVaTKYEQoALsWY&#xa;mjpzsOTvie100WQ+VBpra/Z78OMp6/DEvXDEkWSNm2Uuy5qRXBtSm74/6+eDEKIG&#xa;4+0=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script></port>
+<port protocol="tcp" portid="6443"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="sun-sr-https" servicefp="SF-Port6443-TCP:V=7.60%T=SSL%I=7%D=5/8%Time=663B47A5%P=aarch64-unknown-linux-gnu%r(GenericLines,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(GetRequest,22F,&quot;HTTP/1\.0\x20403\x20Forbidden\r\nAudit-Id:\x20f8793aa6-9b0b-4c80-b297-66de6bc9ba80\r\nCache-Control:\x20no-cache,\x20private\r\nContent-Type:\x20application/json\r\nX-Content-Type-Options:\x20nosniff\r\nX-Kubernetes-Pf-Flowschema-Uid:\x209bfef585-e308-4362-923b-a5f30683a13d\r\nX-Kubernetes-Pf-Prioritylevel-Uid:\x209d6b0832-3172-4ab0-a887-8bd56dac8794\r\nDate:\x20Wed,\x2008\x20May\x202024\x2009:36:37\x20GMT\r\nContent-Length:\x20185\r\n\r\n{\&quot;kind\&quot;:\&quot;Status\&quot;,\&quot;apiVersion\&quot;:\&quot;v1\&quot;,\&quot;metadata\&quot;:{},\&quot;status\&quot;:\&quot;Failure\&quot;,\&quot;message\&quot;:\&quot;forbidden:\x20User\x20\\\&quot;system:anonymous\\\&quot;\x20cannot\x20get\x20path\x20\\\&quot;/\\\&quot;\&quot;,\&quot;reason\&quot;:\&quot;Forbidden\&quot;,\&quot;details\&quot;:{},\&quot;code\&quot;:403}\n&quot;)%r(HTTPOptions,233,&quot;HTTP/1\.0\x20403\x20Forbidden\r\nAudit-Id:\x202e034e53-bd02-4996-b78b-974b4baf7d78\r\nCache-Control:\x20no-cache,\x20private\r\nContent-Type:\x20application/json\r\nX-Content-Type-Options:\x20nosniff\r\nX-Kubernetes-Pf-Flowschema-Uid:\x209bfef585-e308-4362-923b-a5f30683a13d\r\nX-Kubernetes-Pf-Prioritylevel-Uid:\x209d6b0832-3172-4ab0-a887-8bd56dac8794\r\nDate:\x20Wed,\x2008\x20May\x202024\x2009:36:37\x20GMT\r\nContent-Length:\x20189\r\n\r\n{\&quot;kind\&quot;:\&quot;Status\&quot;,\&quot;apiVersion\&quot;:\&quot;v1\&quot;,\&quot;metadata\&quot;:{},\&quot;status\&quot;:\&quot;Failure\&quot;,\&quot;message\&quot;:\&quot;forbidden:\x20User\x20\\\&quot;system:anonymous\\\&quot;\x20cannot\x20options\x20path\x20\\\&quot;/\\\&quot;\&quot;,\&quot;reason\&quot;:\&quot;Forbidden\&quot;,\&quot;details\&quot;:{},\&quot;code\&quot;:403}\n&quot;)%r(RTSPRequest,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(Help,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(SSLSessionReq,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;);" tunnel="ssl" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  GenericLines, Help, RTSPRequest, SSLSessionReq: &#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request&#xa;  GetRequest: &#xa;    HTTP/1.0 403 Forbidden&#xa;    Audit-Id: f8793aa6-9b0b-4c80-b297-66de6bc9ba80&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    X-Kubernetes-Pf-Flowschema-Uid: 9bfef585-e308-4362-923b-a5f30683a13d&#xa;    X-Kubernetes-Pf-Prioritylevel-Uid: 9d6b0832-3172-4ab0-a887-8bd56dac8794&#xa;    Date: Wed, 08 May 2024 09:36:37 GMT&#xa;    Content-Length: 185&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}&#xa;  HTTPOptions: &#xa;    HTTP/1.0 403 Forbidden&#xa;    Audit-Id: 2e034e53-bd02-4996-b78b-974b4baf7d78&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    X-Kubernetes-Pf-Flowschema-Uid: 9bfef585-e308-4362-923b-a5f30683a13d&#xa;    X-Kubernetes-Pf-Prioritylevel-Uid: 9d6b0832-3172-4ab0-a887-8bd56dac8794&#xa;    Date: Wed, 08 May 2024 09:36:37 GMT&#xa;    Content-Length: 189&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot options path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}"><elem key="GenericLines, Help, RTSPRequest, SSLSessionReq">&#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request</elem>
+<elem key="GetRequest">&#xa;    HTTP/1.0 403 Forbidden&#xa;    Audit-Id: f8793aa6-9b0b-4c80-b297-66de6bc9ba80&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    X-Kubernetes-Pf-Flowschema-Uid: 9bfef585-e308-4362-923b-a5f30683a13d&#xa;    X-Kubernetes-Pf-Prioritylevel-Uid: 9d6b0832-3172-4ab0-a887-8bd56dac8794&#xa;    Date: Wed, 08 May 2024 09:36:37 GMT&#xa;    Content-Length: 185&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}</elem>
+<elem key="HTTPOptions">&#xa;    HTTP/1.0 403 Forbidden&#xa;    Audit-Id: 2e034e53-bd02-4996-b78b-974b4baf7d78&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    X-Kubernetes-Pf-Flowschema-Uid: 9bfef585-e308-4362-923b-a5f30683a13d&#xa;    X-Kubernetes-Pf-Prioritylevel-Uid: 9d6b0832-3172-4ab0-a887-8bd56dac8794&#xa;    Date: Wed, 08 May 2024 09:36:37 GMT&#xa;    Content-Length: 189&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot options path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}</elem>
+</script><script id="ssl-cert" output="Subject: commonName=kube-apiserver&#xa;Subject Alternative Name: DNS:localhost, DNS:kubernetes, DNS:kubernetes.default, DNS:kubernetes.default.svc, DNS:apiserver.cluster.local, DNS:kubernetes.default.svc.cluster.local, DNS:ubuntu, IP Address:127.0.0.1, IP Address:10.96.0.1, IP Address:10.103.97.2, IP Address:192.168.30.12&#xa;Issuer: commonName=kubernetes&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2024-04-12T01:38:00&#xa;Not valid after:  2124-03-19T01:38:00&#xa;MD5:   5f9c 3668 2734 a148 eb00 d5d8 9d03 aa36&#xa;SHA-1: fd43 fc37 731a e19b 7c89 59cb a2bd 95aa 9924 97cd"><table key="subject">
+<elem key="commonName">kube-apiserver</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">kubernetes</elem>
+</table>
+<table key="pubkey">
+<elem key="exponent">userdata: 0xaaab01d56d78</elem>
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="critical">true</elem>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:D5:FE:32:5D:5B:B0:32:47:AF:14:EC:06:0D:9A:64:57:FB:31:C9:CD&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:localhost, DNS:kubernetes, DNS:kubernetes.default, DNS:kubernetes.default.svc, DNS:apiserver.cluster.local, DNS:kubernetes.default.svc.cluster.local, DNS:ubuntu, IP Address:127.0.0.1, IP Address:10.96.0.1, IP Address:10.103.97.2, IP Address:192.168.30.12</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2024-04-12T01:38:00</elem>
+<elem key="notAfter">2124-03-19T01:38:00</elem>
+</table>
+<elem key="md5">5f9c36682734a148eb00d5d89d03aa36</elem>
+<elem key="sha1">fd43fc37731ae19b7c8959cba2bd95aa992497cd</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIDrDCCApSgAwIBAgIIWvPgr7AT+tAwDQYJKoZIhvcNAQELBQAwFTETMBEGA1UE&#xa;AxMKa3ViZXJuZXRlczAgFw0yNDA0MTIwMTM4MDBaGA8yMTI0MDMxOTAxMzgwMFow&#xa;GTEXMBUGA1UEAxMOa3ViZS1hcGlzZXJ2ZXIwggEiMA0GCSqGSIb3DQEBAQUAA4IB&#xa;DwAwggEKAoIBAQC/cdF5jlm1KCgeZ1Ah6cUjyF8jsFL6Xz+nYBjBPMd6oUd4ZrCT&#xa;l7Q0Vs7/ztVj9zlI1t1rznQohnO930NK6eqCuRoOIgAl3H9Egv2WDAudfI/rhBie&#xa;EpT82cCALIQcc7UBXWtZH2wgLx0pIi4u7nVqgwDYTOgMmbNh/rFwyos/fnoagY9W&#xa;BGoPSdFc6/FUS2tpr2mBVFuNDPo76FMaB1C9NUgFcsCmxhc0bIhZmrd0wFNJ+8C/&#xa;sHpC3I0b5hNx/jKUW9J9YvzAIVWDp6AmPHJOGWnHS+XzExDWPlxToiVv+4733SFp&#xa;AKzNOuJiLEgj6OPtx+kRn2PC3NTGhPX9phZfAgMBAAGjgfkwgfYwDgYDVR0PAQH/&#xa;BAQDAgWgMBMGA1UdJQQMMAoGCCsGAQUFBwMBMB8GA1UdIwQYMBaAFNX+Ml1bsDJH&#xa;rxTsBg2aZFf7McnNMIGtBgNVHREEgaUwgaKCCWxvY2FsaG9zdIIKa3ViZXJuZXRl&#xa;c4ISa3ViZXJuZXRlcy5kZWZhdWx0ghZrdWJlcm5ldGVzLmRlZmF1bHQuc3Zjghdh&#xa;cGlzZXJ2ZXIuY2x1c3Rlci5sb2NhbIIka3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5j&#xa;bHVzdGVyLmxvY2FsggZ1YnVudHWHBH8AAAGHBApgAAGHBApnYQKHBMCoHgwwDQYJ&#xa;KoZIhvcNAQELBQADggEBAIs0BjeWX0fbj70Tiq5O1HNB8ndeo4c3TJrHGSVBiUAL&#xa;Kj5aE7MkJWabc3bSVeyTzkn/EgojKzpMY7mb5/OCXDuuWxMFNl5N+mUmOSk5qHQf&#xa;7QDhNUh/Kre/8G0mNjZGucL0+Yj8mnazDX9HsEM3GTo2RXHMpwD1Sh7BahTbZKz/&#xa;IPzPmbHAfyvgi2KAvK3HCDZwBQnEN+7ZstEoRqMmuSqye7lDXKteyeczoLskSmde&#xa;CVkP84EkN/LOai7hXR8z1OGQ6ZZdgGlVpTouKN/3qaa1+q7qK9hjNNMO9G55R23T&#xa;RDprtKvek079jnsJJZphD5ijqyeDm/X1oRDKJbnO+O8=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script></port>
+<port protocol="tcp" portid="10248"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Golang net/http server" extrainfo="Go-IPFS json-rpc or InfluxDB API" method="probed" conf="10"><cpe>cpe:/a:protocol_labs:go-ipfs</cpe></service><script id="http-title" output="Site doesn&apos;t have a title (text/plain; charset=utf-8)."></script></port>
+<port protocol="tcp" portid="10249"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Golang net/http server" extrainfo="Go-IPFS json-rpc or InfluxDB API" method="probed" conf="10"><cpe>cpe:/a:protocol_labs:go-ipfs</cpe></service><script id="http-title" output="Site doesn&apos;t have a title (text/plain; charset=utf-8)."></script></port>
+<port protocol="tcp" portid="10250"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Golang net/http server" extrainfo="Go-IPFS json-rpc or InfluxDB API" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:protocol_labs:go-ipfs</cpe></service><script id="http-title" output="Site doesn&apos;t have a title (text/plain; charset=utf-8)."></script><script id="ssl-cert" output="Subject: commonName=ubuntu@1712885905&#xa;Subject Alternative Name: DNS:ubuntu&#xa;Issuer: commonName=ubuntu-ca@1712885904&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2024-04-12T00:38:24&#xa;Not valid after:  2025-04-12T00:38:24&#xa;MD5:   95a8 df79 3122 f004 91f9 183d 85c2 fc11&#xa;SHA-1: 9d80 d0a8 b2cc 876b 1a57 0625 baa3 1ff3 6371 39e8"><table key="subject">
+<elem key="commonName">ubuntu@1712885905</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">ubuntu-ca@1712885904</elem>
+</table>
+<table key="pubkey">
+<elem key="exponent">userdata: 0xaaab007d68e8</elem>
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="critical">true</elem>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication</elem>
+</table>
+<table>
+<elem key="critical">true</elem>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:4C:4B:F4:FE:9B:D4:3C:1A:C2:74:5E:AD:4E:E8:2B:4E:AD:D1:9B:93&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:ubuntu</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2024-04-12T00:38:24</elem>
+<elem key="notAfter">2025-04-12T00:38:24</elem>
+</table>
+<elem key="md5">95a8df793122f00491f9183d85c2fc11</elem>
+<elem key="sha1">9d80d0a8b2cc876b1a570625baa31ff3637139e8</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIDHzCCAgegAwIBAgIBAjANBgkqhkiG9w0BAQsFADAfMR0wGwYDVQQDDBR1YnVu&#xa;dHUtY2FAMTcxMjg4NTkwNDAeFw0yNDA0MTIwMDM4MjRaFw0yNTA0MTIwMDM4MjRa&#xa;MBwxGjAYBgNVBAMMEXVidW50dUAxNzEyODg1OTA1MIIBIjANBgkqhkiG9w0BAQEF&#xa;AAOCAQ8AMIIBCgKCAQEAm9URFq6/oZBbFeIIRKN0enzd6fZe4d1XY4PMozjGfonU&#xa;MLJATZe6i1l6M6NGSYy6sZBY6PnGffhxMma9r+bMwxx7d0ZDmLsuU1aLzPvr9Ewd&#xa;BO9U3DgGxVt5mqwymomFJ19lKlkYQdEMTRsfe8hxSMZjt7ZmB4gDZi7RurDj/muK&#xa;2TWjkhSDw+CWDl76HMPat09spaeRhiS1BwmYw80WhT/ieSwCBfwvG9QsdAg0LjRD&#xa;IqEfaDvc24v5eV4hFPqJtVmUEJaihl6XFpwDZhT7ZqpJjXTHaG5nl4lqGrOy+PUm&#xa;krvTeLHyL0/W2hexFlurGQrSP6LgoP1iN6cILtq3VQIDAQABo2kwZzAOBgNVHQ8B&#xa;Af8EBAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDAYDVR0TAQH/BAIwADAfBgNV&#xa;HSMEGDAWgBRMS/T+m9Q8GsJ0Xq1O6CtOrdGbkzARBgNVHREECjAIggZ1YnVudHUw&#xa;DQYJKoZIhvcNAQELBQADggEBABhiIDtB8DOldwCCMZ/3dkceXqFMtyuVacmvBp5p&#xa;VOM517RZOz/6dNgjsg8mTidwRpj8YgDvFvnQcSsEHaLjT9mKLwRXUUfyg5TNoi2h&#xa;1ARRwztD4rD/Iu1OzkE6iaZJhwSnh0N3HqssWScVp5h44kSw7cZkKgOESUWrwOHk&#xa;O/rfn0Q0GwO08gxuqJc4t6buz6D1wpU+a6QTg9UVqd6wcYmdO0/L/2p4UWJwYdQn&#xa;RmeUdHp9N/ar+yaIQP7fgGPm3dFfxUHussxW7U2WgBbWNnGBl8ke5GM3UwznDy5m&#xa;k32QArQT5EORrCDRC1dvEQyGOPD6jKXSszLdVhlpa/iI8Ks=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script></port>
+<port protocol="tcp" portid="10256"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Golang net/http server" extrainfo="Go-IPFS json-rpc or InfluxDB API" method="probed" conf="10"><cpe>cpe:/a:protocol_labs:go-ipfs</cpe></service><script id="http-title" output="Site doesn&apos;t have a title (text/plain; charset=utf-8)."></script></port>
+<port protocol="tcp" portid="10257"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="unknown" servicefp="SF-Port10257-TCP:V=7.60%T=SSL%I=7%D=5/8%Time=663B47AA%P=aarch64-unknown-linux-gnu%r(GenericLines,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(GetRequest,170,&quot;HTTP/1\.0\x20403\x20Forbidden\r\nCache-Control:\x20no-cache,\x20private\r\nContent-Type:\x20application/json\r\nX-Content-Type-Options:\x20nosniff\r\nDate:\x20Wed,\x2008\x20May\x202024\x2009:36:42\x20GMT\r\nContent-Length:\x20185\r\n\r\n{\&quot;kind\&quot;:\&quot;Status\&quot;,\&quot;apiVersion\&quot;:\&quot;v1\&quot;,\&quot;metadata\&quot;:{},\&quot;status\&quot;:\&quot;Failure\&quot;,\&quot;message\&quot;:\&quot;forbidden:\x20User\x20\\\&quot;system:anonymous\\\&quot;\x20cannot\x20get\x20path\x20\\\&quot;/\\\&quot;\&quot;,\&quot;reason\&quot;:\&quot;Forbidden\&quot;,\&quot;details\&quot;:{},\&quot;code\&quot;:403}\n&quot;)%r(HTTPOptions,174,&quot;HTTP/1\.0\x20403\x20Forbidden\r\nCache-Control:\x20no-cache,\x20private\r\nContent-Type:\x20application/json\r\nX-Content-Type-Options:\x20nosniff\r\nDate:\x20Wed,\x2008\x20May\x202024\x2009:36:42\x20GMT\r\nContent-Length:\x20189\r\n\r\n{\&quot;kind\&quot;:\&quot;Status\&quot;,\&quot;apiVersion\&quot;:\&quot;v1\&quot;,\&quot;metadata\&quot;:{},\&quot;status\&quot;:\&quot;Failure\&quot;,\&quot;message\&quot;:\&quot;forbidden:\x20User\x20\\\&quot;system:anonymous\\\&quot;\x20cannot\x20options\x20path\x20\\\&quot;/\\\&quot;\&quot;,\&quot;reason\&quot;:\&quot;Forbidden\&quot;,\&quot;details\&quot;:{},\&quot;code\&quot;:403}\n&quot;)%r(RTSPRequest,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(Help,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(SSLSessionReq,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(TLSSessionReq,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(Kerberos,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(FourOhFourRequest,18B,&quot;HTTP/1\.0\x20403\x20Forbidden\r\nCache-Control:\x20no-cache,\x20private\r\nContent-Type:\x20application/json\r\nX-Content-Type-Options:\x20nosniff\r\nDate:\x20Wed,\x2008\x20May\x202024\x2009:37:07\x20GMT\r\nContent-Length:\x20212\r\n\r\n{\&quot;kind\&quot;:\&quot;Status\&quot;,\&quot;apiVersion\&quot;:\&quot;v1\&quot;,\&quot;metadata\&quot;:{},\&quot;status\&quot;:\&quot;Failure\&quot;,\&quot;message\&quot;:\&quot;forbidden:\x20User\x20\\\&quot;system:anonymous\\\&quot;\x20cannot\x20get\x20path\x20\\\&quot;/nice\x20ports,/Trinity\.txt\.bak\\\&quot;\&quot;,\&quot;reason\&quot;:\&quot;Forbidden\&quot;,\&quot;details\&quot;:{},\&quot;code\&quot;:403}\n&quot;);" tunnel="ssl" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  FourOhFourRequest: &#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 09:37:07 GMT&#xa;    Content-Length: 212&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/nice ports,/Trinity.txt.bak&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}&#xa;  GenericLines, Help, Kerberos, RTSPRequest, SSLSessionReq, TLSSessionReq: &#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request&#xa;  GetRequest: &#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 09:36:42 GMT&#xa;    Content-Length: 185&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}&#xa;  HTTPOptions: &#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 09:36:42 GMT&#xa;    Content-Length: 189&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot options path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}"><elem key="FourOhFourRequest">&#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 09:37:07 GMT&#xa;    Content-Length: 212&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/nice ports,/Trinity.txt.bak&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}</elem>
+<elem key="GenericLines, Help, Kerberos, RTSPRequest, SSLSessionReq, TLSSessionReq">&#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request</elem>
+<elem key="GetRequest">&#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 09:36:42 GMT&#xa;    Content-Length: 185&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}</elem>
+<elem key="HTTPOptions">&#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 09:36:42 GMT&#xa;    Content-Length: 189&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot options path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}</elem>
+</script><script id="ssl-cert" output="Subject: commonName=localhost@1714961885&#xa;Subject Alternative Name: DNS:localhost, DNS:localhost, IP Address:127.0.0.1&#xa;Issuer: commonName=localhost-ca@1714961885&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2024-05-06T01:18:05&#xa;Not valid after:  2025-05-06T01:18:05&#xa;MD5:   1f73 e787 4a0a b8b2 0fe4 73e8 a4df 9206&#xa;SHA-1: 5740 6d39 44ad c3cb 82a5 00b9 684b b6d5 1b50 02d0"><table key="subject">
+<elem key="commonName">localhost@1714961885</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">localhost-ca@1714961885</elem>
+</table>
+<table key="pubkey">
+<elem key="exponent">userdata: 0xaaaaff433138</elem>
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="critical">true</elem>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication</elem>
+</table>
+<table>
+<elem key="critical">true</elem>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:AE:8F:51:20:33:75:43:C8:9F:46:5C:12:C3:10:7C:B8:B6:60:E4:B8&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:localhost, DNS:localhost, IP Address:127.0.0.1</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2024-05-06T01:18:05</elem>
+<elem key="notAfter">2025-05-06T01:18:05</elem>
+</table>
+<elem key="md5">1f73e7874a0ab8b20fe473e8a4df9206</elem>
+<elem key="sha1">57406d3944adc3cb82a500b9684bb6d51b5002d0</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIDOTCCAiGgAwIBAgIBAjANBgkqhkiG9w0BAQsFADAiMSAwHgYDVQQDDBdsb2Nh&#xa;bGhvc3QtY2FAMTcxNDk2MTg4NTAeFw0yNDA1MDYwMTE4MDVaFw0yNTA1MDYwMTE4&#xa;MDVaMB8xHTAbBgNVBAMMFGxvY2FsaG9zdEAxNzE0OTYxODg1MIIBIjANBgkqhkiG&#xa;9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxldM2Vkv+KnLq1W0N8ghWGkftGWFzOhlgcDg&#xa;c6e6wGw/XFCzXsZnDfhKjPwSY93wyWstiwUu4dg3TLap12Jj+SnD2r2HNjjO3oSW&#xa;D2R9Y4zkEHXb6pbPT3hJ1RjuZBkAvz/natmDSUwWK5Ak9/OTiRViFWcGHhQC8jZb&#xa;70BgLrS8Y/OGvh6soHvp6Y6XYzCsDaJOcq/JF3UblB61T82VphJP43PiI+aHtLVT&#xa;+BaZWQaN6V3CB64Zp0izJZ5D68aemfExZJdk+V3QM/eCRyj870I8XigIaH2nQSIj&#xa;FmukQtyV2OJTKPOCPRMYXTEj9XmEt1q2oS8Y3rK2bdaATT67sQIDAQABo30wezAO&#xa;BgNVHQ8BAf8EBAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDAYDVR0TAQH/BAIw&#xa;ADAfBgNVHSMEGDAWgBSuj1EgM3VDyJ9GXBLDEHy4tmDkuDAlBgNVHREEHjAcggls&#xa;b2NhbGhvc3SCCWxvY2FsaG9zdIcEfwAAATANBgkqhkiG9w0BAQsFAAOCAQEAGNaP&#xa;Intg4iv+uO+GTX6P6jQZBgTjyPWGcwiFtP8MfjVZWR+QHbQERSEig3J11Y9Gntzc&#xa;d9xcjo1GDtIfGaC1xmKXsPYyJtHsdgi2PAU5GsmPP9obBybaerDBr3oYsaBOqKmV&#xa;o8jv1RB0/dC01vInnuEJ7RxvjtaSmuKo8UVfIEmf92MsDlYAigr7CjUQZ/4Hy7Jx&#xa;KKpo/5JFa3jWqpBp1v+f0vBcapTnwLQJJbTCwdMqr1My25wm1pg9SbAzmaZmhuRC&#xa;mKze6NZb19bJmDSSafL5t21m1/E4Oc/bGZUgBwKxjFiO7PkqQzm/SdrkKP3T1Qun&#xa;cA+1A67Thi5xpKmuYA==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script></port>
+<port protocol="tcp" portid="10259"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="unknown" servicefp="SF-Port10259-TCP:V=7.60%T=SSL%I=7%D=5/8%Time=663B47AA%P=aarch64-unknown-linux-gnu%r(GenericLines,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(GetRequest,170,&quot;HTTP/1\.0\x20403\x20Forbidden\r\nCache-Control:\x20no-cache,\x20private\r\nContent-Type:\x20application/json\r\nX-Content-Type-Options:\x20nosniff\r\nDate:\x20Wed,\x2008\x20May\x202024\x2009:36:42\x20GMT\r\nContent-Length:\x20185\r\n\r\n{\&quot;kind\&quot;:\&quot;Status\&quot;,\&quot;apiVersion\&quot;:\&quot;v1\&quot;,\&quot;metadata\&quot;:{},\&quot;status\&quot;:\&quot;Failure\&quot;,\&quot;message\&quot;:\&quot;forbidden:\x20User\x20\\\&quot;system:anonymous\\\&quot;\x20cannot\x20get\x20path\x20\\\&quot;/\\\&quot;\&quot;,\&quot;reason\&quot;:\&quot;Forbidden\&quot;,\&quot;details\&quot;:{},\&quot;code\&quot;:403}\n&quot;)%r(HTTPOptions,174,&quot;HTTP/1\.0\x20403\x20Forbidden\r\nCache-Control:\x20no-cache,\x20private\r\nContent-Type:\x20application/json\r\nX-Content-Type-Options:\x20nosniff\r\nDate:\x20Wed,\x2008\x20May\x202024\x2009:36:42\x20GMT\r\nContent-Length:\x20189\r\n\r\n{\&quot;kind\&quot;:\&quot;Status\&quot;,\&quot;apiVersion\&quot;:\&quot;v1\&quot;,\&quot;metadata\&quot;:{},\&quot;status\&quot;:\&quot;Failure\&quot;,\&quot;message\&quot;:\&quot;forbidden:\x20User\x20\\\&quot;system:anonymous\\\&quot;\x20cannot\x20options\x20path\x20\\\&quot;/\\\&quot;\&quot;,\&quot;reason\&quot;:\&quot;Forbidden\&quot;,\&quot;details\&quot;:{},\&quot;code\&quot;:403}\n&quot;)%r(RTSPRequest,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(Help,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(SSLSessionReq,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(TLSSessionReq,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(Kerberos,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(FourOhFourRequest,18B,&quot;HTTP/1\.0\x20403\x20Forbidden\r\nCache-Control:\x20no-cache,\x20private\r\nContent-Type:\x20application/json\r\nX-Content-Type-Options:\x20nosniff\r\nDate:\x20Wed,\x2008\x20May\x202024\x2009:37:07\x20GMT\r\nContent-Length:\x20212\r\n\r\n{\&quot;kind\&quot;:\&quot;Status\&quot;,\&quot;apiVersion\&quot;:\&quot;v1\&quot;,\&quot;metadata\&quot;:{},\&quot;status\&quot;:\&quot;Failure\&quot;,\&quot;message\&quot;:\&quot;forbidden:\x20User\x20\\\&quot;system:anonymous\\\&quot;\x20cannot\x20get\x20path\x20\\\&quot;/nice\x20ports,/Trinity\.txt\.bak\\\&quot;\&quot;,\&quot;reason\&quot;:\&quot;Forbidden\&quot;,\&quot;details\&quot;:{},\&quot;code\&quot;:403}\n&quot;);" tunnel="ssl" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  FourOhFourRequest: &#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 09:37:07 GMT&#xa;    Content-Length: 212&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/nice ports,/Trinity.txt.bak&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}&#xa;  GenericLines, Help, Kerberos, RTSPRequest, SSLSessionReq, TLSSessionReq: &#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request&#xa;  GetRequest: &#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 09:36:42 GMT&#xa;    Content-Length: 185&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}&#xa;  HTTPOptions: &#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 09:36:42 GMT&#xa;    Content-Length: 189&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot options path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}"><elem key="FourOhFourRequest">&#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 09:37:07 GMT&#xa;    Content-Length: 212&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/nice ports,/Trinity.txt.bak&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}</elem>
+<elem key="GenericLines, Help, Kerberos, RTSPRequest, SSLSessionReq, TLSSessionReq">&#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request</elem>
+<elem key="GetRequest">&#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 09:36:42 GMT&#xa;    Content-Length: 185&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}</elem>
+<elem key="HTTPOptions">&#xa;    HTTP/1.0 403 Forbidden&#xa;    Cache-Control: no-cache, private&#xa;    Content-Type: application/json&#xa;    X-Content-Type-Options: nosniff&#xa;    Date: Wed, 08 May 2024 09:36:42 GMT&#xa;    Content-Length: 189&#xa;    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot options path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}</elem>
+</script><script id="ssl-cert" output="Subject: commonName=localhost@1714961886&#xa;Subject Alternative Name: DNS:localhost, DNS:localhost, IP Address:127.0.0.1&#xa;Issuer: commonName=localhost-ca@1714961885&#xa;Public Key type: rsa&#xa;Public Key bits: 2048&#xa;Signature Algorithm: sha256WithRSAEncryption&#xa;Not valid before: 2024-05-06T01:18:05&#xa;Not valid after:  2025-05-06T01:18:05&#xa;MD5:   e42e d420 953f f02f 51ca 8832 c59c 2c7e&#xa;SHA-1: d277 f720 b9e6 ddab 66a1 93e1 295e ec03 2042 9208"><table key="subject">
+<elem key="commonName">localhost@1714961886</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">localhost-ca@1714961885</elem>
+</table>
+<table key="pubkey">
+<elem key="exponent">userdata: 0xaaaaffaf7df8</elem>
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="critical">true</elem>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication</elem>
+</table>
+<table>
+<elem key="critical">true</elem>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:A1:55:29:74:61:EC:99:B1:CB:8E:B9:EE:46:45:BA:B1:C4:92:C3:1B&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:localhost, DNS:localhost, IP Address:127.0.0.1</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2024-05-06T01:18:05</elem>
+<elem key="notAfter">2025-05-06T01:18:05</elem>
+</table>
+<elem key="md5">e42ed420953ff02f51ca8832c59c2c7e</elem>
+<elem key="sha1">d277f720b9e6ddab66a193e1295eec0320429208</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIDOTCCAiGgAwIBAgIBAjANBgkqhkiG9w0BAQsFADAiMSAwHgYDVQQDDBdsb2Nh&#xa;bGhvc3QtY2FAMTcxNDk2MTg4NTAeFw0yNDA1MDYwMTE4MDVaFw0yNTA1MDYwMTE4&#xa;MDVaMB8xHTAbBgNVBAMMFGxvY2FsaG9zdEAxNzE0OTYxODg2MIIBIjANBgkqhkiG&#xa;9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxqRSUP3IpNAJgtHt2ty3rLCXTyWDkJrJgQT/&#xa;FoQPRumgxvHDMOIus/YV3PCnQVLfLyhtzmrzxUVxfXUgYtpGO14VtwSUww40UI8o&#xa;c4wNL8OJL4yR5OLN/NBfVBXvMq1b8ArlCV3eSlUVtYGQc6SxOj3Lsz928S0DlcP3&#xa;zuqgv6yxOFw/50a1RcGNc3oPieB9x1jBIlJPv8oN3kcUJ/c2d8jIxbEFtaXB0jYK&#xa;1fFe18/zEIN2hJ6AHVtIztIkEgE+ym7bLK1Ysvb6BiRy7YfIN3yGujz2KtvpIq9C&#xa;PStH9LlhhfO/IF7ccy1UxEW7L9kx9mxDy21BMq8kp9fKbGY9HQIDAQABo30wezAO&#xa;BgNVHQ8BAf8EBAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDAYDVR0TAQH/BAIw&#xa;ADAfBgNVHSMEGDAWgBShVSl0YeyZscuOue5GRbqxxJLDGzAlBgNVHREEHjAcggls&#xa;b2NhbGhvc3SCCWxvY2FsaG9zdIcEfwAAATANBgkqhkiG9w0BAQsFAAOCAQEAlres&#xa;BlzJg+YoUj/lVeuE+TTVTg6x69p6nbDUo8GinAEtLHqdql64EzZUY59OpG6HImlH&#xa;0V0HYVZQdysosKFvvOGG7Bd0Tur2CCWr6y/qeDN4C2x8zDj6Gutk8Tkr3F8ailfC&#xa;x4s83mpJ9H/gM2ert9jVlwSwu3W3aY86cdmKJtkpftfvgJzZ7m5YZO4II9Mkd0px&#xa;VSNgWWSM5OJa4O6EL1kwy28/o3sRITt8pZl8/mfQecP27gTguQTKL5/prTZmZ8nO&#xa;w9nLpTWJf29sSZ1svIoEX9t4g8xqz4NP4VXofz+0Cw09e6SH2x/YNGk161SSJ+F7&#xa;9+WFDQSfE8mRo7HdWg==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script></port>
+<port protocol="tcp" portid="13181"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="unknown" servicefp="SF-Port13181-TCP:V=7.60%I=7%D=5/8%Time=663B479F%P=aarch64-unknown-linux-gnu%r(GenericLines,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(GetRequest,8F,&quot;HTTP/1\.0\x20404\x20Not\x20Found\r\nDate:\x20Wed,\x2008\x20May\x202024\x2009:36:31\x20GMT\r\nContent-Length:\x2019\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n\r\n404:\x20Page\x20Not\x20Found&quot;)%r(HTTPOptions,8F,&quot;HTTP/1\.0\x20404\x20Not\x20Found\r\nDate:\x20Wed,\x2008\x20May\x202024\x2009:36:31\x20GMT\r\nContent-Length:\x2019\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n\r\n404:\x20Page\x20Not\x20Found&quot;)%r(RTSPRequest,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(Help,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(SSLSessionReq,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(TLSSessionReq,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(Kerberos,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(FourOhFourRequest,8F,&quot;HTTP/1\.0\x20404\x20Not\x20Found\r\nDate:\x20Wed,\x2008\x20May\x202024\x2009:36:56\x20GMT\r\nContent-Length:\x2019\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n\r\n404:\x20Page\x20Not\x20Found&quot;)%r(LPDString,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(LDAPSearchReq,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(SIPOptions,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;);" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  FourOhFourRequest: &#xa;    HTTP/1.0 404 Not Found&#xa;    Date: Wed, 08 May 2024 09:36:56 GMT&#xa;    Content-Length: 19&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    404: Page Not Found&#xa;  GenericLines, Help, Kerberos, LDAPSearchReq, LPDString, RTSPRequest, SIPOptions, SSLSessionReq, TLSSessionReq: &#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request&#xa;  GetRequest, HTTPOptions: &#xa;    HTTP/1.0 404 Not Found&#xa;    Date: Wed, 08 May 2024 09:36:31 GMT&#xa;    Content-Length: 19&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    404: Page Not Found"><elem key="FourOhFourRequest">&#xa;    HTTP/1.0 404 Not Found&#xa;    Date: Wed, 08 May 2024 09:36:56 GMT&#xa;    Content-Length: 19&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    404: Page Not Found</elem>
+<elem key="GenericLines, Help, Kerberos, LDAPSearchReq, LPDString, RTSPRequest, SIPOptions, SSLSessionReq, TLSSessionReq">&#xa;    HTTP/1.1 400 Bad Request&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    Connection: close&#xa;    Request</elem>
+<elem key="GetRequest, HTTPOptions">&#xa;    HTTP/1.0 404 Not Found&#xa;    Date: Wed, 08 May 2024 09:36:31 GMT&#xa;    Content-Length: 19&#xa;    Content-Type: text/plain; charset=utf-8&#xa;    404: Page Not Found</elem>
+</script></port>
+<port protocol="tcp" portid="15241"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="mountd" version="1-3" extrainfo="RPC #100005" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="20609"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="mountd" version="1-3" extrainfo="RPC #100005" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="24361"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="status" version="1" extrainfo="RPC #100024" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="24541"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="nlockmgr" version="1-4" extrainfo="RPC #100021" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="30080"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Tornado httpd" version="6.2" method="probed" conf="10"><cpe>cpe:/a:tornadoweb:tornado:6.2</cpe></service><script id="http-favicon" output="Unknown favicon MD5: 97C6417ED01BDC0AE3EF32AE4894FD03"/><script id="http-methods" output="&#xa;  Supported Methods: GET POST"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>POST</elem>
+</table>
+</script><script id="http-robots.txt" output="1 disallowed entry &#xa;/ "/><script id="http-server-header" output="TornadoServer/6.2"><elem>TornadoServer/6.2</elem>
+</script><script id="http-title" output="Jupyter Notebook&#xa;Requested resource was /login?next=%2Ftree%3F"><elem key="title">Jupyter Notebook</elem>
+<elem key="redirect_url">/login?next=%2Ftree%3F</elem>
+</script></port>
+<port protocol="tcp" portid="31000"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="31001"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="31003"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="31004"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="31005"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+<port protocol="tcp" portid="31400"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="pace-licensed" method="table" conf="3"/></port>
+<port protocol="tcp" portid="59301"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="mountd" version="1-3" extrainfo="RPC #100005" method="probed" conf="10"/></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="22"/>
+<portused state="closed" proto="tcp" portid="1"/>
+<portused state="closed" proto="udp" portid="39571"/>
+<osmatch name="Linux 2.6.32" accuracy="100" line="52981">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="2.6.X" accuracy="100"><cpe>cpe:/o:linux:linux_kernel:2.6.32</cpe></osclass>
+</osmatch>
+</os>
+<uptime seconds="2421788" lastboot="Wed Apr 10 16:56:54 2024"/>
+<distance value="0"/>
+<tcpsequence index="260" difficulty="Good luck!" values="CD195E42,ADFE167F,99FE63EB,2C9A1790,4834777B,1DD2B58C"/>
+<ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
+<tcptssequence class="1000HZ" values="9057A559,9057A5BD,9057A621,9057A685,9057A6E9,9057A74E"/>
+<times srtt="120" rttvar="41" to="100000"/>
+</host>
+<taskbegin task="NSE" time="1715161202"/>
+<taskend task="NSE" time="1715161202"/>
+<taskbegin task="NSE" time="1715161202"/>
+<taskend task="NSE" time="1715161202"/>
+<runstats><finished time="1715161202" timestr="Wed May  8 17:40:02 2024" elapsed="7559.14" summary="Nmap done at Wed May  8 17:40:02 2024; 2 IP addresses (2 hosts up) scanned in 7559.14 seconds" exit="success"/><hosts up="2" down="0" total="2"/>
+</runstats>
+</nmaprun>
