@@ -1,0 +1,128 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: train-automodel-mindspore-resnet
+  namespace: icaplat-sit-train-automodel
+spec:
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - preference:
+          matchExpressions:
+          - key: unionbigdata.com/product_instance_cnt
+            operator: In
+            values:
+            - "1"
+        weight: 20
+      - preference:
+          matchExpressions:
+          - key: unionbigdata.com/product_instance.icaplat
+            operator: In
+            values:
+            - "true"
+        weight: 20
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: unionbigdata.com/product_instance.icaplat
+            operator: In
+            values:
+            - "true"
+        - matchExpressions:
+          - key: unionbigdata.com/product_instance_cnt
+            operator: In
+            values:
+            - "0"
+        - matchExpressions:
+          - key: unionbigdata.com/product_instance_cnt
+            operator: DoesNotExist
+  containers:
+  - args:
+    - -c
+    - sleep 100000
+    #- cd /workspace && python mindspore_resnet50.py --config configs.json
+    command:
+    - /bin/bash
+    env:
+    - name: GpuNumber
+      value: "0"
+    - name: TrainTaskId
+      value: "31"
+    - name: Parallelism
+      value: "1"
+    - name: EtcdAddress
+      value: etcd.icaplat-sit.svc.cluster.local:2379
+    image: unionbigdata/root_ascend-mindspore:0.1.0-A1
+    imagePullPolicy: IfNotPresent
+    name: train-automodel-5-31
+    resources:
+      limits:
+        cpu: "8"
+        #cpu: "80"
+        memory: 16192Mi
+      requests:
+        cpu: "8"
+        #cpu: "80"
+        memory: 16192Mi
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /dev/shm
+      name: shm
+    - mountPath: /workspace
+      name: vol-index0-number0
+      subPath: train/algplat/one/am5/31/15
+    - mountPath: /workspace/input/dataset/ds/Images
+      name: vol-index0-number0
+      readOnly: true
+      subPath: dataset/algplat/one/5
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-5lpxl
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: ubuntu
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Never
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - emptyDir:
+      medium: Memory
+      sizeLimit: 10Gi
+    name: shm
+  - name: vol-index0-number0
+    persistentVolumeClaim:
+      claimName: pvc-icaplat-sit
+  - name: kube-api-access-5lpxl
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+
