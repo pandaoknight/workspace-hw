@@ -15,9 +15,9 @@ spec:
     name: train-automodel-5-31
     resources:
       limits:
-        cpu: "8"
+        cpu: "24"
         memory: 16192Mi
       requests:
-        cpu: "8"
+        cpu: "24"
         memory: 16192Mi
 

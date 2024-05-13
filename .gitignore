@@ -2,4 +2,6 @@ install/
 src/
 scripts/mindspore_docker_build/volumes/
 scripts/mindspore_docker_build/docker_8888_fcn8s_notebook_ascend-mindspore/mindspore_fcn8s
+scripts/mindspore_docker_build/docker_8888_A1_notebook_ascend-mindspore/mindspore_fcn8s
+scripts/mindspore_docker_build/docker_8888_A1_notebook_ascend-mindspore/resnet50
 scripts/mindspore_docker_build/docker_root_ascend-mindspore_A1/resnet50

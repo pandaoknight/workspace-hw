@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: train-automodel-shm-simple-mindspore-resnet
+  namespace: icaplat-sit-train-automodel
+spec:
+  containers:
+  - args:
+    - -c
+    - cp /workspace/mindspore_resnet50.py /dev/shm && sleep 100000
+    #- cd /workspace && python mindspore_resnet50.py --config configs.json
+    command:
+    - /bin/bash
+    env:
+    image: unionbigdata/root_ascend-mindspore:0.1.0-A1
+    imagePullPolicy: IfNotPresent
+    name: train-automodel-5-31
+    resources:
+      limits:
+        cpu: "24"
+        memory: 16192Mi
+      requests:
+        cpu: "24"
+        memory: 16192Mi
+    volumeMounts:
+    - mountPath: /dev/shm
+      name: shm
+    - mountPath: /workspace
+      name: vol-index0-number0
+      subPath: train/algplat/one/am5/31/15
+  volumes:
+  - emptyDir:
+      medium: Memory
+      sizeLimit: 10Gi
+    name: shm
+  - name: vol-index0-number0
+    persistentVolumeClaim:
+      claimName: pvc-icaplat-sit
+
