@@ -19,3 +19,5 @@ ENV ASCEND_HOME_PATH=${ASCEND_TOOLKIT_HOME}
 RUN pip3 install download==0.3.5
 RUN pip3 install opencv-python==4.9.0.80
 RUN pip3 install matplotlib==3.5.3
+RUN pip3 install fastapi
+RUN pip3 install uvicorn
