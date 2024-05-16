@@ -22,7 +22,7 @@ if [[ $NUM_PODS -eq 0 ]]; then
 elif [[ $NUM_PODS -eq 1 ]]; then
     # Only one pod found, display its logs
     echo "Displaying logs for the pod: ${POD_ARRAY[0]}"
-    kubectl logs ${POD_ARRAY[0]} -n ${NAMESPACE}
+    kubectl logs -f ${POD_ARRAY[0]} -n ${NAMESPACE}
 else
     # More than one pod found, display warning and logs for the first pod
     echo -e "${YELLOW}Warning: More than one pod found. Displaying logs for only the first pod.${NC}"
@@ -31,5 +31,5 @@ else
         echo $pod
     done
     echo "Displaying logs for the pod: ${POD_ARRAY[0]}"
-    kubectl logs ${POD_ARRAY[0]} -n ${NAMESPACE}
+    kubectl logs -f ${POD_ARRAY[0]} -n ${NAMESPACE}
 fi
