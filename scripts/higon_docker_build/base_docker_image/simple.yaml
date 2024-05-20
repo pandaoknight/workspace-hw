@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dcu-simple
+  labels:
+    purpose: demo-dcu-mobilenetv3-pytorch
+spec:
+  containers:
+    - name: dcu-simple
+      image: image.sourcefind.cn:5000/dcu/admin/base/pytorch:1.10.0-centos7.6-dtk-22.10-py38-latest
+      command: ["/bin/bash", "-c", "sleep 1000"]
+      resources:
+        limits:
+          memory: "32Gi"
+          hygon.com/dcu: 1 # requesting a GPU
+      volumeMounts:
+        - name: data
+          mountPath: /data
+  volumes:
+    - name: data
+      hostPath:
+        path: /data
