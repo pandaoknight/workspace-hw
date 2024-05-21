@@ -1,0 +1,83 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dev-notebook-4-68896c8496-8dt4p
+  #namespace: default
+  namespace: icaplat-sit-dev-notebook
+  labels:
+    app: jupyter-notebook
+spec:
+  containers:
+  - env:
+    - name: JUPYTER_TOKEN
+      value: ec2da4b6-68be-4f68-9606-4a104ac9ea12
+    - name: JUPYTER_ENABLE_LAB
+      value: "true"
+    #command:
+    #- /bin/bash
+    #- -c
+    #- 'sleep 1000'
+    image: unionbigdata/notebook_dcu-pytorch:1.10.0-centos7.6
+    name: dev-notebook-4
+    ports:
+    - containerPort: 80
+    resources:
+      limits:
+        cpu: "16"
+        hygon.com/dcu: "1"
+        memory: 32192Mi
+      requests:
+        cpu: "16"
+        hygon.com/dcu: "1"
+        memory: 32192Mi
+    volumeMounts:
+    - mountPath: /dev/shm
+      name: shm
+    - mountPath: /home/jovyan/work
+      name: vol-index0-number0
+      # IMPORTANT ↓
+      subPath: notebook/algplat/one/mine/4/work
+  initContainers:
+  - command:
+    - sh
+    - -c
+    - '[ ! -f /permissions/notebook.done ] && chown -R 1000 /home/jovyan/work && chmod -R g+rwX /home/jovyan/work && touch /permissions/notebook.done || true'
+    image: harbor.xnunion.com/cpyfreg/icaplat/baseon/alpine:3.16
+    name: volume-permissions
+    volumeMounts:
+    - mountPath: /home/jovyan/work
+      name: vol-index0-number0
+      # IMPORTANT ↓
+      subPath: notebook/algplat/one/mine/4/work
+    # IMPORTANT TRAP ↓
+    securityContext:
+      runAsGroup: 0
+      runAsUser: 0
+  # IMPORTANT TRAP ↓
+  securityContext:
+    runAsUser: 1000
+  serviceAccount: default
+  serviceAccountName: default
+  volumes:
+  - emptyDir:
+      medium: Memory
+      sizeLimit: 10Gi
+    name: shm
+  - name: vol-index0-number0
+    persistentVolumeClaim:
+      claimName: pvc-icaplat-sit
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jupyter-notebook-service
+  #namespace: default
+  namespace: icaplat-sit-dev-notebook
+spec:
+  type: NodePort
+  ports:
+  - port: 8888
+    targetPort: 8888
+    nodePort: 30080
+  selector:
+    app: jupyter-notebook
