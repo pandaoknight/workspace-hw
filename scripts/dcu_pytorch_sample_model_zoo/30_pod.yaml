@@ -5,6 +5,7 @@ metadata:
   labels:
     purpose: demo-dcu-mobilenetv3-pytorch
 spec:
+  restartPolicy: OnFailure
   containers:
     - name: dcu-mobilenetv3-pytorch
       image: image.sourcefind.cn:5000/dcu/admin/base/pytorch:1.10.0-centos7.6-dtk-22.10-py38-latest

@@ -1,1 +1,19 @@
-python -m torch.distributed.run --nproc_per_node 2 train.py --batch-size=128 --mode=small --print-freq=1 --dataset=CIFAR10 --ema-decay=0 --label-smoothing=0 --lr=0.2 --save-epoch-freq=10 --lr-decay=cos --lr-min=0 --warmup-epochs=5 --weight-decay=6e-5 --num-epochs=400 --num-workers=2 --width-multiplier=1  --data-dir /data/ --save-path /data/mobilenetv3out/ --log_dir /data/pid.txt 2>&1 | tee mobilenetv3_dcu_`date +%Y%m%d%H%M%S`.log
+python -m torch.distributed.run --nproc_per_node 2 train.py \
+  --batch-size=128 \
+  --mode=small \
+  --print-freq=1 \
+  --dataset=CIFAR10 \
+  --ema-decay=0 \
+  --label-smoothing=0 \
+  --lr=0.2 \
+  --save-epoch-freq=10 \
+  --lr-decay=cos \
+  --lr-min=0 \
+  --warmup-epochs=5 \
+  --weight-decay=6e-5 \
+  --num-epochs=100 \
+  --num-workers=2 \
+  --width-multiplier=1 \
+  --data-dir /data/ \
+  --save-path /data/mobilenetv3out/ \
+  --log_dir /data/pid.txt 2>&1 | tee mobilenetv3_dcu_`date +%Y%m%d%H%M%S`.log
