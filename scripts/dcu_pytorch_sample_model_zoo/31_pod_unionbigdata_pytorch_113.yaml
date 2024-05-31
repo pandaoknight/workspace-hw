@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dcu-mobilenetv3-pytorch
+  labels:
+    purpose: demo-dcu-mobilenetv3-pytorch
+spec:
+  restartPolicy: OnFailure
+  containers:
+    - name: dcu-mobilenetv3-pytorch
+      #image: unionbigdata/icm_dcu-pytorch:1.13.1-ubuntu20.04-dtk23.10-v1
+      #image: image.sourcefind.cn:5000/dcu/admin/base/pytorch:1.13.1-ubuntu20.04-dtk23.10-py38
+      image: image.sourcefind.cn:5000/dcu/admin/base/pytorch:1.13.1-centos7.6-dtk23.10-py38
+      workingDir: /data/mobilenetv3_pytorch
+      command: ["/bin/bash", "train.sh"]
+      resources:
+        limits:
+          memory: "32Gi"
+          hygon.com/dcu: 2 # requesting a GPU
+      volumeMounts:
+        - name: data
+          mountPath: /data
+  volumes:
+    - name: data
+      hostPath:
+        path: /home/szl1160710/scripts/dcu_pytorch_sample_model_zoo/data
+

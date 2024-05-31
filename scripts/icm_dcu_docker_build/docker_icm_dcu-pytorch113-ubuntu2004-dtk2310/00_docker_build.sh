@@ -3,8 +3,8 @@
 IMAGE=$(cat ./IMAGE)
 TAG=$(cat ./TAG)
 
-cp ../notebooks -r .
+#cp ../notebooks -r .
 
 docker build -t ${IMAGE}:${TAG} .
 
-rm ./notebooks -rf
+#rm ./notebooks -rf

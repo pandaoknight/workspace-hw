@@ -1,4 +1,4 @@
-FROM image.sourcefind.cn:5000/dcu/admin/base/pytorch:1.13.1-ubuntu20.04-dtk23.10-py39
+FROM image.sourcefind.cn:5000/dcu/admin/base/pytorch:1.13.1-ubuntu20.04-dtk23.10-py38
 
 LABEL maintainer="chenxing@unionbigdata.com"
 
