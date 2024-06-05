@@ -30,7 +30,7 @@ spec:
       #volumes:
       #- name: mindspore-volume
       #  hostPath:
-      #    path: /data/szl1160710/scripts/mindspore_docker_build/volumes/mindspore_fcn8s
+      #    path: /data/szl1160710/script/mindspore_docker_build/volumes/mindspore_fcn8s
       #    type: Directory
 
 ---

@@ -15,6 +15,6 @@ spec:
   volumes:
   - name: wrk-scripts
     hostPath:
-      path: /data/szl1160710/scripts/mindspore_inference_service/wrk
+      path: /data/szl1160710/script/mindspore_inference_service/wrk
       type: Directory
 

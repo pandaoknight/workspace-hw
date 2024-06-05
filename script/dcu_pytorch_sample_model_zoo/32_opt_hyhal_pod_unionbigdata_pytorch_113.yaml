@@ -27,7 +27,7 @@ spec:
   volumes:
     - name: data
       hostPath:
-        path: /home/szl1160710/scripts/dcu_pytorch_sample_model_zoo/data
+        path: /home/szl1160710/script/dcu_pytorch_sample_model_zoo/data
     - name: host-volume-opt-hyhal
       hostPath:
         path: /opt/hyhal

@@ -26,4 +26,4 @@ spec:
       volumes:
         - name: model-store
           hostPath:
-            path: /home/szl1160710/scripts/dcu_torchserve/data/model-store
+            path: /home/szl1160710/script/dcu_torchserve/data/model-store

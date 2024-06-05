@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ROOT_PATH="/data/szl1160710/scripts/mindspore_docker_build/"
+ROOT_PATH="/data/szl1160710/script/mindspore_docker_build/"
 
 # Variable
 CONTAINER_ID="container-id-ap10"

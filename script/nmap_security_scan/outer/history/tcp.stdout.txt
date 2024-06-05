@@ -1,4 +1,4 @@
-root@ubuntu:/data/szl1160710/scripts/nmap_security_scan/outer# ./nmap_101.204.146.85.sh
+root@ubuntu:/data/szl1160710/script/nmap_security_scan/outer# ./nmap_101.204.146.85.sh
 
 Starting Nmap 7.60 ( https://nmap.org ) at 2024-05-08 15:32 HKT
 NSE: Loaded 146 scripts for scanning.
@@ -654,5 +654,5 @@ Read data files from: /usr/bin/../share/nmap
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 2 IP addresses (2 hosts up) scanned in 13711.78 seconds
            Raw packets sent: 172221 (7.602MB) | Rcvd: 169342 (6.783MB)
-root@ubuntu:/data/szl1160710/scripts/nmap_security_scan/outer#
+root@ubuntu:/data/szl1160710/script/nmap_security_scan/outer#
 
