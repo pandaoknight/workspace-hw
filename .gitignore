@@ -1,5 +1,5 @@
-install/
 src/
+install/go1.22.4/go1.22.4.linux-amd64.tar.gz
 scripts/mindspore_docker_build/volumes/
 scripts/mindspore_docker_build/docker_8888_fcn8s_notebook_ascend-mindspore/mindspore_fcn8s
 scripts/mindspore_docker_build/docker_8888_A1_notebook_ascend-mindspore/mindspore_fcn8s
