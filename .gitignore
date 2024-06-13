@@ -9,3 +9,4 @@ script/mindspore_docker_build/docker_root_ascend-mindspore_A1/resnet50
 script/mindspore_docker_build/docker_root_ascend-mindspore_A1/output
 script/dcu_pytorch_sample_model_zoo/data
 script/icm_dcu_docker_build/ResNet_icm
+script/loong_docker_k8s/downloads
