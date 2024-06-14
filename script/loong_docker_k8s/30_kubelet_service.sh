@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Define the installation directory for the kubelet binary
-INSTALL_DIR="/usr/local/bin"
+#INSTALL_DIR="/usr/local/bin"
+INSTALL_DIR="/usr/bin"
 
 # Create the kubelet.service file
 mkdir -p /etc/systemd/system/
