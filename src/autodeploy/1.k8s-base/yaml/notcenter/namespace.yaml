@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: icaplat-sit-dev-notebook
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: icaplat-sit-estimate-model
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: icaplat-sit-serving-model
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: icaplat-sit-train-automodel
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: icaplat-sit-train-workflow
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: icaplat-sit-serving-workflow
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: icaplat-sit-transformer-model
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: flink-operator

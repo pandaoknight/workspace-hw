@@ -1,0 +1,81 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dispatcher
+  labels:
+    icaplat.app/name: dispatcher
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      icaplat.app/name: dispatcher
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        icaplat.app/type: 'business'
+        icaplat.app/name: dispatcher
+        icaplat.logging/collect: 'true'
+    spec:
+      containers:
+        - image: icaplat/arm64/dev/icaplat-dispatcher:4.9
+          imagePullPolicy: IfNotPresent
+          name: dispatcher
+          resources:
+            limits:
+              cpu: '6'
+              memory: 8Gi
+            requests:
+              cpu: '0.01'
+              memory: 1Gi
+          ports:
+            - containerPort: 80
+          readinessProbe:
+            periodSeconds: 10
+            timeoutSeconds: 5
+            initialDelaySeconds: 1
+            failureThreshold: 3
+            httpGet:
+              scheme: HTTP
+              port: 80
+              path: /actuator/health/readiness
+          livenessProbe:
+            periodSeconds: 3
+            timeoutSeconds: 5
+            initialDelaySeconds: 1
+            failureThreshold: 3
+            httpGet:
+              scheme: HTTP
+              port: 80
+              path: /actuator/health/liveness
+          startupProbe:
+            periodSeconds: 5
+            initialDelaySeconds: 30
+            failureThreshold: 30
+            httpGet:
+              scheme: HTTP
+              port: 80
+              path: /actuator/health
+          volumeMounts:
+            - mountPath: /algplat
+              name: algplat-storage
+      restartPolicy: Always
+      volumes:
+        - name: algplat-storage
+          persistentVolumeClaim:
+            claimName: pvc-icaplat-sit
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dispatcher-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      name: http80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    icaplat.app/name: dispatcher

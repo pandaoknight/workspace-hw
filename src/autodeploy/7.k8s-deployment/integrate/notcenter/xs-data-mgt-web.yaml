@@ -1,0 +1,43 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: xs-data-mgt-web
+  labels:
+    app: xs-data-mgt-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xs-data-mgt-web
+  template:
+    metadata:
+      labels:
+        app: xs-data-mgt-web
+    spec:
+      containers:
+        - name: xs-data-mgt-web
+          image: 172.27.18.160/cpyfreg/icaplat-xs/arm64/xs-data-mgt-web:3.2.0
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 500m
+              memory: 500Mi
+            requests:
+              cpu: 100m
+              memory: 50Mi
+---
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: xs-data-mgt-web
+  name: xs-data-mgt-web
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: xs-data-mgt-web
+

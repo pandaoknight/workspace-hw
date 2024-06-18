@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: icaplat-label
+  labels:
+    app: icaplat-label
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: icaplat-label
+  template:
+    metadata:
+      labels:
+        app: icaplat-label
+    spec:
+      initContainers:
+        - name: deps-base-check
+          image: harbor.xnunion.com/cpyfreg/icaplat/arm64/baseon/alpine:3.16
+          command: [ 'sh', '-c', 'until nc  -zvw3 postgresql 5432; do echo waiting for database; sleep 2; done;' ]
+      containers:
+        - name: icaplat-label
+          image: icaplat/arm64/dev/icaplat-label:4.9
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          startupProbe:
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            failureThreshold: 20
+            tcpSocket:
+              port: 80
+          resources:
+            limits:
+              cpu: '2'
+              memory: 8Gi
+            requests:
+              cpu: '0.1'
+              memory: 1Gi
+          volumeMounts:
+            - mountPath: /algplat
+              name: algplat
+      volumes:
+        - name: algplat
+          persistentVolumeClaim:
+            claimName: pvc-icaplat-sit

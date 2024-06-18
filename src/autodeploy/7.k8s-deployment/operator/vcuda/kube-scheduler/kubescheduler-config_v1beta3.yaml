@@ -1,0 +1,10 @@
+apiVersion: kubescheduler.config.k8s.io/v1beta3
+kind: KubeSchedulerConfiguration
+clientConnection:
+  kubeconfig: /etc/kubernetes/scheduler.conf
+extenders:
+- urlPrefix: "http://127.0.0.1:3456/scheduler"
+  filterVerb: predicates
+  enableHTTPS: false
+  nodeCacheCapable: false
+  ignorable: true

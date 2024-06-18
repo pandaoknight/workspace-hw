@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: icaplat-train
+  labels:
+    app: icaplat-train
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: icaplat-train
+  template:
+    metadata:
+      labels:
+        app: icaplat-train
+    spec:
+      initContainers:
+        - name: deps-base-check
+          image: harbor.xnunion.com/cpyfreg/icaplat/arm64/baseon/alpine:3.16
+          command: [ 'sh', '-c', 'until nc -zvw3 icaplat-base 80; do echo waiting for icaplat-base; sleep 2; done;' ]
+      containers:
+        - name: icaplat-train
+          image: icaplat/arm64/dev/icaplat-train:4.9
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          startupProbe:
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            failureThreshold: 20
+            tcpSocket:
+              port: 80
+          resources:
+            limits:
+              cpu: '2'
+              memory: 8Gi
+            requests:
+              cpu: '0.1'
+              memory: 1Gi
+          volumeMounts:
+            - mountPath: /algplat
+              name: algplat
+      volumes:
+        - name: algplat
+          persistentVolumeClaim:
+            claimName: pvc-icaplat-sit
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: icaplat-train
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: icaplat-train

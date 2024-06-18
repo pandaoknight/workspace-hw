@@ -1,0 +1,20 @@
+unionbigdata:
+  default-resource-name: datamgt
+  
+spring:
+  datasource:
+    dynamic:
+      datasource:
+        master:
+          url: jdbc:mysql://${unionbigdata.mysql.host}:${unionbigdata.mysql.port}/xs_theme?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+          username: ${unionbigdata.mysql.username}
+          password: ${unionbigdata.mysql.password}
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          druid:
+            publicKey: ${unionbigdata.mysql.publicKey}
+
+
+file:
+  upload:
+    server:
+      dir: /rdcdata/html/uploadfiles/${spring.application.name}

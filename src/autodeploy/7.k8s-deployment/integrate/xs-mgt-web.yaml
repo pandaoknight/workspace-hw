@@ -1,0 +1,42 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: xs-mgt-web
+  labels:
+    app: xs-mgt-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xs-mgt-web
+  template:
+    metadata:
+      labels:
+        app: xs-mgt-web
+    spec:
+      containers:
+        - name: xs-mgt-web
+          image: 172.27.18.160/cpyfreg/icaplat-xs/arm64/xs-sys-mgt-web:3.2.0
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 500
+              memory: 500Mi
+            requests:
+              cpu: 100m
+              memory: 50Mi
+---
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: xs-mgt-web
+  name: xs-mgt-web
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: xs-mgt-web

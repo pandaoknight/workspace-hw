@@ -1,0 +1,326 @@
+# szl-common-config.yml
+# unionbigdata
+unionbigdata:
+  redis:
+    # Redis服务器地址
+    host: ${ICAPLAT_REDIS_HOST}
+    # Redis服务器连接端口
+    port: ${ICAPLAT_REDIS_PORT}
+    # Redis数据库索引（默认为0）
+    database: ${ICAPLAT_REDIS_DATABASE}
+    # Redis服务器连接密码（默认为空）
+    password: ${ICAPLAT_REDIS_PASSWORD}
+  mysql:
+    host: ${ICAPLAT_MYSQL_HOST}
+    port: ${ICAPLAT_MYSQL_PORT}
+    username: ${ICAPLAT_MYSQL_USER}
+    #数据库密码公钥
+    publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAM+xoWMgyMOC1kEvcMct3sBictypEfrviFiTL6Yvvi1y23RZVj8jCMSg1nungi8S2qs/GTgyq8gvV2dcPwvGYvMCAwEAAQ==
+    password: ${ICAPLAT_MYSQL_PASSWORD_ENC}
+  cache-config:
+    type: redis
+    specs:
+      '[auth:captcha]':
+        # 过期时间 5分钟
+        expire-time: 300
+        # 缓存最大数量, caffeine有效
+        max-size: 200
+      '[auth:user:fail]':
+        expire-time: 300
+        max-size: 200
+      '[auth:phone:code]':
+        expire-time: 300
+        max-size: 200
+      '[sys:user:info]':
+        expire-time: 7200
+        max-size: 200
+      '[sys:user:base]':
+        expire-time: 7200
+        max-size: 200
+      '[sys:user:permission]':
+        expire-time: 7200
+        max-size: 200
+      '[sys:user:role]':
+        expire-time: 7200
+        max-size: 200
+      '[sys:user:menu]':
+        expire-time: 7200
+        max-size: 200
+      '[default]':
+        expire-time: 7200
+        max-size: 200
+  auth:
+    auto-refresh-token-timeout: -1
+    exclude-paths: /admin/sys/user/list
+  #加解密相关配置
+  crypto:
+    #默认字符集
+    charset: utf-8
+    #默认base64编码
+    encoding-type: base64
+    api:
+      #1. 使用签名注解 (@Signature) 时，这里全局配置 或 注解中配置
+      signature:
+        #签名秘钥
+        secret-key: 64858683
+        #配置验签超时时间，默认不超时。单位（秒）
+        timeout: 0
+      #2. 使用对称性加密解密 (@Symmetric) 注解时，这里全局配置（根据使用的算法选择配置） 或 注解中配置
+      symmetric:
+        #AES 密钥长度可以是 128(bit)、192(bit)、256(bit)
+        AES: 57311407bd114402
+        #DESede(3DES) 密钥长度是 192(bit)
+        DESede: 6f9acdaa9473464329bb7f97
+        #DES 密钥长度是 64(bit)
+        DES: 29bb7f97
+        #SM4 密钥长度必须是16字节(128bit)
+        SM4: sm4demo123456149
+      #3. 使用非对称性加密解密 (@Asymmetry) 注解时，这里全局配置（根据使用的算法选择配置） 或 注解中配置
+      asymmetry:
+        RAS:
+          #公钥
+          public-key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJWNtLWM2Ikx6XP/bA8hWvAKdWTNTdRoPMUi3SflZs2Aq9Jpxe8NQmV74+rImKVy6MgK/uwybQ164olwfXxy6j0CAwEAAQ==
+          #私钥
+          private-key: MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEAlY20tYzYiTHpc/9sDyFa8Ap1ZM1N1Gg8xSLdJ+VmzYCr0mnF7w1CZXvj6siYpXLoyAr+7DJtDXriiXB9fHLqPQIDAQABAkAz0anvziGpR/YQD0yt4WzVB4qtpsV097k2xWHD1STNx2EtXygd+9HmiFqhnhmy+VB1PrId3B5BMCVYcGzcC1wxAiEA8T5+/Z2uxdiQQ5T8psv4BfW97fQy/T6dxMRyOT5Zj68CIQCes3q03o9TLCr4eN8pnnZ5Iwd+Oc9o++5QUET1ruCT0wIhAOonieUqtufr8uLV6oEPOza1tlsPiqpJq6LANkofnZibAiAVnf8F6hb9zlNgGx7SzXn30DSyFe/RrhdtKzHpgVOn7wIhAJAMtIjJXo6/lG1Bcjx5EMV9h4H+Q17fZcjD3UQT9PxC
+    database:
+      symmetric:
+        #AES 密钥长度可以是 128(bit)、192(bit)、256(bit)
+        AES: 57311407bd114402
+        #DESede 密钥长度是 192(bit)
+        DESede: 6f9acdaa9473464429bb7f87
+        #DES 密钥长度是 64(bit)
+        DES: 29bb7f97
+        #SM4 密钥长度必须是16字节(128bit)
+        SM4: sm4demo123456119
+  # feign配置
+  feign-service:
+    xs-database:
+      name: xs-database
+    theme:
+      name: xs-theme
+    xs-rdc-etl:
+      name: rdc-etl
+    file-mgt:
+      name: xs-filemgt
+    xs-scheduler:
+      name: xs-scheduler
+    xs-data-api:
+      name: xs-data-api
+    data-permission:
+        #feign服务的名称
+      - name: xs-theme
+        #是否忽略数据权限，true忽略，false不忽略
+        enable: true
+        #要忽略的数据权限feign接口路径,多个用逗号隔开
+        urls: /**
+        #调用方指定的resourceId，不为空且url匹配情况下会向header设置指定的resourceId，忽略数据权限header不设置；为空则只判断url匹配情况，匹配则设置忽略数据权限header
+        resource-id:
+      - name: xs-database
+        enable: true
+        urls: /**
+        resource-id:
+      - name: xs-filemgt
+        enable: true
+        urls: /**
+        resource-id:
+      - name: xs-warehouse-design
+        enable: true
+        urls: /**
+        resource-id:
+      - name: xs-source
+        enable: true
+        urls: /**
+        resource-id:  
+  log:
+    producer: szl-center-log-producer:7080
+    auditLogEnable: false
+    sysLogEnable: false
+    audit-log:
+      #审计日志索引前缀，默认auditlog_
+      index-prefix: eatp-auditlog_
+    syslog:
+      #系统日志索引前缀，默认syslog_
+      index-prefix: eatp-syslog_
+# Sa-Token配置
+sa-token:
+  # token名称 (同时也是cookie名称)
+  token-name: x-token-id
+  # token有效期，单位s 默认30天, -1代表永不过期，设置为7天(604800)
+  timeout: 604800
+  # token风格
+  token-style: random-32
+  # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
+  is-concurrent: true
+  # 是否开启token自动续签
+  auto-renew: true
+  # 临时有效期，单位s，例如将其配置为 1800 (30分钟)，代表用户如果30分钟无操作，则此Token会立即过期
+  activity-timeout: 1800
+  # 是否打印banner
+  is-print: false
+  # 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)
+  is-share: false
+
+# spring
+spring:
+  # 监控
+  cloud:
+    nacos:
+      discovery:
+        metadata:
+          management:
+            context-path: /manage
+  main:
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  # servlet配置
+  servlet:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
+  # redis配置
+  redis:
+    # Redis服务器地址
+    host: ${unionbigdata.redis.host}
+    # Redis服务器连接端口
+    port: ${unionbigdata.redis.port}
+    # Redis数据库索引（默认为0）
+    database: ${unionbigdata.redis.database}
+    # Redis服务器连接密码（默认为空）
+    password: ${unionbigdata.redis.password}
+    # 连接超时时间
+    timeout: 10s
+    lettuce:
+      pool:
+        # 连接池最大连接数
+        max-active: 200
+        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1ms
+        # 连接池中的最大空闲连接
+        max-idle: 10
+        # 连接池中的最小空闲连接
+        min-idle: 0
+  #druid配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      stat-view-servlet:
+        enabled: true
+        login-username: root
+        login-password: root
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*'
+        session-stat-enable: true
+        session-stat-max-count: 10
+    dynamic:
+      primary: master
+      publicKey: ${unionbigdata.mysql.publicKey}
+      druid:
+        proxy-filters:
+        keep-alive: true
+        # MySql、PostgreSQL、SqlServer校验
+        validation-query: select 1
+        # Oracle校验
+        #validation-query: select 1 from dual
+        validation-query-timeout: 2
+        initial-size: 10
+        max-active: 50
+        min-idle: 10
+        max-wait: 60000
+        test-on-borrow: false
+        test-on-return: false
+        test-while-idle: true
+        time-between-eviction-runs-millis: 30000
+        min-evictable-idle-time-millis: 300000
+        max-evictable-idle-time-millis: 600000
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8          
+
+# servlet编码
+server:
+  servlet:
+    encoding:
+      force: true
+      charset: utf-8
+      enabled: true
+
+
+# logback
+logging:
+#   config: classpath:logback-spring.xml
+#   file:
+#     path: ./logs/${spring.profiles.active}/${spring.application.name}.log
+  level:
+    root: ERROR
+#     com.alibaba.nacos.client.naming: WARN
+#     com.alibaba.nacos.client.config.impl: WARN
+
+
+# mybatis-plus相关配置
+mybatis-plus:
+  # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
+  mapper-locations:
+    - classpath*:/mapper/**/*.xml
+    - classpath*:/com/unionbigdata/**/mapper/xml/*.xml
+    - classpath*:/mybatis/mapper/**/*.xml
+    - classpath*:/com/unionbigdata/**/entity/mapper/*.xml
+  typeAliasesPackage: #com.unionbigdata.rdc.**.entity考虑到别名容易冲突，所有xml中的请使用全限定名称，配置文件中不再指定别名扫描路径
+  # 以下配置均有默认值,可以不设置
+  global-config:
+    # 关闭MP3.0自带的banner
+    banner: false
+    db-config:
+      #主键类型  auto:"数据库ID自增" 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+      id-type: auto
+      logic-delete-field: deleted # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+  configuration:
+    # 是否开启自动驼峰命名规则映射:从数据库列名到Java属性驼峰命名的类似映射
+    map-underscore-to-camel-case: true
+    # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+    call-setters-on-nulls: true
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+# feign配置
+feign:
+  hystrix:
+    enabled: true  #开起 feign 断路器
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 10000
+        loggerLevel: basic
+
+
+# actuator
+management:
+  # 检测关闭
+  health:
+    elasticsearch:
+      enabled: false
+    mongo:
+      enabled: false
+    ldap:
+      enabled: false
+    redis:
+      enabled: false
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  endpoints:
+    web:
+      base-path: /manage
+      exposure:
+        include: '*'
+    health:
+      show-details: always

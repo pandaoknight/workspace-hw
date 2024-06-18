@@ -1,0 +1,21 @@
+spring:
+    datasource:
+        dynamic:
+            druid:
+                proxy-filters:
+            primary: master
+            datasource:
+                master:
+                    url: jdbc:mysql://${unionbigdata.mysql.host}:${unionbigdata.mysql.port}/xs_sysmgt?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+                    username: ${unionbigdata.mysql.username}
+                    password: ${unionbigdata.mysql.password}
+                    driver-class-name: com.mysql.cj.jdbc.Driver
+                    druid:
+                        publicKey: ${unionbigdata.mysql.publicKey}
+                        
+
+logging:
+  level:
+    com.alibaba.nacos.client.naming: WARN
+    com.alibaba.nacos.client.config.impl: WARN
+    #com.unionbigdata.center.system.aop: debug

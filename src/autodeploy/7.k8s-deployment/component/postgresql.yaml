@@ -1,0 +1,84 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgresql
+  labels:
+    app: postgresql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgresql
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: postgresql
+    spec:
+      securityContext:
+        runAsUser: 70
+      initContainers:
+        - name: volume-permissions
+          image: harbor.xnunion.com/cpyfreg/icaplat/arm64/baseon/alpine:3.16
+          command: [ 'sh', '-c', '[ ! -f /permissions/postgresql.done ] && chown -R 70 /var/lib/postgresql && chmod -R g+rwX /var/lib/postgresql && touch /permissions/postgresql.done || true' ]
+          securityContext:
+            runAsUser: 0
+            runAsGroup: 0
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgresql-storage
+              subPath: postgresql
+            - mountPath: /permissions
+              name: postgresql-storage
+              subPath: init-perms
+        - name: postgresql-reset-wal
+          image: harbor.xnunion.com/cpyfreg/icaplat/arm64/baseon/alpine:3.16
+          command: [ 'sh', '-c', '[ -f /var/lib/postgresql/data/PG_VERSION ] && pg_resetwal /var/lib/postgresql/data || true' ]
+          securityContext:
+            runAsUser: 0
+            runAsGroup: 0
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgresql-storage
+              subPath: postgresql
+      containers:
+        - image: harbor.xnunion.com/cpyfreg/middleware/arm64/third/postgres:14-alpine3.16
+          imagePullPolicy: IfNotPresent
+          name: postgresql
+          env:
+            - name: POSTGRES_USER
+              value: icaplat
+            - name: POSTGRES_PASSWORD
+              value: "UnionBigData_123."
+            - name: shared_buffers
+              value: 128MB  
+          resources:
+            limits:
+              cpu: '8'
+              memory: 8Gi
+            requests:
+              cpu: '0.1'
+              memory: 2Gi
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgresql-storage
+              subPath: postgresql
+      volumes:
+        - name: postgresql-storage
+          persistentVolumeClaim:
+            claimName: pvc-icaplat-sit
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgresql
+spec:
+  ports:
+    - port: 5432
+      name: sql5432
+      targetPort: 5432
+  selector:
+    app: postgresql

@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: icaplat-mysql-tmp
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  labels:
+    app: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      securityContext:
+        runAsUser: 0
+      containers:
+        - image: ${ICAPLAT_K8S_IMAGE_MYSQL}
+          imagePullPolicy: IfNotPresent
+          name: mysql
+          args:
+            - --character-set-server=utf8mb4
+            - --collation-server=utf8mb4_unicode_ci
+            - --max_connections=10240
+            - --lower_case_table_names=1
+            - --max_allowed_packet=32M
+            - --default-time_zone=+8:00
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "123456"
+            - name: MYSQL_DATABASE
+              value: sysmgt
+            - name: MYSQL_USER
+              value: sysmgt
+            - name: MYSQL_PASSWORD
+              value: UnionBigData!123.
+          ports:
+            - containerPort: 3306
+          startupProbe:
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            failureThreshold: 10
+            tcpSocket:
+              port: 3306
+

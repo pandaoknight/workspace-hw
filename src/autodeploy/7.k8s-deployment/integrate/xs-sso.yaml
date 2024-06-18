@@ -1,0 +1,66 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: xs-sso
+  name: xs-sso
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xs-sso
+  template:
+    metadata:
+      labels:
+        app: xs-sso
+    spec:
+      containers:
+        - name: xs-sso
+          image: 172.27.18.160/cpyfreg/icaplat-xs/arm64/xs-sso:3.2.0
+          imagePullPolicy: Never
+          command:
+            - java
+            - -Xmx8192M
+            - -Xms1024M
+            - -Xmn448M
+            - -XX:MaxMetaspaceSize=256M
+            - -XX:MetaspaceSize=256M
+            - -XX:+UseSerialGC
+            - -Djava.security.egd=file:/dev/./urandom
+            - -jar
+            - /app.jar
+            - --spring.profiles.active=sit
+            - --server.port=80
+            - --spring.application.name=szl-center-auth
+            - --spring.cloud.nacos.config.server-addr=nacos
+            - --spring.cloud.nacos.config.file-extension=yml
+            - --spring.cloud.nacos.config.namespace=icaplat-config
+            - --spring.cloud.nacos.config.username=nacos
+            - --spring.cloud.nacos.config.password=UnionBigData_123.
+            - --spring.cloud.nacos.discovery.server-addr=nacos
+            - --spring.cloud.nacos.discovery.namespace=icaplat-register
+            - --spring.cloud.nacos.discovery.ip-delete-timeout=600000
+            - --spring.cloud.nacos.discovery.username=nacos
+            - --spring.cloud.nacos.discovery.password=UnionBigData_123.
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: '2'
+              memory: 8Gi
+            requests:
+              cpu: '0.1'
+              memory: 1Gi
+---
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: xs-sso
+  name: xs-sso
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: xs-sso

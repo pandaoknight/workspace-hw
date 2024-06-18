@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: static-gpu-admission
+  namespace: kube-system
+  labels:
+    app: static-gpu-admission
+    createdAt: CREATED_AT
+spec:
+  hostNetwork: true
+  containers:
+  - name: static-gpu-admission
+    image: GPU_ADMISSION_IMAGE
+    command: 
+    - /usr/local/bin/gpu-admission
+    - --address=127.0.0.1:3456
+    - --v=5
+    - --logtostderr=true
+    - --kubeconfig=/etc/kubernetes/kubeconf
+    ports:
+    - containerPort: 3456
+    volumeMounts:
+    - name: kubeconfig
+      mountPath: /etc/kubernetes/kubeconf
+  volumes:
+  - name: kubeconfig
+    hostPath:
+      path: /root/.kube/config
+      type: FileOrCreate

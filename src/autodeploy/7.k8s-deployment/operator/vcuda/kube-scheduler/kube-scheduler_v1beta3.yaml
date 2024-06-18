@@ -1,0 +1,80 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    component: kube-scheduler
+    tier: control-plane
+  name: kube-scheduler
+  namespace: kube-system
+spec:
+  containers:
+  - command:
+    - kube-scheduler
+    - --authentication-kubeconfig=/etc/kubernetes/scheduler.conf
+    - --authorization-kubeconfig=/etc/kubernetes/scheduler.conf
+    - --bind-address=0.0.0.0
+    - --feature-gates=TTLAfterFinished=true,EphemeralContainers=true
+    - --kubeconfig=/etc/kubernetes/scheduler.conf
+    - --leader-elect=true
+    - --config=/etc/kubernetes/scheduler-config/kubescheduler-config_v1beta3.yaml
+    - --v=5
+    #- --log-dir=/output
+    image: KUBE_SCHEDULER_IMAGE
+    imagePullPolicy: IfNotPresent
+    livenessProbe:
+      failureThreshold: 8
+      httpGet:
+        path: /healthz
+        port: 10259
+        scheme: HTTPS
+      initialDelaySeconds: 10
+      periodSeconds: 10
+      timeoutSeconds: 15
+    name: kube-scheduler
+    resources:
+      requests:
+        cpu: 100m
+    startupProbe:
+      failureThreshold: 24
+      httpGet:
+        path: /healthz
+        port: 10259
+        scheme: HTTPS
+      initialDelaySeconds: 10
+      periodSeconds: 10
+      timeoutSeconds: 15
+    volumeMounts:
+    - mountPath: /etc/kubernetes/scheduler.conf
+      name: kubeconfig
+      readOnly: true
+    - mountPath: /etc/localtime
+      name: localtime
+      readOnly: true
+    - name: scheduler-config
+      mountPath: /etc/kubernetes/scheduler-config/kubescheduler-config_v1beta3.yaml
+    - name: output-dir
+      mountPath: /output
+  hostNetwork: true
+  priorityClassName: system-node-critical
+  securityContext:
+    seccompProfile:
+      type: RuntimeDefault
+  volumes:
+  - name: output-dir
+    hostPath:
+      path: /etc/kubernetes/out/
+      type: DirectoryOrCreate
+  - hostPath:
+      path: /etc/kubernetes/scheduler.conf
+      type: FileOrCreate
+    name: kubeconfig
+  - hostPath:
+      path: /etc/localtime
+      type: File
+    name: localtime
+  - name: scheduler-config
+    hostPath:
+      path: /etc/kubernetes/scheduler-config/kubescheduler-config_v1beta3.yaml
+      type: FileOrCreate
+status: {}

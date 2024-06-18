@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-nodeport
+spec:
+  selector:
+    app: mysql
+  type: NodePort
+  ports:
+    - name: 3306tcp31005
+      nodePort: ${ICAPLAT_OUT_PORT_MYSQL}
+      port: 3306
+      targetPort: 3306

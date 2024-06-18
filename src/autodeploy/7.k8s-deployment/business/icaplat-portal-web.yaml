@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: icaplat-portal-web
+  name: icaplat-portal-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: icaplat-portal-web
+  template:
+    metadata:
+      labels:
+        app: icaplat-portal-web
+    spec:
+      containers:
+        - name: icaplat-portal-web
+          image: icaplat/arm64/dev/icaplat-protal-web:4.9
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: 500m
+              memory: 2Gi
+            requests:
+              cpu: 100m
+              memory: 50Mi
+          volumeMounts:
+            - name: volume-conf
+              readOnly: true
+              mountPath: /etc/nginx/nginx.conf
+              subPath: nginx.conf
+      volumes:
+        - name: volume-conf
+          configMap:
+            name: portal-nginx
+            items:
+              - key: nginx.conf
+                path: nginx.conf
+---
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: icaplat-portal-web
+  name: icaplat-portal-web
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: icaplat-portal-web

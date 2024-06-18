@@ -1,0 +1,170 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: portal-nginx
+  namespace: icaplat-sit
+data:
+  nginx.conf: |
+  
+    user  root;
+    worker_processes  1;
+
+    #error_log  logs/error.log;
+    #error_log  logs/error.log  notice;
+    #error_log  logs/error.log  info;
+
+    #pid        logs/nginx.pid;
+
+
+    events {
+      worker_connections  1024;
+    }
+  
+  
+    http {
+      include       mime.types;
+      default_type  application/octet-stream;
+      
+      sendfile        on;
+      
+      keepalive_timeout  65;
+    
+      server {
+        listen       80;
+        #server_name  localhost;
+        proxy_read_timeout 36000s;
+        proxy_send_timeout 36000s;
+        
+        client_max_body_size 102400m;
+        
+        location ~ /[A-Za-z0-9._]+/webjars|/[A-Za-z0-9._]+/swagger-resources|/[A-Za-z0-9._]+/v3/api-docs|/[A-Za-z0-9._]+/swagger-ui {
+        proxy_set_header Host $http_host;
+        proxy_set_header x-forwarded-for  $remote_addr;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_pass  http://icaplat-gateway;
+        }
+        
+        location ~* "^/[A-Za-z0-9._]+-[A-Za-z0-9._]+/rest/v[0-9.]+" {
+        proxy_set_header Host $http_host;
+        proxy_set_header x-forwarded-for  $remote_addr;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_pass  http://icaplat-gateway;
+        }
+        
+        location ~* "^/szl-center-auth/(.*)" {
+        proxy_set_header Host $http_host;
+        proxy_set_header x-forwarded-for  $remote_addr;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        rewrite "(?i)/szl-center-auth/(.*)" /$1 break;
+        proxy_pass  http://xs-sso;
+        }
+        
+        location ~* "^/szl-center-system/(.*)" {
+        proxy_set_header Host $http_host;
+        proxy_set_header x-forwarded-for  $remote_addr;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        rewrite "(?i)/szl-center-system/(.*)" /$1 break;
+        proxy_pass  http://xs-mgt;
+        }
+        
+        location ~* "^/xs-filemgt/(.*)" {
+        proxy_set_header Host $http_host;
+        proxy_set_header x-forwarded-for  $remote_addr;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        rewrite "(?i)/xs-filemgt/(.*)" /$1 break;
+        proxy_pass  http://xs-filemgt;
+        }
+        
+        location ~* "^/xs-theme/(.*)" {
+        proxy_set_header Host $http_host;
+        proxy_set_header x-forwarded-for  $remote_addr;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        rewrite "(?i)/xs-theme/(.*)" /$1 break;
+        proxy_pass  http://xs-theme;
+        }
+        
+        location ~* "^/xs-database/(.*)" {
+        proxy_set_header Host $http_host;
+        proxy_set_header x-forwarded-for  $remote_addr;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        rewrite "(?i)/xs-database/(.*)" /$1 break;
+        proxy_pass  http://xs-database;
+        }
+        
+        location ~* "^/mgt/(.*)" {
+        proxy_set_header Host $http_host;
+        proxy_set_header x-forwarded-for  $remote_addr;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        rewrite "(?i)/mgt/(.*)" /$1 break;
+        proxy_pass  http://xs-mgt-web;
+        }
+        
+        location ~* "^/data/(.*)" {
+        proxy_set_header Host $http_host;
+        proxy_set_header x-forwarded-for  $remote_addr;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        rewrite "(?i)/data/(.*)" /$1 break;
+        proxy_pass  http://xs-data-mgt-web;
+        }
+        
+        location ~* "^/label/(.*)" {
+        proxy_set_header Host $http_host;
+        proxy_set_header x-forwarded-for  $remote_addr;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        rewrite "(?i)/label/(.*)" /$1 break;
+        proxy_pass  http://icaplat-label-web;
+        }
+        
+        location ~* "^/algorithm/(.*)" {
+        proxy_set_header Host $http_host;
+        proxy_set_header x-forwarded-for  $remote_addr;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        rewrite "(?i)/algorithm/(.*)" /$1 break;
+        proxy_pass  http://icaplat-algorithm-web;
+        }
+        
+        location ~* "^/help/(.*)" {
+        proxy_set_header Host $http_host;
+        proxy_set_header x-forwarded-for  $remote_addr;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        rewrite "(?i)/help/(.*)" /$1 break;
+        proxy_pass  http://icaplat-help-web;
+        }
+        
+        
+        location /license/control {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+        }
+        
+        location /license/register {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+        }
+        
+        location / {
+        add_header Cache-Control no-cache;
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+        }
+        
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+        root   /usr/share/nginx/html;
+        }
+      
+      }
+
+    }

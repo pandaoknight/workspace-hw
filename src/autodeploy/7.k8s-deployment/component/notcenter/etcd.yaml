@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: etcd
+  labels:
+    app: etcd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: etcd
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: etcd
+    spec:
+      securityContext:
+        runAsUser: 1001
+      initContainers:
+        - name: volume-permissions
+          image: harbor.xnunion.com/cpyfreg/icaplat/arm64/baseon/alpine:3.16
+          command: [ 'sh', '-c', '[ ! -f /permissions/etcd.done ] && chown -R 1001 /bitnami/etcd && chmod -R g+rwX /bitnami/etcd && touch /permissions/etcd.done || true' ]
+          securityContext:
+            runAsUser: 0
+            runAsGroup: 0
+          volumeMounts:
+            - mountPath: /bitnami/etcd
+              name: etcd-storage
+              subPath: etcd
+            - mountPath: /permissions
+              name: etcd-storage
+              subPath: init-perms
+      containers:
+        - image: harbor.xnunion.com/cpyfreg/middleware/arm64/bitnami/etcd:3.5-debian-11
+          imagePullPolicy: IfNotPresent
+          name: etcd
+          env:
+            - name: ALLOW_NONE_AUTHENTICATION
+              value: "yes"
+            - name: ETCD_ADVERTISE_CLIENT_URLS
+              value: http://etcd:2379
+            - name: ETCDCTL_API
+              value: "2"
+            - name: ETCD_ENABLE_V2
+              value: "true"
+          resources:
+            limits:
+              cpu: '2'
+              memory: 1Gi
+            requests:
+              cpu: '0.01'
+              memory: 128Mi
+          ports:
+            - containerPort: 2379
+          volumeMounts:
+            - mountPath: /bitnami/etcd
+              name: etcd-storage
+              subPath: etcd
+      volumes:
+        - name: etcd-storage
+          persistentVolumeClaim:
+            claimName: pvc-icaplat-sit
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: etcd
+spec:
+  ports:
+    - port: 2379
+      name: etcd2379
+      targetPort: 2379
+  selector:
+    app: etcd

@@ -1,0 +1,50 @@
+unionbigdata:
+  auth:
+    exclude-paths: /,/video/**
+spring:
+  datasource:
+    dynamic:
+      datasource:
+        master:
+          url: jdbc:mysql://${unionbigdata.mysql.host}:${unionbigdata.mysql.port}/xs_filemgt?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+          username: ${unionbigdata.mysql.username}
+          password: ${unionbigdata.mysql.password}
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          druid:
+            publicKey: ${unionbigdata.mysql.publicKey}
+
+storage:
+  type: LOCAL
+  pdf:
+    enable: false
+
+minio:
+  endpoint: http://172.27.8.194:9090
+  access-key: WD5niEb8AgKlLF4f
+  secret-key: guf6ugyVivFobTAyF5ozIqaVxnQrPXXB
+  bucket-name: eatp-sit
+  # 默认的文件存储真实基础目录
+  default-dir: /filemgt
+
+ceph:
+  endpoint: http://172.27.12.31:80
+  access-key: CLMNNLTXEM8ANR54HQRE
+  secret-key: RH8ubIHNaXNprp0hiz4RqXqQvA6FrXQOUNTkTOXC
+  bucket-name: dibucket
+  # 默认的文件存储真实基础目录
+  default-dir: /filemgt
+
+hdfs:
+  uri: hdfs://172.27.8.181:8020
+  user: hdfs
+  base-dir: /filemgt
+  local-dir: /rdc/html/uploadfiles/filemgt/hdfs/temp
+
+local:
+  base-dir: /algplat/filemgt
+  temp-dir: /algplat/filemgt/temp
+  chunk-dir: /algplat/filemgt/temp/chunk
+
+compress:
+  queue:
+    size: 1000000  

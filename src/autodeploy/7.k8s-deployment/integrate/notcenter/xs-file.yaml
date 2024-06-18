@@ -1,0 +1,74 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: xs-filemgt
+  name: xs-filemgt
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xs-filemgt
+  template:
+    metadata:
+      labels:
+        app: xs-filemgt
+    spec:
+      containers:
+        - name: xs-filemgt
+          image: 172.27.18.160/cpyfreg/icaplat-xs/arm64/xs-filemgt:3.2.0
+          imagePullPolicy: Never
+          command:
+            - java
+            - -Xmx8192M
+            - -Xms1024M
+            - -Xmn448M
+            - -XX:MaxMetaspaceSize=256M
+            - -XX:MetaspaceSize=256M
+            - -XX:+UseSerialGC
+            - -Djava.security.egd=file:/dev/./urandom
+            - -jar
+            - /app.jar
+            - --spring.profiles.active=sit
+            - --server.port=80
+            - --spring.application.name=xs-filemgt
+            - --spring.cloud.nacos.config.server-addr=nacos
+            - --spring.cloud.nacos.config.file-extension=yml
+            - --spring.cloud.nacos.config.namespace=icaplat-config
+            - --spring.cloud.nacos.config.username=nacos
+            - --spring.cloud.nacos.config.password=UnionBigData_123.
+            - --spring.cloud.nacos.discovery.server-addr=nacos
+            - --spring.cloud.nacos.discovery.namespace=icaplat-register
+            - --spring.cloud.nacos.discovery.ip-delete-timeout=600000
+            - --spring.cloud.nacos.discovery.username=nacos
+            - --spring.cloud.nacos.discovery.password=UnionBigData_123.
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: '2'
+              memory: 8Gi
+            requests:
+              cpu: '0.1'
+              memory: 1Gi
+          volumeMounts:
+            - name: algplat-storage
+              mountPath: /algplat
+              subPath: files
+      volumes:
+        - name: algplat-storage
+          persistentVolumeClaim:
+            claimName: pvc-icaplat-sit
+---
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: xs-filemgt
+  name: xs-filemgt
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: xs-filemgt

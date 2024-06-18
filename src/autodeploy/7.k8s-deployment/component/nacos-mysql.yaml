@@ -1,0 +1,128 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nacos-cm
+data:
+  mysql.host: "192.168.30.14"
+  mysql.db.name: "nacos_config"
+  mysql.port: "3306"
+  mysql.user: "root"
+  mysql.password: "626uug"
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: nacos
+  labels:
+    app: nacos
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nacos
+  template:
+    metadata:
+      labels:
+        app: nacos
+    spec:
+      containers:
+        - name: nacos
+          image: harbor.xnunion.com/cpyfreg/middleware/arm64/third/nacos:2.3.0
+          ports:
+            - name: client
+              containerPort: 8848
+              protocol: TCP
+            - name: client-rpc
+              containerPort: 9848
+              protocol: TCP
+          env:
+            - name: nacos.core.auth.enabled
+              value: 'true'
+            - name: nacos.core.auth.plugin.nacos.token.secret.key
+              value: >-
+                SecretKey012345678901234567890123456789012345678901234567890123456789
+            - name: nacos.core.auth.server.identity.key
+              value: >-
+                SecretKey012345678901234567890123456789012345678901234567890123456789
+            - name: nacos.core.auth.server.identity.value
+              value: >-
+                SecretKey012345678901234567890123456789012345678901234567890123456789
+            - name: MODE
+              value: standalone
+            - name: MYSQL_SERVICE_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: nacos-cm
+                  key: mysql.host
+            - name: MYSQL_SERVICE_DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: nacos-cm
+                  key: mysql.db.name
+            - name: MYSQL_SERVICE_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: nacos-cm
+                  key: mysql.port
+            - name: MYSQL_SERVICE_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: nacos-cm
+                  key: mysql.user
+            - name: MYSQL_SERVICE_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: nacos-cm
+                  key: mysql.password
+            - name: SPRING_DATASOURCE_PLATFORM
+              value: mysql
+            - name: NACOS_SERVER_PORT
+              value: '8848'
+            - name: NACOS_APPLICATION_PORT
+              value: '8848'
+            - name: PREFER_HOST_MODE
+              value: hostname
+            - name: logging.config
+            - name: logging.level.com.alibaba.nacos
+              value: DEBUG
+            - name: logging.level.com.alibaba.nacos.core.remote
+              value: WARN
+            - name: logging.level.com.alibaba.nacos.naming.raft
+              value: WARN
+            - name: logging.level.org.reflections.Reflections
+              value: WARN
+            - name: logging.level.org.apache.jasper
+              value: WARN
+            - name: logging.level.com.alibaba.nacos.naming.performance
+              value: WARN
+            - name: logging.level.com.alipay.sofa.jraft
+              value: ERROR
+            - name: logging.level.com.alibaba.nacos.core.protocol.raft
+              value: 'OFF'
+          resources:
+            limits:
+              cpu: '2'
+              memory: 4Gi
+            requests:
+              cpu: '0.01'
+              memory: 256Mi
+          imagePullPolicy: Never
+      restartPolicy: Always
+  strategy:
+    type: Recreate
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nacos
+spec:
+  ports:
+    - port: 8848
+      name: web8848
+      targetPort: 8848
+    - port: 9848
+      name: rpc9848
+      targetPort: 9848
+  selector:
+    app: nacos
