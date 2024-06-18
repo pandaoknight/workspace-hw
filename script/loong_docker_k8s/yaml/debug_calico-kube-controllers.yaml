@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: debug-calico-kube-controllers
+  namespace: kube-system
+  labels:
+    k8s-app: debug-calico-kube-controllers
+spec:
+  # The controllers can only have a single active instance.
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: debug-calico-kube-controllers
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      name: debug-calico-kube-controllers
+      namespace: kube-system
+      labels:
+        k8s-app: debug-calico-kube-controllers
+    spec:
+      nodeSelector:
+        kubernetes.io/os: linux
+      tolerations:
+        # Mark the pod as a critical add-on for rescheduling.
+        - key: CriticalAddonsOnly
+          operator: Exists
+        - key: node-role.kubernetes.io/master
+          effect: NoSchedule
+        - key: node-role.kubernetes.io/control-plane
+          effect: NoSchedule
+      serviceAccountName: debug-calico-kube-controllers
+      priorityClassName: system-cluster-critical
+      containers:
+        - name: debug-calico-kube-controllers
+          image: lcr.loongnix.cn/calico/kube-controllers:3.26.1
+          imagePullPolicy: IfNotPresent
+          env:
+            # Choose which controllers to run.
+            - name: ENABLED_CONTROLLERS
+              value: node
+            - name: DATASTORE_TYPE
+              value: kubernetes
+          command: ['/bin/sh', "-c", "sleep 1000"]

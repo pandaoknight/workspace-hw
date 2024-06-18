@@ -6,4 +6,5 @@ cat /etc/systemd/system/kubelet.service.d/*
 
 cat /etc/sysconfig/kubelet
 
-systemctl status kubelet
+systemctl status kubelet --no-pager -l
+#systemctl show kubelet --no-pager

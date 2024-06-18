@@ -1,0 +1,13 @@
+#!/bin/bash -x
+
+mkdir -p ./downloads
+cd ./downloads
+
+#
+wget -c https://docs.projectcalico.org/manifests/calico.yaml
+wget -c https://raw.githubusercontent.com/projectcalico/calico/v3.27.3/manifests/calico.yaml -O calico.v3.27.3.yaml
+wget -c https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/calico.yaml -O calico.v3.26.1.yaml
+wget -c https://raw.githubusercontent.com/projectcalico/calico/v3.25.2/manifests/calico.yaml -O calico.v3.25.2.yaml
+
+#
+echo "ATTENTION: Loongarch64 https://lcr.loongnix.cn/repository/calico/ only provide calico v3.26.1"
