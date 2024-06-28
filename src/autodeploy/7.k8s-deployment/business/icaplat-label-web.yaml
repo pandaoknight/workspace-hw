@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: icaplat-label-web
-          image: icaplat/arm64/dev/icaplat-label-web:4.9
+          image: harbor.xnunion.com/cpyfreg/icaplat/lcr/dev/icaplat-label-web:4.9
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

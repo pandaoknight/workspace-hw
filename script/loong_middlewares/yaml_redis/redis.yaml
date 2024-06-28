@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+  labels:
+    app: redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      securityContext:
+        runAsUser: 999
+      initContainers:
+        - name: volume-permissions
+          image: lcr.loongnix.cn/library/redis:7.0-alpine
+          command: [ 'sh', '-c', '[ ! -f /permissions/redis.done ] && chown -R 999 /data && chmod -R g+rwX /data && touch /permissions/redis.done || true' ]
+          securityContext:
+            runAsUser: 0
+            runAsGroup: 0
+          volumeMounts:
+            - mountPath: /data
+              name: redis-storage
+              subPath: redis
+            - mountPath: /permissions
+              name: redis-storage
+              subPath: init-perms
+      containers:
+        - image: lcr.loongnix.cn/library/redis:7.0-alpine
+          imagePullPolicy: IfNotPresent
+          name: redis
+          resources:
+            limits:
+              cpu: '4'
+              memory: 8Gi
+            requests:
+              cpu: '0.01'
+          lifecycle:
+            postStart:
+              exec:
+                command: [ "/bin/sh", "-c", "redis-cli config set requirepass UnionBigData_123." ]
+          ports:
+            - containerPort: 6379
+          volumeMounts:
+            - mountPath: /data
+              name: redis-storage
+              subPath: redis
+      volumes:
+        - name: redis-storage
+          persistentVolumeClaim:
+            claimName: pvc-icaplat-sit
+      tolerations:
+        - key: "node-role.kubernetes.io/control-plane"
+          operator: "Exists"
+          effect: "NoSchedule"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+spec:
+  ports:
+    - port: 6379
+      name: redis6379
+      targetPort: 6379
+  selector:
+    app: redis

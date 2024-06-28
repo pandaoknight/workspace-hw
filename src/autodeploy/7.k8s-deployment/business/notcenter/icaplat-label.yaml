@@ -20,7 +20,7 @@ spec:
           command: [ 'sh', '-c', 'until nc  -zvw3 postgresql 5432; do echo waiting for database; sleep 2; done;' ]
       containers:
         - name: icaplat-label
-          image: icaplat/arm64/dev/icaplat-label:4.9
+          image: harbor.xnunion.com/cpyfreg/icaplat/lcr/dev/icaplat-label:4.9
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

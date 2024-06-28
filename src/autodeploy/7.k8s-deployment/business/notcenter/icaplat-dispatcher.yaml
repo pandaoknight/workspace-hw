@@ -19,7 +19,7 @@ spec:
         icaplat.logging/collect: 'true'
     spec:
       containers:
-        - image: icaplat/arm64/dev/icaplat-dispatcher:4.9
+        - image: harbor.xnunion.com/cpyfreg/icaplat/lcr/dev/icaplat-dispatcher:4.9
           imagePullPolicy: IfNotPresent
           name: dispatcher
           resources:

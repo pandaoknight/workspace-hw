@@ -2,17 +2,19 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
+  namespace: icaplat-sit
   name: nacos-cm
 data:
-  mysql.host: "192.168.30.14"
+  mysql.host: "192.168.122.1"
   mysql.db.name: "nacos_config"
-  mysql.port: "3306"
+  mysql.port: "31005"
   mysql.user: "root"
   mysql.password: "626uug"
 ---
 kind: Deployment
 apiVersion: apps/v1
 metadata:
+  namespace: icaplat-sit
   name: nacos
   labels:
     app: nacos
@@ -28,7 +30,10 @@ spec:
     spec:
       containers:
         - name: nacos
-          image: harbor.xnunion.com/cpyfreg/middleware/arm64/third/nacos:2.3.0
+          image: harbor.xnunion.com/cpyfreg/middleware/lcr/third/nacos:2.3.0
+          command: ["/bin/bash", "-c"]
+          args:
+            - sleep 1000
           ports:
             - name: client
               containerPort: 8848
@@ -108,7 +113,19 @@ spec:
               cpu: '0.01'
               memory: 256Mi
           imagePullPolicy: Never
+          volumeMounts:
+            - name: log-volume
+              mountPath: /home/nacos/logs
+              subPath: nacos/logs
+      volumes:
+        - name: log-volume
+          persistentVolumeClaim:
+            claimName: pvc-icaplat-sit
       restartPolicy: Always
+      tolerations:
+        - key: "node-role.kubernetes.io/control-plane"
+          operator: "Exists"
+          effect: "NoSchedule"
   strategy:
     type: Recreate
 ---
@@ -116,6 +133,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nacos
+  namespace: icaplat-sit
 spec:
   ports:
     - port: 8848
@@ -126,3 +144,4 @@ spec:
       targetPort: 9848
   selector:
     app: nacos
+

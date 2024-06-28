@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS ${ICAPLAT_NACOS_DB};
-CREATE DATABASE ${ICAPLAT_NACOS_DB} DEFAULT character set utf8mb4;
+DROP DATABASE IF EXISTS nacos_config;
+CREATE DATABASE nacos_config DEFAULT character set utf8mb4;
 
-use ${ICAPLAT_NACOS_DB};
+use nacos_config;
 
 CREATE TABLE `config_info` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',

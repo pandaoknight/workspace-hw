@@ -20,7 +20,7 @@ spec:
           command: [ 'sh', '-c', 'until nc -zvw3 icaplat-base 80; do echo waiting for icaplat-base; sleep 2; done;' ]
       containers:
         - name: icaplat-model
-          image: icaplat/arm64/dev/icaplat-model:4.9
+          image: harbor.xnunion.com/cpyfreg/icaplat/lcr/dev/icaplat-model:4.9
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

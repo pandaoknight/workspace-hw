@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: icaplat-gateway
-          image: icaplat/arm64/dev/icaplat-gateway:4.9
+          image: harbor.xnunion.com/cpyfreg/icaplat/lcr/dev/icaplat-gateway:4.9
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
